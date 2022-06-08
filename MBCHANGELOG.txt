@@ -14,7 +14,13 @@
 
 [*]LLSE bugs
 [LIST]
+[*]en.isPlayer 总是返回 false
+[*]en.toPlayer 总是失败
 [*]sp.simulateWorldMove
 [*]sp.simulateWorldMove
 [/LIST]
 
+[*]LLMoney bugs
+[LIST]
+[*]LLMoney 指令崩服
+[/LIST]

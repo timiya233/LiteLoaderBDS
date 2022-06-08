@@ -5,6 +5,9 @@ This is a bug fix update.Please update as soon as possible!
 - Remove MCVAPI
 
 ## [Bug Fixes]
+- Fix BDS thorns crash
+- Fix LLSE en.isPlayer alway return false
+- Fix LLSE en.toPlayer error
 - Fix LLSE sp.simulateWorldMove
 - Fix LLSE sp.simulateLocalMove
-- Fix BDS thorns crash
+- Fix LLMoney command crash
