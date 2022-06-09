@@ -276,7 +276,7 @@ TClasslessInstanceHook(__int64, "?teleportEntity@EndGatewayBlockActor@@QEAAXAEAV
 
 // Fix Thorns crash
 #include <MC/ActorDamageSource.hpp>
-TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
+TInstanceHook2("?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z_FixThornsCrash", bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@M_N1@Z",
               Mob, class ActorDamageSource* damageSource, float damage, bool unk1_1, bool unk2_0)
 {
     if (LL::globalConfig.enableFixMcBug && this)
