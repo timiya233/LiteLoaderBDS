@@ -12,6 +12,11 @@
 [*]装备带荆棘附魔的两个玩家相互攻击使服务端崩溃
 [/LIST]
 
+[*]LL bugs
+[LIST]
+[*]SimulatedPlayer::simulateDestory 异常行为
+[/LIST]
+
 [*]LLSE bugs
 [LIST]
 [*]en.isPlayer 总是返回 false

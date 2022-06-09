@@ -12,8 +12,10 @@ static_assert(sizeof(ScriptNavigationResult) == 32);
 bool SimulatedPlayer::simulateDestory()
 {
     FaceID face = FaceID::Unknown;
-    auto block = getBlockFromViewVector(face);
-    return simulateDestroyBlock(block.getPosition(), (ScriptFacing)face);
+    auto blockIns = getBlockFromViewVector(face);
+    if(blockIns.isNull())
+        return false;
+    return simulateDestroyBlock(blockIns.getPosition(), (ScriptFacing)face);
 }
 
 bool SimulatedPlayer::simulateUseItem()
