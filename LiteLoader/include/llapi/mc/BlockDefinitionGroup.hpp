@@ -22,10 +22,7 @@
 class BlockDefinitionGroup {
 
 #define AFTER_EXTRA
-// Add Member There
-public:
-    std::unordered_map<std::string, std::unique_ptr<BlockDefinition>> mBlockDefinitions;
-    int mLastBlockId;
+    // Add Member There
 
 public:
 struct BlockResource {
@@ -35,7 +32,9 @@ struct BlockResource {
 };
 
 inline int getNextBlockId() {
-    return mLastBlockId++;
+    auto id = *((int*)this + 62);//
+    *((int*)this + 62) = id + 1;
+    return id + 1;
 }
 
 #undef AFTER_EXTRA

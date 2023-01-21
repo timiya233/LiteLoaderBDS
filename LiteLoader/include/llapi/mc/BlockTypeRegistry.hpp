@@ -29,10 +29,11 @@ public:
     class BlockComplexAliasContent;
 
     template <typename T, typename... Args>
-    static T& registerBlock(Args&&... args) {
+    static WeakPtr<T> registerBlock(Args&&... args) {
         SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
-        mBlockLookupMap[Util::toLower(blockReg->getRawNameId())] = blockReg;
-        return *blockReg;
+        mBlockLookupMap[blockReg->getRawNameHash()] = blockReg;
+        mKnownNamespaces.emplace(blockReg->getNamespace());
+        return blockReg;
     }
 
 #undef AFTER_EXTRA

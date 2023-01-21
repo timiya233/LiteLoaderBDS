@@ -2,7 +2,9 @@
 #include <llapi/mc/BlockLegacy.hpp>
 #include <llapi/mc/BlockTypeRegistry.hpp>
 #include <llapi/mc/BlockDefinitionGroup.hpp>
-
+#include <llapi/mc/HashedString.hpp>
+#include <llapi/mc/BlockStateDefinition.hpp>
+#include <llapi/mc/BlockStateGroup.hpp>
 class RegisterBlock {
 public:
     class BlockInfo {
@@ -14,8 +16,7 @@ public:
         virtual void initBlock(BlockDefinitionGroup* blockGroup) = 0;
     };
 
-    static std::vector<BlockInfo*> BlockRegistryList;
-
+    static std::vector<RegisterBlock::BlockInfo*> BlockRegistryList;
     template <class T, typename... Args>
     class BlockRegistryInfo : public BlockInfo {
     public:
@@ -31,10 +32,10 @@ public:
 
         template <std::size_t... I>
         WeakPtr<BlockLegacy> registerBlock(BlockDefinitionGroup* blockGroup, std::index_sequence<I...>) {
-            auto& temp =
-                BlockTypeRegistry::registerBlock<T>(mNameId, blockGroup->getNextBlockId(), std::get<I>(mArgs)...);      
-            temp.setIsVanillaBlock(false);
-            return temp.createWeakPtr();
+            auto result = BlockTypeRegistry::registerBlock<T>(mNameId, blockGroup->getNextBlockId(), std::get<I>(mArgs)...);
+            result->setIsVanillaBlock(false);
+            result->initializeBlockStateGroup();
+            return result;
         }
     };
 
@@ -42,7 +43,8 @@ public:
     static WeakPtr<BlockLegacy>* registerBlock(std::string name, BlockShape shape, Args&&... args) {
         BlockRegistryInfo<T, Args...>* decl = new BlockRegistryInfo<T, Args...>(name, shape, std::forward<Args>(args)...);
         BlockRegistryList.push_back(decl);
-        return decl->blockPointer;
+        return decl->mBlock;
     }
-
 };
+
+inline std::vector<RegisterBlock::BlockInfo*> RegisterBlock::BlockRegistryList{};

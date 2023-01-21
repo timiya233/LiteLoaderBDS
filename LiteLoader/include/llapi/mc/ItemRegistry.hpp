@@ -7,10 +7,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Json.hpp"
-#include "BlockLegacy.hpp"
-#include "Block.hpp"
-#include "Level.hpp"
-#include "ItemRegistryRef.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
@@ -35,29 +32,6 @@ struct ItemAlias {
     ItemAlias(ItemAlias const&) = delete;
     ItemAlias(ItemAlias const&&) = delete;
 };
-
-template <typename T, typename... Args>
-static WeakPtr<T> registerItem(const std::string& name, short id, Args&&... args) {
-    return ItemRegistry::registerItemShared<T>(name, id + 256, std::forward<Args>(args)...);
-}
-
-template <typename T, typename... Args>
-static WeakPtr<T> registerBlockItem(const std::string& name, const BlockLegacy& block, Args&&... args) {
-    return ItemRegistry::registerItemShared<T>(name, block.getBlockItemId(), std::forward<Args>(args)...);
-}
-
-template <typename T, typename... Args>
-static WeakPtr<T> registerBlockItem(const std::string& name, const Block& block, Args&&... args) {
-    return ItemRegistry::registerItemShared<T>(name, block.getLegacyBlock().getBlockItemId(),
-                                               std::forward<Args>(args)...);
-}
-
-template <typename T, typename... Args>
-static WeakPtr<T> registerItemShared(Args&&... args) {
-    SharedPtr<T> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
-    Global<Level>->getItemRegistry()._lockRegistry()->registerItem(itemReg);
-    return itemReg;
-}
 
 
 #undef AFTER_EXTRA

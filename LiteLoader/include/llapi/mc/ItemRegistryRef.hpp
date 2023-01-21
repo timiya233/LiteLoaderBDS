@@ -6,6 +6,9 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "BlockLegacy.hpp"
+#include "Block.hpp"
+#include "Level.hpp"
 
 #define BEFORE_EXTRA
 
@@ -18,6 +21,29 @@
 class ItemRegistryRef {
 
 #define AFTER_EXTRA
+public:
+    template <typename T, typename... Args>
+     WeakPtr<T> registerItem(const std::string& name, short id, Args&&... args) {
+        return registerItemShared<T>(name, id + 256, std::forward<Args>(args)...);
+    }
+
+    template <typename T, typename... Args>
+     WeakPtr<T> registerBlockItem(const std::string& name, const BlockLegacy& block, Args&&... args) {
+        return registerItemShared<T>(name, block.getBlockItemId(), std::forward<Args>(args)...);
+    }
+
+    template <typename T, typename... Args>
+     WeakPtr<T> registerBlockItem(const std::string& name, const Block& block, Args&&... args) {
+        return registerItemShared<T>(name, block.getLegacyBlock().getBlockItemId(),
+                                                   std::forward<Args>(args)...);
+    }
+
+    template <typename T, typename... Args>
+     WeakPtr<T> registerItemShared(Args&&... args) {
+        SharedPtr<T> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
+        ItemRegistry::mInternalInstance.registerItem(itemReg);
+        return itemReg;
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMREGISTRYREF
