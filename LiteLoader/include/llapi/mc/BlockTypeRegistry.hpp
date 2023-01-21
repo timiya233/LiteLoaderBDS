@@ -10,21 +10,30 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <shared_mutex>
-
+#include "Util.hpp"
 #undef BEFORE_EXTRA
 
 /**
  * @brief MC class BlockTypeRegistry.
  *
  */
+
 class BlockTypeRegistry {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     struct LookupByNameImplReturnType;
     class InhibitModificationsLock;
     struct BlockComplexAliasBlockState;
     class BlockComplexAliasContent;
+
+    template <typename T, typename... Args>
+    static T& registerBlock(Args&&... args) {
+        SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
+        mBlockLookupMap[Util::toLower(blockReg->getRawNameId())] = blockReg;
+        return *blockReg;
+    }
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRY

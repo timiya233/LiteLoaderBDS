@@ -6,7 +6,10 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
+#include "SemVersion.hpp"
+#include "HashedString.hpp"
+#include "AABB.hpp"
+#include "BlockTypeRegistry.hpp"
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;
@@ -22,8 +25,11 @@ class ItemStack;
 class BlockLegacy {
 
 #define AFTER_EXTRA
-// Add new members to class
+    // Add new members to class
+#define DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACY
 public:
+    char filler[832-8];
+
     struct NameInfo;
 
     LIAPI Block* toBlock(unsigned short tileData);
@@ -156,7 +162,7 @@ public:
      * @vftbl  19
      * @hash   -227039124
      */
-    virtual void __unk_vfn_19();
+    virtual bool hasVariableLighting() const;
     /**
      * @vftbl  20
      * @symbol ?isStrippable@BlockLegacy@@UEBA_NAEBVBlock@@@Z
@@ -215,12 +221,12 @@ public:
      * @vftbl  29
      * @hash   -198409973
      */
-    virtual void __unk_vfn_29();
+    virtual bool canDamperVibrations() const;
     /**
      * @vftbl  30
      * @hash   -178092511
      */
-    virtual void __unk_vfn_30();
+    virtual bool canOccludeVibrations() const;
     /**
      * @vftbl  31
      * @symbol ?isClimbable@BlockLegacy@@UEBA_NAEBUIActorMovementProxy@@@Z
@@ -231,17 +237,17 @@ public:
      * @vftbl  32
      * @hash   -176245469
      */
-    virtual void __unk_vfn_32();
+    virtual bool isStemBlock() const;
     /**
      * @vftbl  33
      * @hash   -175321948
      */
-    virtual void __unk_vfn_33();
+    virtual bool isContainerBlock() const;
     /**
      * @vftbl  34
      * @hash   -174398427
      */
-    virtual void __unk_vfn_34();
+    virtual bool isCraftingBlock() const;
     /**
      * @vftbl  35
      * @symbol ?isWaterBlocking@BlockLegacy@@UEBA_NXZ
@@ -252,37 +258,37 @@ public:
      * @vftbl  36
      * @hash   -172551385
      */
-    virtual void __unk_vfn_36();
+    virtual bool isHurtableBlock() const;
     /**
      * @vftbl  37
      * @hash   -171627864
      */
-    virtual void __unk_vfn_37();
+    virtual bool isFenceBlock() const;
     /**
      * @vftbl  38
      * @hash   -170704343
      */
-    virtual void __unk_vfn_38();
+    virtual bool isFenceGateBlock() const;
     /**
      * @vftbl  39
      * @hash   -169780822
      */
-    virtual void __unk_vfn_39();
+    virtual bool isThinFenceBlock() const;
     /**
      * @vftbl  40
      * @hash   -149463360
      */
-    virtual void __unk_vfn_40();
+    virtual bool isWallBlock() const;
     /**
      * @vftbl  41
      * @hash   -148539839
      */
-    virtual void __unk_vfn_41();
+    virtual bool isStairBlock() const;
     /**
      * @vftbl  42
      * @hash   -147616318
      */
-    virtual void __unk_vfn_42();
+    virtual bool isSlabBlock() const ;
     /**
      * @vftbl  43
      * @symbol ?isDoubleSlabBlock@BlockLegacy@@UEBA_NXZ
@@ -293,32 +299,32 @@ public:
      * @vftbl  44
      * @hash   -145769276
      */
-    virtual void __unk_vfn_44();
+    virtual bool isDoorBlock() const;
     /**
      * @vftbl  45
      * @hash   -144845755
      */
-    virtual void __unk_vfn_45();
+    virtual bool isRailBlock() const;
     /**
      * @vftbl  46
      * @hash   -143922234
      */
-    virtual void __unk_vfn_46();
+    virtual bool isButtonBlock() const;
     /**
      * @vftbl  47
      * @hash   -142998713
      */
-    virtual void __unk_vfn_47();
+    virtual bool isLeverBlock() const;
     /**
      * @vftbl  48
      * @hash   -142075192
      */
-    virtual void __unk_vfn_48();
+    virtual bool isCandleCakeBlock() const;
     /**
      * @vftbl  49
      * @hash   -141151671
      */
-    virtual void __unk_vfn_49();
+    virtual bool isMultifaceBlock() const;
     /**
      * @vftbl  50
      * @symbol ?canHurtAndBreakItem@BlockLegacy@@UEBA_NXZ
@@ -347,7 +353,7 @@ public:
      * @vftbl  54
      * @hash   -117140125
      */
-    virtual void __unk_vfn_54();
+    virtual bool isSilentWhenJumpingOff() const;
     /**
      * @vftbl  55
      * @symbol ?isValidAuxValue@BlockLegacy@@UEBA_NH@Z
@@ -382,12 +388,12 @@ public:
      * @vftbl  60
      * @hash   -92205058
      */
-    virtual void __unk_vfn_60();
+    virtual bool canBeDestroyedByWaterSpread() const;
     /**
      * @vftbl  61
      * @hash   -91281537
      */
-    virtual void __unk_vfn_61();
+    virtual bool waterSpreadCausesSpawn() const;
     /**
      * @vftbl  62
      * @symbol ?canContainLiquid@BlockLegacy@@UEBA_NXZ
@@ -470,7 +476,7 @@ public:
      * @vftbl  75
      * @hash   -58958302
      */
-    virtual void __unk_vfn_75();
+    virtual bool detachesOnPistonMove(class BlockSource&, class BlockPos const&) const;
     /**
      * @vftbl  76
      * @symbol ?movedByPiston@BlockLegacy@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -511,7 +517,7 @@ public:
      * @vftbl  82
      * @hash   -33099714
      */
-    virtual void __unk_vfn_82();
+    virtual bool isBounceBlock() const;
     /**
      * @vftbl  83
      * @symbol ?isFilteredOut@BlockLegacy@@UEBA_NW4BlockRenderLayer@@@Z
@@ -648,7 +654,7 @@ public:
      * @vftbl  105
      * @hash   1432640646
      */
-    virtual void __unk_vfn_105();
+    virtual bool spawnBurnResources(class BlockSource&, float, float, float) const;
     /**
      * @vftbl  106
      * @symbol ?getPlacementBlock@BlockLegacy@@UEBAAEBVBlock@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@H@Z
@@ -755,7 +761,7 @@ public:
      * @vftbl  123
      * @hash   1488051906
      */
-    virtual void __unk_vfn_123();
+    virtual bool pushesUpFallingBlocks() const;
     /**
      * @vftbl  124
      * @symbol ?calcGroundFriction@BlockLegacy@@UEBAMAEBUIMobMovementProxy@@AEBVBlockPos@@@Z
@@ -766,12 +772,12 @@ public:
      * @vftbl  125
      * @hash   1489898948
      */
-    virtual void __unk_vfn_125();
+    virtual bool canHaveExtraData() const;
     /**
      * @vftbl  126
      * @hash   1490822469
      */
-    virtual void __unk_vfn_126();
+    virtual bool hasComparatorSignal() const;
     /**
      * @vftbl  127
      * @symbol ?getComparatorSignal@BlockLegacy@@UEBAHAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@E@Z
@@ -800,7 +806,7 @@ public:
      * @vftbl  131
      * @hash   1514834015
      */
-    virtual void __unk_vfn_131();
+    virtual bool causesFreezeEffect() const;
     /**
      * @vftbl  132
      * @symbol ?getIconYOffset@BlockLegacy@@UEBAHXZ
@@ -854,7 +860,7 @@ public:
      * @symbol ?onGraphicsModeChanged@BlockLegacy@@UEAAXAEBUBlockGraphicsModeChangeContext@@@Z
      * @hash   823738338
      */
-    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const &);
+    virtual void onGraphicsModeChanged(struct BlockGraphicsModeChangeContext const&);
     /**
      * @vftbl  141
      * @symbol ?getShadeBrightness@BlockLegacy@@UEBAMAEBVBlock@@@Z
@@ -927,18 +933,22 @@ public:
      * @hash   134379413
      */
     virtual class BlockLegacy & init();
+
+protected:
     /**
      * @vftbl  153
      * @symbol ?getLightEmission@BlockLegacy@@MEBA?AUBrightness@@AEBVBlock@@@Z
      * @hash   1769484341
      */
     virtual struct Brightness getLightEmission(class Block const &) const;
+
+public:
     /**
      * @vftbl  154
      * @symbol ?addState@BlockLegacy@@UEAAAEAV1@AEBVItemState@@@Z
      * @hash   1999455334
      */
-    virtual class BlockLegacy & addState(class ItemState const &);
+    virtual class BlockLegacy& addState(class ItemState const&);
     /**
      * @vftbl  155
      * @symbol ?addState@BlockLegacy@@UEAAAEAV1@AEBVItemState@@_K@Z
@@ -949,7 +959,7 @@ public:
      * @vftbl  156
      * @hash   1569252562
      */
-    virtual void __unk_vfn_156();
+    virtual bool canBeSilkTouched() const;
     /**
      * @vftbl  157
      * @symbol ?getSilkTouchItemInstance@BlockLegacy@@UEBA?AVItemInstance@@AEBVBlock@@@Z
@@ -986,6 +996,8 @@ public:
      * @hash   -34671382
      */
     virtual void _addHardCodedBlockComponents();
+
+protected:
     /**
      * @vftbl  163
      * @symbol ?onRemove@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -1008,17 +1020,17 @@ public:
      * @vftbl  166
      * @hash   1547586817
      */
-    virtual void __unk_vfn_166();
+    virtual void onStepOn(class Actor&, class BlockPos const&) const;
     /**
      * @vftbl  167
      * @hash   1548510338
      */
-    virtual void __unk_vfn_167();
+    virtual void onStepOff(class Actor&, class BlockPos const&) const;
     /**
      * @vftbl  168
      * @hash   1549433859
      */
-    virtual void __unk_vfn_168();
+    virtual void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, unsigned char) const;
     /**
      * @vftbl  169
      * @symbol ?onPlace@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@@Z
@@ -1041,7 +1053,7 @@ public:
      * @vftbl  172
      * @hash   1630274140
      */
-    virtual void __unk_vfn_172();
+    virtual bool shouldTickOnSetBlock() const;
     /**
      * @vftbl  173
      * @symbol ?tick@BlockLegacy@@MEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z
@@ -1064,7 +1076,7 @@ public:
      * @vftbl  176
      * @hash   1633968224
      */
-    virtual void __unk_vfn_176();
+    virtual bool isInteractiveBlock() const;
     /**
      * @vftbl  177
      * @symbol ?clip@BlockLegacy@@MEBA?AVHitResult@@AEBVBlockSource@@AEBVBlockPos@@AEBVVec3@@2_N@Z
@@ -1123,7 +1135,7 @@ public:
      * @vftbl  186
      * @hash   1662597375
      */
-    virtual void __unk_vfn_186();
+    virtual bool isCropBlock() const;
     /**
      * @vftbl  187
      * @symbol ?getResourceCount@BlockLegacy@@MEBAHAEAVRandomize@@AEBVBlock@@H@Z
@@ -1136,6 +1148,8 @@ public:
      * @hash   1616711675
      */
     virtual class ItemInstance getResourceItem(class Randomize &, class Block const &, int) const;
+
+private:
     /**
      * @vftbl  189
      * @symbol ?_executeEvent@BlockLegacy@@EEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$CBV12@@std@@@2@@3@AEAVRenderParams@@@Z
@@ -1154,6 +1168,8 @@ public:
      * @hash   -1427820769
      */
     virtual void _forceExecuteTrigger(class DefinitionTrigger const &, std::vector<struct std::pair<std::string const, std::string const>> &, class RenderParams &) const;
+
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKLEGACY
     /**
      * @symbol ?canBeDestroyedByWaterSpread@BlockLegacy@@UEBA_NXZ

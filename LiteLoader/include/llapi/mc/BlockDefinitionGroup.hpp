@@ -8,6 +8,7 @@
 #include "../Global.h"
 #include "JsonUtil.hpp"
 #include "Json.hpp"
+#include "BlockDefinition.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,11 +24,19 @@ class BlockDefinitionGroup {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    std::unordered_map<std::string, std::unique_ptr<BlockDefinition>> mBlockDefinitions;
+    int mLastBlockId;
+
+public:
 struct BlockResource {
     BlockResource() = delete;
     BlockResource(BlockResource const&) = delete;
     BlockResource(BlockResource const&&) = delete;
 };
+
+inline int getNextBlockId() {
+    return mLastBlockId++;
+}
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDEFINITIONGROUP
