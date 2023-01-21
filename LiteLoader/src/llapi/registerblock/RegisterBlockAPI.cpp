@@ -14,11 +14,11 @@ public:
         setDestroyTime(0.5);
         setExplodeable(3.0);
         addTag(VanillaTags::Wood);
-        setCategory(CreativeItemCategory::Items);
+        setCategory(CreativeItemCategory::Custom);
     }
-
-
 };
+
+
 
 THook(void, "?initServerData@ItemRegistryRef@@QEBAXAEAVResourcePackManager@@AEBVExperiments@@W4ItemVersion@@@Z",
       __int64 a1, __int64 a2, __int64 a3, char a4) {
@@ -27,7 +27,7 @@ THook(void, "?initServerData@ItemRegistryRef@@QEBAXAEAVResourcePackManager@@AEBV
 }
 
 THook(void, "?registerBlocks@BlockDefinitionGroup@@QEAAXXZ", BlockDefinitionGroup* a1) {
-    mtest = RegisterBlock::registerBlock<TestBlock>("fiercecraft:warped_bookshelf", BlockShape::BLOCK);
+    auto mtest = RegisterBlock::registerBlock<TestBlock>("fiercecraft:warped_bookshelf", BlockShape::BLOCK);
     //register block
     for (auto block : RegisterBlock::BlockRegistryList)
         block->initBlock(a1);

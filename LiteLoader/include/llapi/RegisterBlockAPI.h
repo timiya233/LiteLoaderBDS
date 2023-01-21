@@ -10,11 +10,11 @@ public:
         std::string mNameId;
         BlockShape mBlockShape;
 
-        BlockInfo(std::string name, BlockShape shape) : nameId(name), blockShape(shape) {}
+        BlockInfo(std::string name, BlockShape shape) : mNameId(name), mBlockShape(shape) {}
         virtual void initBlock(BlockDefinitionGroup* blockGroup) = 0;
     };
 
-    std::vector<BlockInfo*> BlockRegistryList;
+    static std::vector<BlockInfo*> BlockRegistryList;
 
     template <class T, typename... Args>
     class BlockRegistryInfo : public BlockInfo {
@@ -32,7 +32,7 @@ public:
         template <std::size_t... I>
         WeakPtr<BlockLegacy> registerBlock(BlockDefinitionGroup* blockGroup, std::index_sequence<I...>) {
             auto& temp =
-                BlockTypeRegistry::registerBlock<T>(nameId, blockGroup->getNextBlockId(), std::get<I>(arguments)...);      
+                BlockTypeRegistry::registerBlock<T>(mNameId, blockGroup->getNextBlockId(), std::get<I>(mArgs)...);      
             temp.setIsVanillaBlock(false);
             return temp.createWeakPtr();
         }
