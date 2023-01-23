@@ -52,10 +52,10 @@ public:
     float mParticleQuantityScalar;
     CreativeItemCategory mCreativeCategory;//232
     std::string mCreativeGroup;//240
-    char unk272[1];//272
+    bool mIsHiddenInCommands;//272
     bool mAllowsRunes;//273
     bool mCanBeBrokenFromFalling;//274
-    char unk275[1];//275
+    bool mCanBeOriginalSurface; // 275
     bool mSolid;//276
     bool mPushesOutItems;//277
     bool mIgnoreBlockForInsideCubeRenderer;//278
@@ -93,7 +93,10 @@ public:
     std::unordered_map<unsigned short, class Block const*> mContent;
     char mEntity[0x18];//784
     std::unique_ptr<class BlockStateGroup> mBlockStateGroup; //808
-    char unk816[16];
+    bool mIsExperienceDrop; //816
+    char unk817[7];
+    bool mIsReturnDefaultBlockOnUnidentifiedBlockState;//824
+    char unk825[7];
 
 
     struct NameInfo;
