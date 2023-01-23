@@ -25,6 +25,7 @@ class AllowListFile;
 class PropertiesSettings;
 class ResourcePackRepository;
 class LevelStorage;
+class BlockDefinitionGroup;
 
 #ifdef LITELOADER_EXPORTS
 template <typename T>

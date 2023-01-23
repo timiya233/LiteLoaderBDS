@@ -10,6 +10,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <shared_mutex>
+#include "BlockLegacy.hpp"
 #include "Util.hpp"
 #undef BEFORE_EXTRA
 
@@ -23,6 +24,7 @@ class BlockTypeRegistry {
 #define AFTER_EXTRA
 // Add Member There
 public:
+
     struct LookupByNameImplReturnType;
     class InhibitModificationsLock;
     struct BlockComplexAliasBlockState;
@@ -31,7 +33,8 @@ public:
     template <typename T, typename... Args>
     static WeakPtr<T> registerBlock(Args&&... args) {
         SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
-        mBlockLookupMap[blockReg->getRawNameHash()] = blockReg;
+        HashedString hash = blockReg->getRawNameHash();
+        mBlockLookupMap[hash] = blockReg;
         mKnownNamespaces.emplace(blockReg->getNamespace());
         return blockReg;
     }

@@ -31,10 +31,10 @@ struct BlockResource {
     BlockResource(BlockResource const&&) = delete;
 };
 
-inline int getNextBlockId() {
-    auto id = *((int*)this + 62);//
-    *((int*)this + 62) = id + 1;
-    return id + 1;
+inline unsigned long getNextBlockId() {
+    auto id = *((DWORD*)this + 62);
+    *((DWORD*)this + 62) = id + 1;
+    return id;
 }
 
 #undef AFTER_EXTRA

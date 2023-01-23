@@ -8,6 +8,7 @@
 #include "llapi/mc/RakNet.hpp"
 #include "llapi/mc/Scoreboard.hpp"
 #include "llapi/mc/AllowListFile.hpp"
+#include "llapi/mc/BlockDefinitionGroup.hpp"
 #include "llapi/GlobalServiceAPI.h"
 #include <libloaderapi.h>
 
@@ -105,3 +106,14 @@ TInstanceHook(int, "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ", AllowLis
 }
 // PropertiesSettings
 // -> BuiltinBugFix.cpp
+
+TInstanceHook(BlockDefinitionGroup*, "??0BlockDefinitionGroup@@QEAA@XZ",
+              BlockDefinitionGroup)
+{
+    static bool set = false;
+    if (!set) {
+        Global<BlockDefinitionGroup> = this;
+        set = true;
+    }
+    return original(this);
+}

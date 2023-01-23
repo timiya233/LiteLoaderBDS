@@ -1,22 +1,26 @@
+#pragma once
+
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/BlockLegacy.hpp>
 #include <llapi/mc/BlockTypeRegistry.hpp>
 #include <llapi/mc/BlockDefinitionGroup.hpp>
 #include <llapi/mc/HashedString.hpp>
-#include <llapi/mc/BlockStateDefinition.hpp>
-#include <llapi/mc/BlockStateGroup.hpp>
-class RegisterBlock {
+
+class BlockRegistry {
 public:
+
     class BlockInfo {
     public:
         std::string mNameId;
         BlockShape mBlockShape;
 
-        BlockInfo(std::string name, BlockShape shape) : mNameId(name), mBlockShape(shape) {}
-        virtual void initBlock(BlockDefinitionGroup* blockGroup) = 0;
+        BlockInfo(std::string name, BlockShape shape) : mNameId(std::move(name)), mBlockShape(shape) {}
+        virtual void initialize(BlockDefinitionGroup* blockGroup) = 0;
     };
 
-    static std::vector<RegisterBlock::BlockInfo*> BlockRegistryList;
+    static std::vector<BlockRegistry::BlockInfo*> BlockRegistryList;
+    static std::vector<WeakPtr<BlockLegacy>*> registeredBlocks;
+
     template <class T, typename... Args>
     class BlockRegistryInfo : public BlockInfo {
     public:
@@ -26,7 +30,8 @@ public:
         BlockRegistryInfo(std::string name, BlockShape shape, Args&&... args)
         : BlockInfo(name, shape), mArgs(args...), mBlock(new WeakPtr<BlockLegacy>()) {}
 
-        virtual void initBlock(BlockDefinitionGroup* blockGroup) {
+        // register to mc block system.
+        void initialize(BlockDefinitionGroup* blockGroup) override {
             *mBlock = registerBlock(blockGroup, std::index_sequence_for<Args...>{});
         }
 
@@ -40,11 +45,31 @@ public:
     };
 
     template <class T, typename... Args>
-    static WeakPtr<BlockLegacy>* registerBlock(std::string name, BlockShape shape, Args&&... args) {
-        BlockRegistryInfo<T, Args...>* decl = new BlockRegistryInfo<T, Args...>(name, shape, std::forward<Args>(args)...);
-        BlockRegistryList.push_back(decl);
-        return decl->mBlock;
+    static WeakPtr<BlockLegacy> registerBlock(std::string name, BlockShape shape, Args&&... args) {
+        auto* decl = new BlockRegistryInfo<T, Args...>(name, shape, std::forward<Args>(args)...);
+        BlockRegistryList.emplace_back(decl);
+        return *(decl->mBlock);
     }
+
+    // Order of register blocks:
+    // BedrockBlockTypes -> VanillaBlockTypes -> BlockDefinitionGroup
+    static WeakPtr<BlockLegacy> registerBlock(const std::string& typeName, const Material& material) {
+        auto exists = BlockTypeRegistry::lookupByName(typeName, false);
+        if (exists && exists.get())
+            return exists;
+        auto lastBlockId = Global<BlockDefinitionGroup>->getNextBlockId();
+        auto legacyBlock = SymCall("??$registerBlock@VBlockLegacy@@HAEBVMaterial@@@BlockTypeRegistry@@SAAEAVBlockLegacy@@AEBVHashedString@@$$QEAHAEBVMaterial@@@Z",
+                                   BlockLegacy*, HashedString const &, DWORD*, class Material const &)(typeName, &lastBlockId, material);
+        auto weakLegacy = legacyBlock->createWeakPtr();
+        if (!weakLegacy)
+            return {};
+        weakLegacy->setIsVanillaBlock(false);
+        weakLegacy->initializeBlockStateGroup();
+        registeredBlocks.emplace_back(&weakLegacy);
+        return weakLegacy;
+    }
+
 };
 
-inline std::vector<RegisterBlock::BlockInfo*> RegisterBlock::BlockRegistryList{};
+inline std::vector<BlockRegistry::BlockInfo*> BlockRegistry::BlockRegistryList;
+inline std::vector<WeakPtr<BlockLegacy>*> BlockRegistry::registeredBlocks;
