@@ -17,7 +17,7 @@ public:
         if (exists && exists.get())
             return exists;
         auto lastBlockId = Global<BlockDefinitionGroup>->getNextBlockId();
-        auto legacyBlock = BlockTypeRegistry::registerBlock<T>(typeName, lastBlockId , args...);
+        auto& legacyBlock = BlockTypeRegistry::registerBlock<T>(typeName, lastBlockId , args...);
         auto weakLegacy = legacyBlock.createWeakPtr();
         if (!weakLegacy)
             return {};

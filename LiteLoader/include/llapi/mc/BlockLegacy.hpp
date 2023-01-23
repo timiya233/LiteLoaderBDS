@@ -8,8 +8,10 @@
 #include "../Global.h"
 #include "SemVersion.hpp"
 #include "HashedString.hpp"
+#include "Brightness.hpp"
 #include "AABB.hpp"
 #include "BlockTypeRegistry.hpp"
+#include "BaseGameVersion.hpp"
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;
@@ -33,10 +35,68 @@ public:
     HashedString mRawNameId;//40
     std::string mNamespace;//88
     HashedString mFullName;//120
-    char filler[656];
+    bool mFancy;
+    BlockRenderLayer mRenderLayer;
+    bool mRenderLayerCanRenderAsOpaque;
+    BlockProperty mProperties;
+    BlockActorType mBlockEntityType;
+    bool mAnimatedTexture;
+    float mBrightnessGamma;
+    float mThickness;
+    bool mCanSlide;
+    bool mCanInstatick;
+    bool mIsInteraction;
+    float mGravity;
+    const class Material* mMaterial;//216
+    bool mHeavy;//224
+    float mParticleQuantityScalar;
+    CreativeItemCategory mCreativeCategory;//232
+    std::string mCreativeGroup;//240
+    char unk272[1];//272
+    bool mAllowsRunes;//273
+    bool mCanBeBrokenFromFalling;//274
+    char unk275[1];//275
+    bool mSolid;//276
+    bool mPushesOutItems;//277
+    bool mIgnoreBlockForInsideCubeRenderer;//278
+    bool mIsTrapdoor;//279
+    bool mIsDoor;//280
+    float mTranslucency;//284
+    bool mShouldRandomTick;//288
+    bool mShouldRandomTickExtraLayer;//289
+    bool mIsMobPiece;//290
+    bool mCanBeExtraBlock;//291
+    bool mCanPropagateBrightness;//292
+    Brightness mLightBlock;//293
+    Brightness mLightEmission;//294
+    int mFlameOdds;//296
+    int mBurnOdds;//300
+    char unk304[4];//304
+    float mDestroySpeed;//308
+    float mExplosionResistance;//312
+    mce::Color mMapColor;//316
+    float mFriction;//332
+    unsigned __int16 mID;//336
+    BaseGameVersion mMinRequiredBaseGameVersion; //344
+    bool mIsVanilla;//464
+    std::vector<class HashedString> mTags;//472
+    std::unordered_map<std::string, class DefinitionEvent> mEventHandlers;//496
+    AABB mVisualShape;//560
+    unsigned int mBitsUsed;
+    unsigned int mTotalBitsUsed;
+    std::map<unsigned __int64, class ItemStateInstance> mStates;//616
+    std::unordered_map<class HashedString, unsigned __int64> mStateNameMap;
+    unsigned __int64 mCreativeEnumState; //672
+    std::vector<std::unique_ptr<Block>> mBlockPermutations;//680
+    const Block* mDefaultState; //704
+    std::shared_mutex mAccess;                                      
+    std::unordered_map<unsigned short, class Block const*> mContent;
+    char mEntity[0x18];//784
+    std::unique_ptr<class BlockStateGroup> mBlockStateGroup; //808
+    char unk816[16];
+
 
     struct NameInfo;
-
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
     LIAPI bool applyBoneMeal(class BlockSource* a1, class BlockPos const& a2);
@@ -1862,5 +1922,3 @@ protected:
 private:
 
 };
-
-static_assert(offsetof(BlockLegacy, mFullName) == 120);

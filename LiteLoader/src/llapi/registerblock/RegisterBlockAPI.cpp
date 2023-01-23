@@ -24,7 +24,6 @@ inline static WeakPtr<BlockLegacy> mTest2;
 // event: RegisterBlocksEvent
 THook(void, "?registerBlocks@BlockDefinitionGroup@@QEAAXXZ", BlockDefinitionGroup* a1) {
     original(a1);
-
     mTest = BlockRegistry::registerBlock<TestBlock>("fiercecraft:ancient_debris_marker");
 
     //auto& material = Material::getMaterial(MaterialType::Dirt);

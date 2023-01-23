@@ -21,6 +21,9 @@ class BaseGameVersion {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    SemVersion mSemVersion;
+    bool mIsValid;
 
 #undef AFTER_EXTRA
 public:
