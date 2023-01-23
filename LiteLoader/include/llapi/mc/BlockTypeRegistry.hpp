@@ -12,6 +12,7 @@
 #include <shared_mutex>
 #include "BlockLegacy.hpp"
 #include "Util.hpp"
+#include "BlockTypeRegistryModificationsLock.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -31,12 +32,13 @@ public:
     class BlockComplexAliasContent;
 
     template <typename T, typename... Args>
-    static WeakPtr<T> registerBlock(Args&&... args) {
+    static T& registerBlock(Args&&... args) {
         SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
-        HashedString hash = blockReg->getRawNameHash();
-        mBlockLookupMap[hash] = blockReg;
-        mKnownNamespaces.emplace(blockReg->getNamespace());
-        return blockReg;
+        HashedString FullHash = blockReg.get()->mFullName;
+        mBlockLookupMap[FullHash] = blockReg;
+        mKnownNamespaces.emplace(blockReg.get()->mNamespace);
+        mBlockNameHashToStringMap.emplace(std::make_pair(FullHash.hash, FullHash));
+        return *blockReg;
     }
 
 #undef AFTER_EXTRA

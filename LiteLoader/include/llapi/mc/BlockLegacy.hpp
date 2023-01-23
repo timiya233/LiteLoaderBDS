@@ -22,13 +22,18 @@ class ItemStack;
  * @brief MC class BlockLegacy.
  *
  */
+
 class BlockLegacy {
 
 #define AFTER_EXTRA
     // Add new members to class
 #define DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACY
 public:
-    char filler[832-8];
+    std::string mDescriptionId;//8
+    HashedString mRawNameId;//40
+    std::string mNamespace;//88
+    HashedString mFullName;//120
+    char filler[656];
 
     struct NameInfo;
 
@@ -1857,3 +1862,5 @@ protected:
 private:
 
 };
+
+static_assert(offsetof(BlockLegacy, mFullName) == 120);

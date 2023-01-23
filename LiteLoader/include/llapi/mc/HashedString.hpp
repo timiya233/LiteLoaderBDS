@@ -20,11 +20,11 @@ class HashedString {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     uint64_t hash;
     std::string str;
     int64_t unk;
 
-public:
     //HashedString(HashedString const& hstr)
     //    : str(hstr.getString())
     //    , unk(0)
