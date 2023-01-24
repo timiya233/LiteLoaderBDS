@@ -32,6 +32,12 @@ public:
     LIAPI bool setNbt(CompoundTag* nbt, BlockSource* bs);
     static unsigned int getBlockEntityType(Block* block);
 
+
+    static void registerBlockActor(BlockActorType a1, std::string a2) {
+        (const_cast<std::map<BlockActorType, std::string>*>(&BlockActor::mClassIdMap))->emplace(std::make_pair(a1,a2));
+        (const_cast<std::map<std::string,BlockActorType>*>(&BlockActor::mIdClassMap))->emplace(std::make_pair(a2, a1));
+    }
+
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR
 public:

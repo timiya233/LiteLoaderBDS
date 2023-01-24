@@ -26,6 +26,7 @@ class PropertiesSettings;
 class ResourcePackRepository;
 class LevelStorage;
 class BlockDefinitionGroup;
+class ItemRegistryRef;
 
 #ifdef LITELOADER_EXPORTS
 template <typename T>

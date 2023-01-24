@@ -20,8 +20,16 @@
 class ItemRegistry {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
+
+    template <typename T, typename... Args>
+    WeakPtr<T> registerItemShared(Args&&... args) {
+        SharedPtr<T> itemReg = SharedPtr<T>::make(std::forward<Args>(args)...);
+        registerItem(itemReg);
+        return itemReg;
+    }
+
 struct ItemHashAlias {
     ItemHashAlias() = delete;
     ItemHashAlias(ItemHashAlias const&) = delete;

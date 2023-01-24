@@ -10,6 +10,7 @@
 #include "llapi/mc/AllowListFile.hpp"
 #include "llapi/mc/BlockDefinitionGroup.hpp"
 #include "llapi/GlobalServiceAPI.h"
+#include "llapi/mc/ItemRegistryRef.hpp"
 #include <libloaderapi.h>
 
 // Minecraft
@@ -116,4 +117,14 @@ TInstanceHook(BlockDefinitionGroup*, "??0BlockDefinitionGroup@@QEAA@XZ",
         set = true;
     }
     return original(this);
+}
+
+THook(__int64, "?init@VanillaWorldSystems@@YA?AV?$shared_ptr@VImpl@VanillaWorldSystems@@@std@@PEAVLevel@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z",
+    __int64 a1, __int64 a2, __int64* a3, __int64* a4, __int64* a5, ItemRegistryRef* a6) {
+    static bool set = false;
+    if (!set) {
+        Global<ItemRegistryRef> = a6;
+        set = true;
+    }
+    return original(a1,a2,a3,a4,a5,a6);
 }

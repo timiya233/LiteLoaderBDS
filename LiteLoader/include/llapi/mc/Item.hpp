@@ -21,9 +21,12 @@ class Item {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[0x240];
+
+
 public:
-class Tier {
-public:
+    class Tier {
+    public:
     Tier() = delete;
     Tier(Tier const&) = delete;
     Tier(Tier const&&) = delete;
@@ -83,7 +86,7 @@ public:
      * @vftbl  7
      * @hash   -1253298233
      */
-    virtual void __unk_vfn_7();
+    virtual bool isMusicDisk() const;
     /**
      * @vftbl  8
      * @symbol ?hasTag@Item@@UEBA_NAEBVHashedString@@@Z
@@ -106,7 +109,7 @@ public:
      * @vftbl  11
      * @hash   -234427292
      */
-    virtual void __unk_vfn_11();
+    virtual bool isComponentBased() const;
     /**
      * @vftbl  12
      * @symbol ?isArmor@Item@@UEBA_NXZ
@@ -123,7 +126,7 @@ public:
      * @vftbl  14
      * @hash   -231656729
      */
-    virtual void __unk_vfn_14();
+    virtual bool isBucket() const;
     /**
      * @vftbl  15
      * @symbol ?isCamera@Item@@UEBA_NXZ
@@ -134,7 +137,7 @@ public:
      * @vftbl  16
      * @hash   -229809687
      */
-    virtual void __unk_vfn_16();
+    virtual bool isCandle() const;
     /**
      * @vftbl  17
      * @symbol ?isDamageable@Item@@UEBA_NXZ
@@ -343,7 +346,7 @@ public:
      * @vftbl  51
      * @hash   -119910688
      */
-    virtual void __unk_vfn_51();
+    virtual bool isPattern() const;
     /**
      * @vftbl  52
      * @symbol ?getPatternIndex@Item@@UEBAHXZ
@@ -354,7 +357,7 @@ public:
      * @vftbl  53
      * @hash   -118063646
      */
-    virtual void __unk_vfn_53();
+    virtual bool showsDurabilityInCreative() const;
     /**
      * @vftbl  54
      * @symbol ?isWearableThroughLootTable@Item@@UEBA_NPEBVCompoundTag@@@Z
@@ -431,7 +434,7 @@ public:
      * @vftbl  66
      * @hash   -86663932
      */
-    virtual void __unk_vfn_66();
+    virtual bool isComplex() const;
     /**
      * @vftbl  67
      * @symbol ?isValidAuxValue@Item@@UEBA_NH@Z
@@ -454,17 +457,17 @@ public:
      * @vftbl  70
      * @hash   -63575907
      */
-    virtual void __unk_vfn_70();
+    virtual bool uniqueAuxValues() const;
     /**
      * @vftbl  71
      * @hash   -62652386
      */
-    virtual void __unk_vfn_71();
+    virtual bool isActorPlacerItem() const;
     /**
      * @vftbl  72
      * @hash   -61728865
      */
-    virtual void __unk_vfn_72();
+    virtual bool isMultiColorTinted(class ItemStack const&) const;
     /**
      * @vftbl  73
      * @symbol ?getColor@Item@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z
@@ -481,7 +484,7 @@ public:
      * @vftbl  75
      * @hash   -58958302
      */
-    virtual void __unk_vfn_75();
+    virtual bool hasCustomColor(class ItemStackBase const&) const;
     /**
      * @vftbl  76
      * @symbol ?clearColor@Item@@UEBAXAEAVItemStackBase@@@Z
@@ -504,12 +507,12 @@ public:
      * @vftbl  79
      * @hash   -275840522
      */
-    virtual void __unk_vfn_79();
+    virtual class mce::Color getBaseColor(class ItemStack const&) const;
     /**
      * @vftbl  80
      * @hash   -255523060
      */
-    virtual void __unk_vfn_80();
+    virtual class mce::Color getSecondaryColor(class ItemStack const&) const;
     /**
      * @vftbl  81
      * @symbol ?getActorIdentifier@Item@@UEBA?AUActorDefinitionIdentifier@@AEBVItemStack@@@Z
@@ -749,7 +752,7 @@ public:
      * @symbol ?getAnimationFrameFor@Item@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z
      * @hash   1773766466
      */
-    virtual int getAnimationFrameFor(class Mob *, bool, class ItemStack const *, bool) const;
+    virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, const bool) const;
     /**
      * @vftbl  121
      * @symbol ?isEmissive@Item@@UEBA_NH@Z
@@ -804,6 +807,8 @@ public:
      * @hash   -1895271197
      */
     virtual std::string getAuxValuesDescription() const;
+
+private:
     /**
      * @vftbl  130
      * @symbol ?_checkUseOnPermissions@Item@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z
@@ -822,6 +827,8 @@ public:
      * @hash   -1830337535
      */
     virtual bool _useOn(class ItemStack &, class Actor &, class BlockPos, unsigned char, class Vec3 const &) const;
+
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEM
     /**
      * @symbol ?getBaseColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z

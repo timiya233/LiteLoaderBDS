@@ -3,9 +3,12 @@
 
 #include <llapi/mc/Material.hpp>
 #include <llapi/mod/CustomBlock.h>
-#include <llapi/mc/ActorBlock.hpp>
+#include <llapi/mc/BlockActor.hpp>
 #include <llapi/mod/TestBlock.h>
-
+#include <llapi/mc/Item.hpp>
+#include <llapi/mc/ItemRegistry.hpp>
+#include <llapi/mc/ItemRegistryRef.hpp>
+#include <llapi/mod/TestItem.h>
 Logger blockRegLogger("BlockRegistry");
 typedef std::vector<std::pair<std::string, CompoundTag>> BlockProperties;
 
@@ -14,7 +17,16 @@ typedef std::vector<std::pair<std::string, CompoundTag>> BlockProperties;
 // event: RegisterBlocksEvent
 THook(void, "?registerBlocks@BlockDefinitionGroup@@QEAAXXZ", BlockDefinitionGroup* a1) {
     original(a1);
-    ll::mod::registerBlock<TestBlock>("fiercecraft:ancient_debris_marker");
+    auto ttt = ll::mod::registerBlock<TestBlock>("fiercecraft:ancient_debris_marker");
+   /* BlockActor::registerBlockActor(BlockActorType(89) ,"TestFurnace");*/
+    
+}
+
+// event: RegisterItemsEvent
+THook(void, "?registerItems@VanillaItems@@SAXVItemRegistryRef@@AEBVBaseGameVersion@@AEBVExperiments@@_N@Z",
+      ItemRegistryRef* a1, void* a2, void* a3) {
+    original(a1, a2, a3);
+    ll::mod::registerItem<TestItem>("fiercecraft:fierce_heart", 903);
 }
 
 TInstanceHook(BlockProperties, "?generateServerBlockProperties@BlockDefinitionGroup@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@XZ",

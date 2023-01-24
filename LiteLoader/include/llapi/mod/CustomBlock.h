@@ -9,15 +9,15 @@ public:
 	void build() {
         this->setDestroyTime(getDestroyTime());
         this->setExplodeable(getExplodeable());
-        this->setCategory(getCategory());
-        this->setCreativeEnumState(getCreativeEnumState());
-        this->initializeBlockStateGroup();
+        this->mFriction = getFrictionFactor();
 	}
 
 	virtual float getDestroyTime() const = 0;
     virtual float getExplodeable() const = 0;
-    virtual CreativeItemCategory getCategory() const = 0;
-    virtual ItemState& getCreativeEnumState() const = 0;
+
+	virtual float getFrictionFactor() {
+        return 0;
+	}
 
 };
 

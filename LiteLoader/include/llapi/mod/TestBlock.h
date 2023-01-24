@@ -1,17 +1,15 @@
 #pragma once
 
 #include <llapi/mc/Material.hpp>
-#include <llapi/mc/BlockItem.hpp>
-#include <llapi/mc/VanillaTags.hpp>
-#include <llapi/mc/ItemState.hpp>
-#include "llapi/mc/CompoundTag.hpp"
 #include <llapi/mod/CustomBlock.h>
 #include <llapi/mc/BlockLegacy.hpp>
+#include <llapi/mc/Player.hpp>
+#include <llapi/mc/BlockSource.hpp>
 
 class TestBlock : public CustomBlock<BlockLegacy> {
 public:
     TestBlock(const std::string& name, int id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Dirt)) {
-        build();
+        //build();
     }
 
     virtual float getDestroyTime() const {
@@ -22,12 +20,19 @@ public:
         return 100.0;
     }
 
-    virtual CreativeItemCategory getCategory() const {
-        return CreativeItemCategory::Nature;
-    } 
+    //bool use(Player& player, const BlockPos& pos) const {
+    //    BlockSource& blockSource = player.getRegion();
+    //    TestBlockActor* blockEntity = (TestBlockActor*)blockSource.getBlockEntity(pos);
+    //    if (blockEntity != nullptr) {
+    //        blockEntity->startOpen(player);
+    //        return true;
+    //    } else {
+    //        return false;
+    //    }
+    //}
 
-    virtual ItemState& getCreativeEnumState() const {
-        return *(ItemState*)dlsym_real("?StoneType@VanillaStates@@3V?$ItemStateVariant@W4StoneType@@@@B");
-    }
-
+  /*  virtual std::shared_ptr<BlockActor> newBlockEntity(class BlockPos const& pos, class Block const& bl) const {
+        return std::make_shared<TestBlockActor>(BlockActorType::Furnace, pos, "furnace", LevelSoundEvent::Undefined,
+                                                ContainerType::FURNACE, 10, bl, bl);
+    }*/
 };
