@@ -4,7 +4,8 @@ requires std::is_base_of<BlockLegacy, T>::value
 class CustomBlock : public T {
 public:
 	
-	CustomBlock(std::string const& name, int id, class Material const& material) : T(name, id, material){};
+    template <typename... Args>
+    CustomBlock(Args&&... args) : T(args...){};
 
 	void build() {
         this->setDestroyTime(getDestroyTime());

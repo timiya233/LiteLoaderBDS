@@ -7,6 +7,7 @@
 
 namespace ll {
 namespace mod {
+// Register Block
 static std::vector<WeakPtr<BlockLegacy>> registeredBlocks;
 
 template <class T, typename... Args>
@@ -24,6 +25,7 @@ static WeakPtr<BlockLegacy> registerBlock(const std::string& typeName, Args&&...
     return weakLegacy;
 }
 
+//Register Item
 template <class T, typename... Args>
 static WeakPtr<T> registerItem(const std::string& name, short id, Args&&... args) {
     return Global<ItemRegistryRef>->registerItem<T>(name, id, args...);
@@ -38,5 +40,13 @@ template <class T, typename... Args>
 static WeakPtr<T> registerBlockItem(const std::string& name, const Block& block, Args&&... args) {
     return Global<ItemRegistryRef>->registerBlockItem<T>(name, block, args...);
 }
+
+//Register Recipes
+
+static void registerRecipe() {
+
+}
+
+
 } // namespace mod
 } // namespace ll
