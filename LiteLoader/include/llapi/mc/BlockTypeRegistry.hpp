@@ -32,13 +32,13 @@ public:
     class BlockComplexAliasContent;
 
     template <typename T, typename... Args>
-    static T& registerBlock(Args&&... args) {
+    static T* registerBlock(Args&&... args) {
         SharedPtr<T> blockReg = SharedPtr<T>::make(std::forward<Args>(args)...);
         HashedString FullHash = blockReg.get()->mFullName;
         mBlockLookupMap[FullHash] = blockReg;
         mKnownNamespaces.emplace(blockReg.get()->mNamespace);
         mBlockNameHashToStringMap.emplace(std::make_pair(FullHash.hash, FullHash));
-        return *blockReg;
+        return blockReg.get();
     }
 
 #undef AFTER_EXTRA

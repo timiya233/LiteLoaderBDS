@@ -12,6 +12,7 @@
 #include "AABB.hpp"
 #include "BlockTypeRegistry.hpp"
 #include "BaseGameVersion.hpp"
+#include "ItemState.hpp"
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;

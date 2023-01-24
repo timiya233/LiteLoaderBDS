@@ -1,11 +1,16 @@
 #pragma once
-
 #include <llapi/mc/Block.hpp>
 #include <llapi/mc/BlockLegacy.hpp>
 #include <llapi/mc/BlockTypeRegistry.hpp>
 #include <llapi/mc/BlockDefinitionGroup.hpp>
 #include <llapi/mc/HashedString.hpp>
 #include <llapi/mc/VanillaBlockTypes.hpp>
+#include <llapi/mc/ActorBlock.hpp>
+
+namespace AddonAPI {
+
+}
+
 class BlockRegistry {
 public:
 
