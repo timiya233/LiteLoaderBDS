@@ -118,6 +118,15 @@ TInstanceHook(BlockDefinitionGroup*, "??0BlockDefinitionGroup@@QEAA@XZ",
     }
     return original(this);
 }
+#include "llapi/mc/Recipes.hpp"
+TInstanceHook(Recipes*, "??0Recipes@@QEAA@PEAVLevel@@@Z", Recipes,void* a2) {
+    static bool set = false;
+    if (!set) {
+        Global<Recipes> = this;
+        set = true;
+    }
+    return original(this,a2);
+}
 
 THook(__int64, "?init@VanillaWorldSystems@@YA?AV?$shared_ptr@VImpl@VanillaWorldSystems@@@std@@PEAVLevel@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z",
     __int64 a1, __int64 a2, __int64* a3, __int64* a4, __int64* a5, ItemRegistryRef* a6) {

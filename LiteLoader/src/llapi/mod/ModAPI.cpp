@@ -4,11 +4,12 @@
 #include <llapi/mc/Material.hpp>
 #include <llapi/mod/CustomBlock.h>
 #include <llapi/mc/BlockActor.hpp>
-#include <llapi/mod/TestBlock.h>
 #include <llapi/mc/Item.hpp>
 #include <llapi/mc/ItemRegistry.hpp>
 #include <llapi/mc/ItemRegistryRef.hpp>
-#include <llapi/mod/TestItem.h>
+#include <llapi/mod/Test.h>
+#include <llapi/MC/Recipes.hpp>
+
 Logger blockRegLogger("BlockRegistry");
 typedef std::vector<std::pair<std::string, CompoundTag>> BlockProperties;
 
@@ -27,6 +28,13 @@ THook(void, "?registerItems@VanillaItems@@SAXVItemRegistryRef@@AEBVBaseGameVersi
       ItemRegistryRef* a1, void* a2, void* a3) {
     original(a1, a2, a3);
     ll::mod::registerItem<TestItem>("fiercecraft:fierce_heart", 903);
+}
+
+THook(void, "?_loadHardcodedRecipes@Recipes@@AEAAXXZ", Recipes& recipes) {
+    original(recipes);
+    ll::mod::registerShapedRecipe<TestShapedRecipe>("betweaker::betskick1");
+    ll::mod::registerShapelessRecipe<TestShapedlessRecipe>("betweaker::betskick2");
+    ll::mod::registerFurnaceRecipe<TestFurnaceRecipe>();
 }
 
 TInstanceHook(BlockProperties, "?generateServerBlockProperties@BlockDefinitionGroup@@QEBA?AV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@VCompoundTag@@@std@@@2@@std@@XZ",

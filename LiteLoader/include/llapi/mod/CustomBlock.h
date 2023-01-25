@@ -1,4 +1,6 @@
 #pragma once
+#include <type_traits>
+#include "llapi/mc/BlockLegacy.hpp"
 template<class T>
 requires std::is_base_of<BlockLegacy, T>::value
 class CustomBlock : public T {
@@ -20,5 +22,6 @@ public:
         return 0;
 	}
 
+    // TODO
 };
 

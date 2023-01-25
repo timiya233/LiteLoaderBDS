@@ -26,7 +26,7 @@ class Recipes {
 #define AFTER_EXTRA
 // Add Member There
 public:
-public:
+
 struct FurnaceRecipeKey {
 public:
     int mID;

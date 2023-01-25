@@ -4,7 +4,9 @@
 #include "llapi/mc/BlockTypeRegistry.hpp"
 #include "llapi/mc/BlockDefinitionGroup.hpp"
 #include "llapi/mc/ItemRegistryRef.hpp"
-
+#include "llapi/mc/Recipes.hpp"
+#include "llapi/mc/ItemInstance.hpp"
+#include "llapi/mod/CustomRecipe.h"
 namespace ll {
 namespace mod {
 // Register Block
@@ -42,9 +44,30 @@ static WeakPtr<T> registerBlockItem(const std::string& name, const Block& block,
 }
 
 //Register Recipes
+template <class T>
+    requires std::is_base_of<CustomShapedRecipe, T>::value
+static void registerShapedRecipe(std::string recipeId) {
+    SharedPtr<T> ShapedRecipe = SharedPtr<T>::make();
+    return Global<Recipes>->addShapedRecipe(recipeId, ShapedRecipe->getResult(), ShapedRecipe->getRows(),
+                                                       ShapedRecipe->getTypes(), ShapedRecipe->getTags(),
+                                                       ShapedRecipe->getPriority(), ShapedRecipe->getConstructor());
+}
 
-static void registerRecipe() {
+template <class T>
+    requires std::is_base_of<CustomShapelessRecipe, T>::value
+static void registerShapelessRecipe(std::string recipeId) {
+    SharedPtr<T> ShapedlessRecipe = SharedPtr<T>::make();
+    return Global<Recipes>->addShapelessRecipe(recipeId, ShapedlessRecipe->getResult(), ShapedlessRecipe->getTypes(),
+                                               ShapedlessRecipe->getTags(), ShapedlessRecipe->getPriority(),
+                                               ShapedlessRecipe->getConstructor());
+}
 
+template <class T>
+    requires std::is_base_of<CustomFurnaceRecipe, T>::value
+static void registerFurnaceRecipe() {
+    SharedPtr<T> FurnaceRecipe = SharedPtr<T>::make();
+    return Global<Recipes>->addFurnaceRecipeAuxData(FurnaceRecipe->getInput(), FurnaceRecipe->getResult(),
+                                                    FurnaceRecipe->getTags());
 }
 
 
