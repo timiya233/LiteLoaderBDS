@@ -38,6 +38,8 @@ class Actor {
 
 #define AFTER_EXTRA
 // Add new members to class
+    char filler[0x5B8];
+
 public:
     enum class InitializationMethod;
 
@@ -154,6 +156,8 @@ public:
      * @hash   979365551
      */
     virtual void outOfWorld();
+
+protected:
     /**
      * @vftbl  10
      * @symbol ?reloadHardcoded@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z
@@ -190,6 +194,8 @@ public:
      * @hash   1099438822
      */
     virtual void _doInitialMove();
+
+public:
     /**
      * @vftbl  16
      * @hash   1676995139
@@ -349,7 +355,7 @@ public:
      * @vftbl  42
      * @hash   -147616318
      */
-    virtual void __unk_vfn_42();
+    virtual bool breaksFallingBlocks() const;
     /**
      * @vftbl  43
      * @symbol ?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z
@@ -474,7 +480,7 @@ public:
      * @vftbl  63
      * @hash   -96891855
      */
-    virtual void __unk_vfn_63();
+    virtual bool canExistInPeaceful() const;
     /**
      * @vftbl  64
      * @symbol ?setNameTagVisible@Actor@@UEAAX_N@Z
@@ -515,7 +521,7 @@ public:
      * @vftbl  70
      * @hash   -63575907
      */
-    virtual void __unk_vfn_70();
+    virtual bool getAlwaysShowNameTag() const;
     /**
      * @vftbl  71
      * @symbol ?setScoreTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z
@@ -598,7 +604,7 @@ public:
      * @vftbl  84
      * @hash   -31252672
      */
-    virtual void __unk_vfn_84();
+    virtual bool canSeeInvisible() const;
     /**
      * @vftbl  85
      * @symbol ?canSee@Actor@@UEBA_NAEBV1@@Z
@@ -615,7 +621,7 @@ public:
      * @vftbl  87
      * @hash   -35939469
      */
-    virtual void __unk_vfn_87();
+    virtual bool canInteractWithOtherEntitiesInGame() const;
     /**
      * @vftbl  88
      * @symbol ?isSkyLit@Actor@@UEAA_NM@Z
@@ -632,7 +638,7 @@ public:
      * @vftbl  90
      * @hash   -6317605
      */
-    virtual void __unk_vfn_90();
+    virtual bool interactPreventDefault();
     /**
      * @vftbl  91
      * @symbol ?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z
@@ -679,7 +685,7 @@ public:
      * @vftbl  98
      * @hash   -6386797
      */
-    virtual void __unk_vfn_98();
+    virtual bool isFishable() const;
     /**
      * @vftbl  99
      * @symbol ?isSleeping@Actor@@UEBA_NXZ
@@ -696,7 +702,7 @@ public:
      * @vftbl  101
      * @hash   1428946562
      */
-    virtual void __unk_vfn_101();
+    virtual bool isShootable();
     /**
      * @vftbl  102
      * @symbol ?setSneaking@Actor@@UEAAX_N@Z
@@ -737,7 +743,7 @@ public:
      * @vftbl  108
      * @hash   1435411209
      */
-    virtual void __unk_vfn_108();
+    virtual bool isCreativeModeAllowed();
     /**
      * @vftbl  109
      * @symbol ?isSurfaceMob@Actor@@UEBA_NXZ
@@ -748,12 +754,12 @@ public:
      * @vftbl  110
      * @hash   1456652192
      */
-    virtual void __unk_vfn_110();
+    virtual bool isTargetable() const;
     /**
      * @vftbl  111
      * @hash   1450118353
      */
-    virtual void __unk_vfn_111();
+    virtual bool isLocalPlayer() const;
     /**
      * @vftbl  112
      * @symbol ?isRemotePlayer@Actor@@UEBA_NXZ
@@ -764,7 +770,7 @@ public:
      * @vftbl  113
      * @hash   1459422755
      */
-    virtual void __unk_vfn_113();
+    virtual bool isPlayer() const;
     /**
      * @vftbl  114
      * @symbol ?isAffectedByWaterBottle@Actor@@UEBA_NXZ
@@ -1183,7 +1189,7 @@ public:
      * @vftbl  183
      * @hash   1602074556
      */
-    virtual void __unk_vfn_183();
+    virtual void changeDimension(class ChangeDimensionPacket const&);
     /**
      * @vftbl  184
      * @symbol ?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@@Z
@@ -1266,7 +1272,7 @@ public:
      * @vftbl  197
      * @hash   1692150047
      */
-    virtual void __unk_vfn_197();
+    virtual bool isLeashableType();
     /**
      * @vftbl  198
      * @symbol ?tickLeash@Actor@@UEAAXXZ
@@ -1415,12 +1421,12 @@ public:
      * @vftbl  222
      * @hash   -1937633230
      */
-    virtual void __unk_vfn_222();
+    virtual bool hasOutputSignal(unsigned char) const;
     /**
      * @vftbl  223
      * @hash   -1919411709
      */
-    virtual void __unk_vfn_223();
+    virtual int getOutputSignal() const;
     /**
      * @vftbl  224
      * @symbol ?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z
@@ -1551,7 +1557,7 @@ public:
      * @vftbl  245
      * @hash   -1918058621
      */
-    virtual void __unk_vfn_245();
+    virtual void renderDebugServerState(class Options const&);
     /**
      * @vftbl  246
      * @symbol ?reloadLootTable@Actor@@UEAAXXZ
@@ -1568,7 +1574,7 @@ public:
      * @vftbl  248
      * @hash   -511059482
      */
-    virtual void __unk_vfn_248();
+    virtual float getDeletionDelayTimeSeconds() const;
     /**
      * @vftbl  249
      * @symbol ?kill@Actor@@UEAAXXZ
@@ -1647,6 +1653,8 @@ public:
      * @hash   -1071764522
      */
     virtual void doWaterSplashEffect();
+
+protected:
     /**
      * @vftbl  262
      * @symbol ?_shouldProvideFeedbackOnHandContainerItemSet@Actor@@MEBA_NW4HandSlot@@AEBVItemStack@@@Z
@@ -1675,7 +1683,7 @@ public:
      * @vftbl  266
      * @hash   -1809581902
      */
-    virtual void __unk_vfn_266();
+    virtual bool canMakeStepSound() const;
     /**
      * @vftbl  267
      * @symbol ?_hurt@Actor@@MEAA_NAEBVActorDamageSource@@M_N1@Z
@@ -1722,7 +1730,7 @@ public:
      * @vftbl  274
      * @hash   -1775342433
      */
-    virtual void __unk_vfn_274();
+    virtual bool _makeFlySound() const;
     /**
      * @vftbl  275
      * @symbol ?checkInsideBlocks@Actor@@MEAAXM@Z
@@ -1753,12 +1761,16 @@ public:
      * @hash   879538883
      */
     virtual void _removePassenger(struct ActorUniqueID const &, bool, bool, bool);
+
+private:
     /**
      * @vftbl  280
      * @symbol ?_onSizeUpdated@Actor@@EEAAXXZ
      * @hash   -653470336
      */
     virtual void _onSizeUpdated();
+
+public:
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_ACTOR
     /**
      * @symbol ?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z

@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "ActorDefinitionIdentifier.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +19,23 @@
 struct ActorInfo {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFO
+public:
+    unsigned int mRuntimeId;
+    ActorDefinitionIdentifier mIdentifier;
+    ActorDefinitionIdentifier mBaseIdentifier;
+    bool mHasSpawnEgg;
+    bool mIsSummonable;
+    std::optional<int> mExperimentIndex;
+
+    ActorInfo(unsigned int a1, ActorDefinitionIdentifier a2, bool a3, bool a4, std::optional<int> a5)
+    : mRuntimeId(a1)
+    , mIdentifier(a2)
+    , mBaseIdentifier(ActorDefinitionIdentifier())
+    , mHasSpawnEgg(a3)
+    , mIsSummonable(a4)
+    , mExperimentIndex(a5){};
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFO

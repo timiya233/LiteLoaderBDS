@@ -56,3 +56,15 @@ TInstanceHook(BlockProperties, "?generateServerBlockProperties@BlockDefinitionGr
     }
     return properties;
 }
+
+THook(void, "?_loadDefinitionsHelper@ActorFactory@@AEAAXXZ", ActorFactory* af) {
+    original(af);
+    ll::mod::registerActor<TestActor, ActorType(99992)>("fiercecraft:imp_npc", true, true);
+}
+
+THook(void*,
+    "??$_actorFromClass@VZombie@@@@YA?AV?$unique_ptr@VActor@@U?$default_delete@VActor@@@std@@@std@@"
+    "PEAVActorDefinitionGroup@@AEBUActorDefinitionIdentifier@@AEAVEntityContext@@@Z",
+    void* a1, void* a2, void* a3, void* a4) {
+    return original(a1, a2, a3, a4);
+}

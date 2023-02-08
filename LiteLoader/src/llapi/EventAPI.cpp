@@ -387,6 +387,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     IF_LISTENED(PlayerChatEvent) {
         Event::PlayerChatEvent ev{};
         ev.mPlayer = this->getServerPlayer(*id);
+        std::cout << Level::spawnMob(ev.mPlayer->getPos(), 0, "fiercecraft:imp_npc") << std::endl;
         if (!ev.mPlayer)
             return;
 
@@ -614,7 +615,7 @@ TClasslessInstanceHook(void, "?sendBlockDestructionStarted@BlockEventCoordinator
 #include "llapi/mc/ItemUseInventoryTransaction.hpp"
 TInstanceHook(char, "?checkBlockPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@EAEBVItemStackBase@@_N@Z",
               BlockSource, Actor* ac, BlockPos* bp, unsigned __int8 facing, ItemStackBase* item, bool a6) {
-    if (ac->isPlayer()) {
+    if (ac->isPlayer(true)) {
         IF_LISTENED(PlayerPlaceBlockEvent) {
             auto pl = (Player*)ac;
             PlayerPlaceBlockEvent ev{};
@@ -646,7 +647,7 @@ TClasslessInstanceHook(void, "?sendBlockPlacedByPlayer@BlockEventCoordinator@@QE
 /////////////////// PlayerOpenContainer ///////////////////
 TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2) {
     Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
-    if (pl->isPlayer()) {
+    if (pl->isPlayer(true)) {
         IF_LISTENED(PlayerOpenContainerEvent) {
             BlockPos bp = dAccess<BlockPos>(a2, 28);
             PlayerOpenContainerEvent ev{};
@@ -699,7 +700,7 @@ TClasslessInstanceHook(bool, "?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z",
 TInstanceHook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z",
               Player, void* container, int slotNumber, ItemStack* oldItem, ItemStack* newItem, bool is) {
     IF_LISTENED(PlayerInventoryChangeEvent) {
-        if (this->isPlayer()) {
+        if (this->isPlayer(true)) {
             PlayerInventoryChangeEvent ev{};
             ev.mPlayer = this;
             ev.mSlot = (int)slotNumber;
@@ -733,7 +734,7 @@ TClasslessInstanceHook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVP
 TInstanceHook(void, "?setSprinting@Mob@@UEAAX_N@Z",
               Mob, bool sprinting) {
     IF_LISTENED(PlayerSprintEvent) {
-        if (this->isPlayer() && this->isSprinting() != sprinting) {
+        if (this->isPlayer(true) && this->isSprinting() != sprinting) {
             PlayerSprintEvent ev{};
             ev.mPlayer = (Player*)this;
             ev.mIsSprinting = sprinting;
@@ -753,7 +754,7 @@ TInstanceHook(void, "?setArmor@ServerPlayer@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z
               Player, unsigned slot, ItemStack* it) {
     original(this, slot, it);
     IF_LISTENED(PlayerSetArmorEvent) {
-        if (this->isPlayer()) {
+        if (this->isPlayer(true)) {
             PlayerSetArmorEvent ev{};
             ev.mPlayer = this;
             ev.mSlot = slot;
@@ -1258,7 +1259,7 @@ TInstanceHook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AE
 /////////////////// PlayerDeath ///////////////////
 TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer, ActorDamageSource* src) {
     IF_LISTENED(PlayerDieEvent) {
-        if (this->isPlayer()) {
+        if (this->isPlayer(true)) {
             PlayerDieEvent ev{};
             ev.mPlayer = this;
             ev.mDamageSource = src;
@@ -1299,7 +1300,7 @@ TInstanceHook(void*, "?die@ServerPlayer@@UEAAXAEBVActorDamageSource@@@Z", Server
 TInstanceHook(bool, "?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z",
               GameMode, BlockPos a3, unsigned __int8 a4) {
     IF_LISTENED(PlayerDestroyBlockEvent) {
-        if (getPlayer()->isPlayer()) {
+        if (getPlayer()->isPlayer(true)) {
             PlayerDestroyBlockEvent ev{};
             ev.mPlayer = getPlayer();
             auto bl = Level::getBlockInstance(a3, getPlayer()->getDimensionId());
@@ -1966,7 +1967,7 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
 TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
               Container, int a2, char a3, char a4, bool a5) {
     auto pl = dAccess<Player*, 248>(this);
-    if (pl->isPlayer()) {
+    if (pl->isPlayer(true)) {
         IF_LISTENED(PlayerDropItemEvent) {
             PlayerDropItemEvent ev{};
             if (a2 >= 0) {

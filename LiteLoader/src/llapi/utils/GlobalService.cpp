@@ -128,6 +128,19 @@ TInstanceHook(Recipes*, "??0Recipes@@QEAA@PEAVLevel@@@Z", Recipes,void* a2) {
     return original(this,a2);
 }
 
+#include "llapi/mc/ActorInfoRegistry.hpp"
+
+TInstanceHook(ActorInfoRegistry*, "??0ActorInfoRegistry@@QEAA@XZ", ActorInfoRegistry) {
+    static bool set = false;
+    if (!set) {
+        Global<ActorInfoRegistry> = this;
+        set = true;
+    }
+    return original(this);
+}
+
+
+
 THook(__int64, "?init@VanillaWorldSystems@@YA?AV?$shared_ptr@VImpl@VanillaWorldSystems@@@std@@PEAVLevel@@AEBVExperiments@@AEBVBaseGameVersion@@PEAVResourcePackManager@@VItemRegistryRef@@@Z",
     __int64 a1, __int64 a2, __int64* a3, __int64* a4, __int64* a5, ItemRegistryRef* a6) {
     static bool set = false;
@@ -137,3 +150,4 @@ THook(__int64, "?init@VanillaWorldSystems@@YA?AV?$shared_ptr@VImpl@VanillaWorldS
     }
     return original(a1,a2,a3,a4,a5,a6);
 }
+

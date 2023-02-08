@@ -8,7 +8,11 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-
+#include "ActorDefinitionIdentifier.hpp"
+#include "ActorDefinitionGroup.hpp"
+#include "EntityContext.hpp"
+#include <optional>
+using ActorFactoryFunction = std::unique_ptr<Actor>(*)(ActorDefinitionGroup*, const ActorDefinitionIdentifier&,class EntityContext&);
 #undef BEFORE_EXTRA
 
 /**
@@ -18,6 +22,17 @@
 struct ActorFactoryData {
 
 #define AFTER_EXTRA
+#define DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORYDATA
+public:
+    ActorDefinitionIdentifier mIdentifier;
+    ActorDefinitionIdentifier mBaseIdentifier;
+    bool mAllowSummon;
+    ActorFactoryFunction mFactory;
+    std::optional<int> mExperimentIndex;
+    ActorType mActorType;
+    float mWalkAnimSpeed;
+    bool unk384 = false;
+
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORYDATA

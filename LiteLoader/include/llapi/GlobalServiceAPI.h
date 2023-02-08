@@ -28,6 +28,7 @@ class LevelStorage;
 class BlockDefinitionGroup;
 class ItemRegistryRef;
 class Recipes;
+class ActorInfoRegistry;
 #ifdef LITELOADER_EXPORTS
 template <typename T>
 LIAPI inline T* Global = nullptr;

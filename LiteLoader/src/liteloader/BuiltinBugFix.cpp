@@ -160,7 +160,7 @@ template <typename T> inline bool validPosition(T const& pos) {
 }
 
 inline void fixPlayerPosition(Player* pl, bool kick = true) {
-    if (pl->isPlayer()) {
+    if (pl->isPlayer(true)) {
         logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
         auto& pos = pl->getPosPrev();
         if (validPosition(pos))

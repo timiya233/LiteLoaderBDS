@@ -9,7 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "HashedString.hpp"
 #undef BEFORE_EXTRA
 
 /**
@@ -19,7 +19,16 @@
 struct ActorMapping {
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING
+public:
+    std::string mNamespace;
+    std::string mPrimaryName;
+    std::string mAlternateName;
+    HashedString mCanonicalName;
+
+    ActorMapping(const ActorMapping&) = default;
+    ActorMapping(ActorMapping&&) = default;
 
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORMAPPING

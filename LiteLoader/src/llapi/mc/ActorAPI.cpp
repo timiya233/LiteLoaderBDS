@@ -127,7 +127,7 @@ bool Actor::teleport(Vec3 to, int dimID, float x, float y) {
 }
 
 ItemStack* Actor::getHandSlot() {
-    if (isPlayer())
+    if (isPlayer(true))
         return (ItemStack*)&((Player*)this)->getSelectedItem();
     return (ItemStack*)&getHandContainer().getItem(0);
 }
@@ -190,7 +190,7 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto viewPos = pos + (viewVec * maxDistance);
-    auto player = isPlayer() ? (Player*)this : nullptr;
+    auto player = isPlayer(true) ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
     HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr, ClipDefaults::CHECK_ALL_PICKABLE_BLOCKS);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
@@ -218,7 +218,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto aabb = *(AABB*)&getAABB();
-    auto player = isPlayer() ? (Player*)this : nullptr;
+    auto player = isPlayer(true) ? (Player*)this : nullptr;
     Actor* result = nullptr;
     float distance = 0.0f;
     Vec3 resultPos{};

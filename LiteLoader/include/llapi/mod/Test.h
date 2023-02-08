@@ -9,6 +9,7 @@
 class TestBlock : public CustomBlock<BlockLegacy> {
 public:
     TestBlock(const std::string& name, int id) : CustomBlock(name, id, Material::getMaterial(MaterialType::Dirt)) {
+        std::cout << "Reg " << name << std::endl;
         //build();
     }
 
@@ -44,7 +45,7 @@ public:
 class TestItem : public CustomItem<Item> {
 public:
     TestItem(std::string const& name, short id) : CustomItem(name, id) {
-        setMaxDamage(100);
+        std::cout << "Reg " << name << std::endl;
     }
 
     virtual int getAttackDamage() const {
@@ -130,5 +131,14 @@ public:
 
     virtual std::vector<HashedString> getTags() {
         return vector<HashedString>{"furnace"};
+    }
+};
+#include <llapi/mod/CustomActor.h>
+
+class TestActor : public CustomActor<Actor> {
+public:
+    TestActor(class ActorDefinitionGroup* a1, struct ActorDefinitionIdentifier const& a2, class EntityContext& a3)
+    : CustomActor(a1, a2,a3) {
+        std::cout << "Reg " << a2.getFullName() << std::endl;
     }
 };
