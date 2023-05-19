@@ -49,9 +49,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@UpdateAdventureSettingsPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@UpdateAdventureSettingsPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEADVENTURESETTINGSPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -59,12 +59,12 @@ public:
     MCVAPI ~UpdateAdventureSettingsPacket();
 #endif
     /**
-     * @symbol ??0UpdateAdventureSettingsPacket\@\@QEAA\@AEBUAdventureSettings\@\@\@Z
-     */
-    MCAPI UpdateAdventureSettingsPacket(struct AdventureSettings const &);
-    /**
      * @symbol ??0UpdateAdventureSettingsPacket\@\@QEAA\@XZ
      */
     MCAPI UpdateAdventureSettingsPacket();
+    /**
+     * @symbol ??0UpdateAdventureSettingsPacket\@\@QEAA\@AEBUAdventureSettings\@\@\@Z
+     */
+    MCAPI UpdateAdventureSettingsPacket(struct AdventureSettings const &);
 
 };

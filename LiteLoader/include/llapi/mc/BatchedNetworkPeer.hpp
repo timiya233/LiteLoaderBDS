@@ -74,6 +74,10 @@ public:
      * @symbol ?_startSendTask\@BatchedNetworkPeer\@\@AEAAXXZ
      */
     MCAPI void _startSendTask();
+    /**
+     * @symbol ?getCompressibleState\@BatchedNetworkPeer\@\@AEBA?AW4Compressibility\@\@_K\@Z
+     */
+    MCAPI enum class Compressibility getCompressibleState(unsigned __int64) const;
 
 private:
 

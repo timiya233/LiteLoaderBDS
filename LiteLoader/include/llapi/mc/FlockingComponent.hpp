@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0FlockingComponent\@\@QEAA\@XZ
-     */
-    MCAPI FlockingComponent();
-    /**
      * @symbol ??0FlockingComponent\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI FlockingComponent(class FlockingComponent &&);
+    /**
+     * @symbol ??0FlockingComponent\@\@QEAA\@XZ
+     */
+    MCAPI FlockingComponent();
     /**
      * @symbol ?addFlockMember\@FlockingComponent\@\@QEAAXUActorUniqueID\@\@\@Z
      */

@@ -47,6 +47,10 @@ public:
      */
     MCAPI static void appendEnchantToFormattedText(enum class Enchant::Type, class std::basic_string_view<char, struct std::char_traits<char>>, std::string &);
     /**
+     * @symbol ?applyEnchant\@EnchantUtils\@\@SA_NAEAVItemStackBase\@\@W4Type\@Enchant\@\@H_N\@Z
+     */
+    MCAPI static bool applyEnchant(class ItemStackBase &, enum class Enchant::Type, int, bool);
+    /**
      * @symbol ?applyEnchant\@EnchantUtils\@\@SA_NAEAVItemStackBase\@\@AEBVEnchantmentInstance\@\@_N\@Z
      */
     MCAPI static bool applyEnchant(class ItemStackBase &, class EnchantmentInstance const &, bool);
@@ -54,10 +58,6 @@ public:
      * @symbol ?applyEnchant\@EnchantUtils\@\@SAHAEAVItemStackBase\@\@AEBVItemEnchants\@\@_N\@Z
      */
     MCAPI static int applyEnchant(class ItemStackBase &, class ItemEnchants const &, bool);
-    /**
-     * @symbol ?applyEnchant\@EnchantUtils\@\@SA_NAEAVItemStackBase\@\@W4Type\@Enchant\@\@H_N\@Z
-     */
-    MCAPI static bool applyEnchant(class ItemStackBase &, enum class Enchant::Type, int, bool);
     /**
      * @symbol ?canEnchant\@EnchantUtils\@\@SA?AUEnchantResult\@\@AEBVItemStackBase\@\@AEBVEnchantmentInstance\@\@_N\@Z
      */

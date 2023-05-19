@@ -41,5 +41,10 @@ public:
      * @symbol ?tick\@DispatcherUpdateSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
+    /**
+     * @vftbl 3
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
 
 };

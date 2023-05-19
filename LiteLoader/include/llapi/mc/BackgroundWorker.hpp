@@ -96,6 +96,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_assignWorkerToThisThread\@BackgroundWorker\@\@AEAAXXZ
+     */
+    MCAPI void _assignWorkerToThisThread();
+    /**
      * @symbol ?_processNextTask\@BackgroundWorker\@\@AEAA_NXZ
      */
     MCAPI bool _processNextTask();

@@ -36,17 +36,17 @@ public:
      */
     MCAPI BlockDescriptor(std::string const &, std::vector<class BlockDescriptor::State> const &&);
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBVHashedString\@\@\@Z
      */
-    MCAPI BlockDescriptor(class BlockDescriptor &&);
+    MCAPI BlockDescriptor(class HashedString const &);
     /**
      * @symbol ??0BlockDescriptor\@\@QEAA\@XZ
      */
     MCAPI BlockDescriptor();
     /**
-     * @symbol ??0BlockDescriptor\@\@QEAA\@AEBVHashedString\@\@\@Z
+     * @symbol ??0BlockDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
-    MCAPI BlockDescriptor(class HashedString const &);
+    MCAPI BlockDescriptor(class BlockDescriptor &&);
     /**
      * @symbol ?getBlockOrUnknownBlock\@BlockDescriptor\@\@QEBAAEBVBlock\@\@XZ
      */
@@ -142,9 +142,9 @@ public:
 
 //private:
     /**
-     * @symbol ?_resolveImpl\@BlockDescriptor\@\@AEAAX_N\@Z
+     * @symbol ?_resolve\@BlockDescriptor\@\@AEBAX_N\@Z
      */
-    MCAPI void _resolveImpl(bool);
+    MCAPI void _resolve(bool) const;
 
 private:
 

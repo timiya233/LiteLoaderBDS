@@ -72,6 +72,10 @@ public:
      */
     MCAPI static bool isIngredient(class ItemDescriptor const &);
     /**
+     * @symbol ?isPotionIngredient\@PotionBrewing\@\@SA_NAEBVItemDescriptor\@\@\@Z
+     */
+    MCAPI static bool isPotionIngredient(class ItemDescriptor const &);
+    /**
      * @symbol ?isPotionRecipeInput\@PotionBrewing\@\@SA_NAEBVItemDescriptor\@\@\@Z
      */
     MCAPI static bool isPotionRecipeInput(class ItemDescriptor const &);

@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ??0EnchantmentInstance\@\@QEAA\@XZ
-     */
-    MCAPI EnchantmentInstance();
-    /**
      * @symbol ??0EnchantmentInstance\@\@QEAA\@W4Type\@Enchant\@\@H\@Z
      */
     MCAPI EnchantmentInstance(enum class Enchant::Type, int);
+    /**
+     * @symbol ??0EnchantmentInstance\@\@QEAA\@XZ
+     */
+    MCAPI EnchantmentInstance();
     /**
      * @symbol ?getEnchantLevel\@EnchantmentInstance\@\@QEBAHXZ
      */

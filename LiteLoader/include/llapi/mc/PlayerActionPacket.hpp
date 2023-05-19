@@ -94,9 +94,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PlayerActionPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PlayerActionPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYERACTIONPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -112,6 +112,10 @@ public:
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, class ActorRuntimeID);
     /**
+     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@EVActorRuntimeID\@\@\@Z
+     */
+    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
+    /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@HVActorRuntimeID\@\@\@Z
      */
     MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, int, class ActorRuntimeID);
@@ -119,10 +123,6 @@ public:
      * @symbol ??0PlayerActionPacket\@\@QEAA\@XZ
      */
     MCAPI PlayerActionPacket();
-    /**
-     * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@AEBVBlockPos\@\@EVActorRuntimeID\@\@\@Z
-     */
-    MCAPI PlayerActionPacket(enum class PlayerActionType, class BlockPos const &, unsigned char, class ActorRuntimeID);
     /**
      * @symbol ??0PlayerActionPacket\@\@QEAA\@W4PlayerActionType\@\@VActorRuntimeID\@\@\@Z
      */

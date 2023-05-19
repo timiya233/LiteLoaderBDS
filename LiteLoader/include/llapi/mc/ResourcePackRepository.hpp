@@ -370,6 +370,10 @@ public:
      * @symbol ?_triggerRemoveResourcePackCallback\@ResourcePackRepository\@\@AEAAXPEAVResourcePack\@\@\@Z
      */
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack *);
+    /**
+     * @symbol ?_updatePackLogVersion\@ResourcePackRepository\@\@AEAAXAEAUKnownPackContainer\@1\@W4KnownPackType\@\@\@Z
+     */
+    MCAPI void _updatePackLogVersion(struct ResourcePackRepository::KnownPackContainer &, enum class KnownPackType);
 
 private:
 

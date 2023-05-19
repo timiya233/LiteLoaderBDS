@@ -51,11 +51,6 @@ public:
      */
     virtual void releaseResources();
     /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@PlayerUIContainerModelBase\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
@@ -81,11 +76,6 @@ public:
      */
     virtual void __unk_vfn_16();
     /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
-    /**
      * @vftbl 20
      * @symbol ?_getContainer\@PlayerUIContainerModelBase\@\@MEBAPEAVContainer\@\@XZ
      */
@@ -107,9 +97,9 @@ public:
 
 //protected:
     /**
-     * @symbol ?_refreshContainer\@PlayerUIContainerModelBase\@\@IEAAX_N\@Z
+     * @symbol ?_refreshSlot\@PlayerUIContainerModelBase\@\@IEAAX_NH\@Z
      */
-    MCAPI void _refreshContainer(bool);
+    MCAPI void _refreshSlot(bool, int);
 
 protected:
 

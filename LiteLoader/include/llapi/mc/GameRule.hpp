@@ -42,10 +42,6 @@ public:
 
 public:
     /**
-     * @symbol ??0GameRule\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI GameRule(class GameRule &&);
-    /**
      * @symbol ??0GameRule\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI GameRule(class GameRule const &);
@@ -53,6 +49,10 @@ public:
      * @symbol ??0GameRule\@\@QEAA\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI GameRule(std::string const &, bool);
+    /**
+     * @symbol ??0GameRule\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI GameRule(class GameRule &&);
     /**
      * @symbol ?allowUseInCommand\@GameRule\@\@QEBA_NXZ
      */
@@ -86,13 +86,13 @@ public:
      */
     MCAPI union GameRule::Value const & getValue() const;
     /**
-     * @symbol ??4GameRule\@\@QEAAAEAV0\@AEBV0\@\@Z
-     */
-    MCAPI class GameRule & operator=(class GameRule const &);
-    /**
      * @symbol ??4GameRule\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class GameRule & operator=(class GameRule &&);
+    /**
+     * @symbol ??4GameRule\@\@QEAAAEAV0\@AEBV0\@\@Z
+     */
+    MCAPI class GameRule & operator=(class GameRule const &);
     /**
      * @symbol ?requiresCheats\@GameRule\@\@QEBA_NXZ
      */
@@ -126,23 +126,11 @@ public:
      */
     MCAPI ~GameRule();
 
-//protected:
-    /**
-     * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@_N\@Z
-     */
-    MCAPI class GameRule & _setDefaultValue(bool);
-    /**
-     * @symbol ?_setDefaultValue\@GameRule\@\@IEAAAEAV1\@H\@Z
-     */
-    MCAPI class GameRule & _setDefaultValue(int);
-
 //private:
     /**
      * @symbol ?_set\@GameRule\@\@AEAA_NAEBTValue\@1\@PEA_NPEAVValidationError\@1\@\@Z
      */
     MCAPI bool _set(union GameRule::Value const &, bool *, class GameRule::ValidationError *);
-
-protected:
 
 private:
 

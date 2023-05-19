@@ -29,15 +29,37 @@ public:
 #endif
 
 public:
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
     /**
-     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     * @vftbl 0
+     * @symbol __unk_vfn_0
      */
-    MCVAPI bool _read(class ReadOnlyBinaryStream &);
+    virtual void __unk_vfn_0();
     /**
+     * @vftbl 1
+     * @symbol __unk_vfn_1
+     */
+    virtual void __unk_vfn_1();
+    /**
+     * @vftbl 2
+     * @symbol __unk_vfn_2
+     */
+    virtual void __unk_vfn_2();
+    /**
+     * @vftbl 3
+     * @symbol __unk_vfn_3
+     */
+    virtual void __unk_vfn_3();
+    /**
+     * @vftbl 4
      * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
      */
-    MCVAPI void _write(class BinaryStream &) const;
+    virtual void _write(class BinaryStream &) const;
+    /**
+     * @vftbl 5
+     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
+     */
+    virtual bool _read(class ReadOnlyBinaryStream &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_ITEMSTACKREQUESTACTIONTRANSFERBASE
     /**
      * @symbol __unk_destructor_-1
      */
@@ -47,5 +69,13 @@ public:
      * @symbol ?getSrc\@ItemStackRequestActionTransferBase\@\@QEBAAEBUItemStackRequestSlotInfo\@\@XZ
      */
     MCAPI struct ItemStackRequestSlotInfo const & getSrc() const;
+
+//protected:
+    /**
+     * @symbol ??0ItemStackRequestActionTransferBase\@\@IEAA\@W4ItemStackRequestActionType\@\@_N1\@Z
+     */
+    MCAPI ItemStackRequestActionTransferBase(enum class ItemStackRequestActionType, bool, bool);
+
+protected:
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class HeartbeatServerSystem.
  *
  */
-class HeartbeatServerSystem {
+class HeartbeatServerSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 
@@ -42,5 +43,10 @@ public:
      * @symbol ?tick\@HeartbeatServerSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
+    /**
+     * @vftbl 3
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
 
 };

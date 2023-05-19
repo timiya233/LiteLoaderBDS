@@ -31,17 +31,17 @@ public:
 
 public:
     /**
-     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NPEAVPackSettings\@\@\@Z
+     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
      */
-    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
     /**
      * @symbol ??0PackInstance\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI PackInstance(class PackInstance const &);
     /**
-     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@H_NPEAVPackSettings\@\@\@Z
+     * @symbol ??0PackInstance\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@VResourcePack\@\@\@Bedrock\@\@\@gsl\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_NPEAVPackSettings\@\@\@Z
      */
-    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings *);
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const &, bool, class PackSettings *);
     /**
      * @symbol ?forEachIn\@PackInstance\@\@QEBAXAEBVPath\@Core\@\@V?$function\@$$A6AXAEBVPath\@Core\@\@\@Z\@std\@\@_N\@Z
      */
@@ -118,10 +118,6 @@ public:
      * @symbol ??4PackInstance\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class PackInstance & operator=(class PackInstance const &);
-    /**
-     * @symbol ??8PackInstance\@\@QEBA_NAEBV0\@\@Z
-     */
-    MCAPI bool operator==(class PackInstance const &) const;
     /**
      * @symbol ??1PackInstance\@\@QEAA\@XZ
      */

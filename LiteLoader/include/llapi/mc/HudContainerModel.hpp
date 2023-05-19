@@ -41,11 +41,6 @@ public:
      */
     virtual void __unk_vfn_1();
     /**
-     * @vftbl 6
-     * @symbol __unk_vfn_6
-     */
-    virtual void __unk_vfn_6();
-    /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@HudContainerModel\@\@UEBA?AVContainerWeakRef\@\@XZ
      */
@@ -70,11 +65,6 @@ public:
      * @symbol __unk_vfn_16
      */
     virtual void __unk_vfn_16();
-    /**
-     * @vftbl 19
-     * @symbol __unk_vfn_19
-     */
-    virtual void __unk_vfn_19();
     /**
      * @vftbl 20
      * @symbol ?_getContainer\@HudContainerModel\@\@EEBAPEAVContainer\@\@XZ

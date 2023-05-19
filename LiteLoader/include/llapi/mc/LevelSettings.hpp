@@ -29,6 +29,10 @@ public:
 
 public:
     /**
+     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI LevelSettings(class LevelSettings const &);
+    /**
      * @symbol ??0LevelSettings\@\@QEAA\@AEBVLevelData\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI LevelSettings(class LevelData const &, class AutomaticID<class Dimension, int>);
@@ -40,10 +44,6 @@ public:
      * @symbol ??0LevelSettings\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelSettings(class LevelSettings &&);
-    /**
-     * @symbol ??0LevelSettings\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI LevelSettings(class LevelSettings const &);
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelSettings\@\@QEBA_NXZ
      */
@@ -228,6 +228,10 @@ public:
      * @symbol ?isFromWorldTemplate\@LevelSettings\@\@QEBA_NXZ
      */
     MCAPI bool isFromWorldTemplate() const;
+    /**
+     * @symbol ?isRandomSeedAllowed\@LevelSettings\@\@QEBA_NXZ
+     */
+    MCAPI bool isRandomSeedAllowed() const;
     /**
      * @symbol ?isTexturepacksRequired\@LevelSettings\@\@QEBA_NXZ
      */

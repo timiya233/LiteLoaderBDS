@@ -51,6 +51,10 @@ public:
      * @symbol ?_createLevelStorageID\@DimensionDataSerializer\@\@IEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@00\@Z
      */
     MCAPI std::string _createLevelStorageID(std::string const &, std::string const &, std::string const &);
+    /**
+     * @symbol ?_isValidDimensionPrefix\@DimensionDataSerializer\@\@IEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI bool _isValidDimensionPrefix(std::string const &) const;
 
 protected:
 

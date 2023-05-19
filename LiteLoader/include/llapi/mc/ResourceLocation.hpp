@@ -31,13 +31,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@W4ResourceFileSystem\@\@\@Z
-     */
-    MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
-    /**
      * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@\@Z
      */
     MCAPI ResourceLocation(class Core::Path const &);
+    /**
+     * @symbol ??0ResourceLocation\@\@QEAA\@AEBVPath\@Core\@\@W4ResourceFileSystem\@\@\@Z
+     */
+    MCAPI ResourceLocation(class Core::Path const &, enum class ResourceFileSystem);
     /**
      * @symbol ??0ResourceLocation\@\@QEAA\@XZ
      */

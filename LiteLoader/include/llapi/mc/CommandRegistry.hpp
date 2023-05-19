@@ -576,10 +576,6 @@ public:
      */
     MCAPI bool buildSelector(struct ActorSelectorArgs const &, class CommandSelectorBase *, std::string &) const;
     /**
-     * @symbol ?enabledInEditor\@CommandRegistry\@\@QEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCAPI bool enabledInEditor(std::string const &) const;
-    /**
      * @symbol ?fireCommandParseTableTelemetry\@CommandRegistry\@\@QEBAXAEBVIMinecraftEventing\@\@_N\@Z
      */
     MCAPI void fireCommandParseTableTelemetry(class IMinecraftEventing const &, bool) const;
@@ -706,6 +702,10 @@ public:
 
 //private:
     /**
+     * @symbol ?_addEnumValueConstraintsInternal\@CommandRegistry\@\@AEAAXAEBV?$vector\@U?$pair\@_KI\@std\@\@V?$allocator\@U?$pair\@_KI\@std\@\@\@2\@\@std\@\@W4SemanticConstraint\@\@\@Z
+     */
+    MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const &, enum class SemanticConstraint);
+    /**
      * @symbol ?_addEnumValuesInternal\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV?$vector\@U?$pair\@_K_K\@std\@\@V?$allocator\@U?$pair\@_K_K\@std\@\@\@2\@\@4\@V?$typeid_t\@VCommandRegistry\@\@\@Bedrock\@\@P81\@EBA_NPEAXAEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV34\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@4\@\@Z\@Z
      */
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const &, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const &, class Bedrock::typeid_t<class CommandRegistry>, bool ( CommandRegistry::*)(void *, struct CommandRegistry::ParseToken const &, class CommandOrigin const &, int, std::string &, std::vector<std::string> &) const);
@@ -762,9 +762,17 @@ public:
      */
     MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, std::vector<class CommandRegistry::Symbol> const &);
     /**
+     * @symbol ?buildOptionalRuleChain\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEBUSignature\@1\@AEBV?$vector\@VCommandParameterData\@\@V?$allocator\@VCommandParameterData\@\@\@std\@\@\@std\@\@PEBVCommandParameterData\@\@_K\@Z
+     */
+    MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const &, std::vector<class CommandParameterData> const &, class CommandParameterData const *, unsigned __int64);
+    /**
      * @symbol ?buildParseTable\@CommandRegistry\@\@AEBAXI\@Z
      */
     MCAPI void buildParseTable(unsigned int) const;
+    /**
+     * @symbol ?buildPredictTable\@CommandRegistry\@\@AEBAXAEAUParseTable\@1\@I\@Z
+     */
+    MCAPI void buildPredictTable(struct CommandRegistry::ParseTable &, unsigned int) const;
     /**
      * @symbol ?buildRules\@CommandRegistry\@\@AEAA?AVSymbol\@1\@AEAUSignature\@1\@AEBV?$vector\@V?$not_null\@PEAUOverload\@CommandRegistry\@\@\@gsl\@\@V?$allocator\@V?$not_null\@PEAUOverload\@CommandRegistry\@\@\@gsl\@\@\@std\@\@\@std\@\@_K\@Z
      */
@@ -810,10 +818,6 @@ public:
      */
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const &) const;
     /**
-     * @symbol ?first\@CommandRegistry\@\@AEBA?AV?$vector\@VSymbol\@CommandRegistry\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@std\@\@\@std\@\@AEAUParseTable\@1\@AEBV23\@\@Z
-     */
-    MCAPI std::vector<class CommandRegistry::Symbol> first(struct CommandRegistry::ParseTable &, std::vector<class CommandRegistry::Symbol> const &) const;
-    /**
      * @symbol ?forEachNonTerminal\@CommandRegistry\@\@AEBAXV?$function\@$$A6AXVSymbol\@CommandRegistry\@\@\@Z\@std\@\@\@Z
      */
     MCAPI void forEachNonTerminal(class std::function<void (class CommandRegistry::Symbol)>) const;
@@ -830,13 +834,13 @@ public:
      */
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     /**
-     * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUSignature\@1\@\@Z
-     */
-    MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
-    /**
      * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUOverload\@1\@\@Z
      */
     MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Overload const &) const;
+    /**
+     * @symbol ?originCanRun\@CommandRegistry\@\@AEBA_NAEBVCommandOrigin\@\@AEBUSignature\@1\@\@Z
+     */
+    MCAPI bool originCanRun(class CommandOrigin const &, struct CommandRegistry::Signature const &) const;
     /**
      * @symbol ?parseSelector\@CommandRegistry\@\@AEBA_NPEAVCommandSelectorBase\@\@AEBUParseToken\@1\@AEBVCommandOrigin\@\@HAEAV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@6\@_N\@Z
      */
@@ -861,6 +865,10 @@ public:
      * @symbol ?_removeStringQuotes\@CommandRegistry\@\@CA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@\@Z
      */
     MCAPI static std::string _removeStringQuotes(std::string const &);
+    /**
+     * @symbol ?addNonEpsilonSymbols\@CommandRegistry\@\@CAXAEAV?$dense_set\@VSymbol\@CommandRegistry\@\@USymbolHasher\@2\@U?$equal_to\@VSymbol\@CommandRegistry\@\@\@std\@\@V?$allocator\@VSymbol\@CommandRegistry\@\@\@5\@\@entt\@\@AEBV23\@\@Z
+     */
+    MCAPI static void addNonEpsilonSymbols(class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, struct std::equal_to<class CommandRegistry::Symbol>, class std::allocator<class CommandRegistry::Symbol>> &, class entt::dense_set<class CommandRegistry::Symbol, struct CommandRegistry::SymbolHasher, struct std::equal_to<class CommandRegistry::Symbol>, class std::allocator<class CommandRegistry::Symbol>> const &);
     /**
      * @symbol ?buildOverload\@CommandRegistry\@\@CAXAEAUOverload\@1\@\@Z
      */

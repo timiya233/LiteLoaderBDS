@@ -88,6 +88,10 @@ public:
      */
     MCAPI float getDownfall() const;
     /**
+     * @symbol ?getEntity\@Biome\@\@QEBAAEAVEntityContext\@\@XZ
+     */
+    MCAPI class EntityContext & getEntity() const;
+    /**
      * @symbol ?getEvergreenFoliageColor\@Biome\@\@QEBAHAEBVBlockPos\@\@\@Z
      */
     MCAPI int getEvergreenFoliageColor(class BlockPos const &) const;
@@ -148,6 +152,10 @@ public:
      */
     MCAPI bool hasTag(class WellKnownTagID const &) const;
     /**
+     * @symbol ?initEntity\@Biome\@\@QEAAXAEAVEntityRegistry\@\@\@Z
+     */
+    MCAPI void initEntity(class EntityRegistry &);
+    /**
      * @symbol ?isHumid\@Biome\@\@QEBA_NXZ
      */
     MCAPI bool isHumid() const;
@@ -179,6 +187,10 @@ public:
      * @symbol ?setOddColor\@Biome\@\@QEAAAEAV1\@H\@Z
      */
     MCAPI class Biome & setOddColor(int);
+    /**
+     * @symbol ?setSnowAccumulation\@Biome\@\@QEAAAEAV1\@MM\@Z
+     */
+    MCAPI class Biome & setSnowAccumulation(float, float);
     /**
      * @symbol ?writePacketData\@Biome\@\@QEAAXAEAVCompoundTag\@\@AEAV?$TagRegistry\@U?$IDType\@UBiomeTagIDType\@\@\@\@U?$IDType\@UBiomeTagSetIDType\@\@\@\@\@\@\@Z
      */

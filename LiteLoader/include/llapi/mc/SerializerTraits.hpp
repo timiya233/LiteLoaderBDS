@@ -23,17 +23,21 @@ struct SerializerTraits {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0SerializerTraits\@\@QEAA\@XZ
-     */
-    MCAPI SerializerTraits();
-    /**
      * @symbol ??0SerializerTraits\@\@QEAA\@AEBU0\@\@Z
      */
     MCAPI SerializerTraits(struct SerializerTraits const &);
     /**
+     * @symbol ??0SerializerTraits\@\@QEAA\@XZ
+     */
+    MCAPI SerializerTraits();
+    /**
      * @symbol ??0SerializerTraits\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI SerializerTraits(struct SerializerTraits &&);
+    /**
+     * @symbol ?help\@SerializerTraits\@\@QEAAAEAU1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
+     */
+    MCAPI struct SerializerTraits & help(std::string const &);
     /**
      * @symbol ?name\@SerializerTraits\@\@QEAAAEAU1\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */

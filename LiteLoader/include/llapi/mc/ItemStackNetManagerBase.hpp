@@ -117,6 +117,10 @@ public:
 
 //protected:
     /**
+     * @symbol ?_debugContext\@ItemStackNetManagerBase\@\@IEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V23\@\@Z
+     */
+    MCAPI std::string _debugContext(std::string) const;
+    /**
      * @symbol ?_isRequestActionAllowed\@ItemStackNetManagerBase\@\@IEAA_NAEBVItemStackRequestAction\@\@\@Z
      */
     MCAPI bool _isRequestActionAllowed(class ItemStackRequestAction const &);

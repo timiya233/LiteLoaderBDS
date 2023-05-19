@@ -64,10 +64,6 @@ public:
      */
     MCAPI void _maybeReplaceStairs(class Random &, class BlockSource &, class BlockPos, struct PortalEnvironmentModifiers const &);
     /**
-     * @symbol ?_maybeReplaceWall\@RuinedPortalPiece\@\@AEAAXAEAVRandom\@\@AEAVBlockSource\@\@VBlockPos\@\@AEBUPortalEnvironmentModifiers\@\@\@Z
-     */
-    MCAPI void _maybeReplaceWall(class Random &, class BlockSource &, class BlockPos, struct PortalEnvironmentModifiers const &);
-    /**
      * @symbol ?_moveStructureBoundsToSuitableY\@RuinedPortalPiece\@\@AEAAXAEAVRandom\@\@AEAVBlockSource\@\@AEBUPortalEnvironmentModifiers\@\@\@Z
      */
     MCAPI void _moveStructureBoundsToSuitableY(class Random &, class BlockSource &, struct PortalEnvironmentModifiers const &);

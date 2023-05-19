@@ -56,41 +56,41 @@ public:
      */
     MCAPI ItemDescriptor(class std::basic_string_view<char, struct std::char_traits<char>>, int);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBV0\@\@Z
+     * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
      */
-    MCAPI ItemDescriptor(class ItemDescriptor const &);
+    MCAPI ItemDescriptor();
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI ItemDescriptor(class ReadOnlyBinaryStream &);
     /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@XZ
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
-    MCAPI ItemDescriptor();
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
-     */
-    MCAPI ItemDescriptor(struct ItemTag const &);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
-     */
-    MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
-     */
-    MCAPI ItemDescriptor(class Item const &, int);
-    /**
-     * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ItemDescriptor(class ItemDescriptor &&);
+    MCAPI ItemDescriptor(class ItemDescriptor const &);
     /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlockLegacy\@\@\@Z
      */
     MCAPI ItemDescriptor(class BlockLegacy const &);
     /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVValue\@Json\@\@AEBVSemVersion\@\@\@Z
+     */
+    MCAPI ItemDescriptor(class Json::Value const &, class SemVersion const &);
+    /**
      * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVBlock\@\@\@Z
      */
     MCAPI ItemDescriptor(class Block const &);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBVItem\@\@H\@Z
+     */
+    MCAPI ItemDescriptor(class Item const &, int);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@AEBUItemTag\@\@\@Z
+     */
+    MCAPI ItemDescriptor(struct ItemTag const &);
+    /**
+     * @symbol ??0ItemDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ItemDescriptor(class ItemDescriptor &&);
     /**
      * @symbol ?forEachItemUntil\@ItemDescriptor\@\@QEBA_NV?$function\@$$A6A_NAEBVItem\@\@F\@Z\@std\@\@\@Z
      */

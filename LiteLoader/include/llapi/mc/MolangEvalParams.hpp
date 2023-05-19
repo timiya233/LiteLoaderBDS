@@ -51,17 +51,17 @@ public:
      */
     MCAPI unsigned __int64 popHash();
     /**
-     * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KW4MolangVariableIndex\@\@\@Z
+     * @symbol ?popLoopScope\@MolangEvalParams\@\@QEAAXXZ
      */
-    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex);
+    MCAPI void popLoopScope();
     /**
      * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KAEBVHashedString\@\@\@Z
      */
     MCAPI unsigned __int64 popMissingVariableOrActorAddress(class HashedString const &);
     /**
-     * @symbol ?popPublicAccessMode\@MolangEvalParams\@\@QEAA_NXZ
+     * @symbol ?popMissingVariableOrActorAddress\@MolangEvalParams\@\@QEAA_KW4MolangVariableIndex\@\@\@Z
      */
-    MCAPI bool popPublicAccessMode();
+    MCAPI unsigned __int64 popMissingVariableOrActorAddress(enum class MolangVariableIndex);
     /**
      * @symbol ?popRenderParamsCopyAndPtr\@MolangEvalParams\@\@QEAAXXZ
      */

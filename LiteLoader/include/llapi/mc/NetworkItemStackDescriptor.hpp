@@ -49,6 +49,10 @@ public:
      */
     MCAPI NetworkItemStackDescriptor();
     /**
+     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
+     */
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
+    /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStackDescriptor\@\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const &);
@@ -56,10 +60,6 @@ public:
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor &&);
-    /**
-     * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBV0\@\@Z
-     */
-    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor const &);
     /**
      * @symbol ??0NetworkItemStackDescriptor\@\@QEAA\@AEBVItemStack\@\@\@Z
      */

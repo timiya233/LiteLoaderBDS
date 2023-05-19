@@ -42,10 +42,6 @@ public:
 
 public:
     /**
-     * @symbol ??0ItemStackRequestActionHandler\@\@QEAA\@AEAVItemStackNetManagerServer\@\@AEAVPlayer\@\@\@Z
-     */
-    MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer &, class Player &);
-    /**
      * @symbol ?_addResponseSlotInfo\@ItemStackRequestActionHandler\@\@QEAAXAEBUItemStackRequestHandlerSlotInfo\@\@AEBVItemStack\@\@\@Z
      */
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const &, class ItemStack const &);
@@ -78,6 +74,10 @@ public:
      */
     MCAPI void addFilteredStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string>);
     /**
+     * @symbol ?beginRequest\@ItemStackRequestActionHandler\@\@QEAAXAEBV?$TypedClientNetId\@UItemStackRequestIdTag\@\@H$0A\@\@\@AEAVItemStackNetManagerScreen\@\@\@Z
+     */
+    MCAPI void beginRequest(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> const &, class ItemStackNetManagerScreen &);
+    /**
      * @symbol ?endRequest\@ItemStackRequestActionHandler\@\@QEAA?AV?$tuple\@W4ItemStackNetResult\@\@V?$vector\@UItemStackResponseContainerInfo\@\@V?$allocator\@UItemStackResponseContainerInfo\@\@\@std\@\@\@std\@\@\@std\@\@W4ItemStackNetResult\@\@\@Z
      */
     MCAPI class std::tuple<enum class ItemStackNetResult, std::vector<struct ItemStackResponseContainerInfo>> endRequest(enum class ItemStackNetResult);
@@ -108,9 +108,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_handleDestroy\@ItemStackRequestActionHandler\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionDestroy\@\@\@Z
+     * @symbol ?_getCurrentScreenData\@ItemStackRequestActionHandler\@\@AEBAPEAUScreenData\@1\@XZ
      */
-    MCAPI enum class ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const &);
+    MCAPI struct ItemStackRequestActionHandler::ScreenData * _getCurrentScreenData() const;
+    /**
+     * @symbol ?_getItemStackNetResult\@ItemStackRequestActionHandler\@\@AEAA?AW4ItemStackNetResult\@\@AEBUContainerValidationResult\@\@\@Z
+     */
+    MCAPI enum class ItemStackNetResult _getItemStackNetResult(struct ContainerValidationResult const &);
     /**
      * @symbol ?_handlePlaceInItemContainer\@ItemStackRequestActionHandler\@\@AEAA?AW4ItemStackNetResult\@\@AEBVItemStackRequestActionPlaceInItemContainer\@\@\@Z
      */

@@ -71,6 +71,10 @@ public:
      * @symbol ?addTunnel\@CanyonFeature\@\@IEBAXAEAVBlockVolume\@\@AEBVBiomeSource\@\@AEAVRandom\@\@AEBVChunkPos\@\@AEBVVec3\@\@4MMMHHMAEBUWorldGenContext\@\@\@Z
      */
     MCAPI void addTunnel(class BlockVolume &, class BiomeSource const &, class Random &, class ChunkPos const &, class Vec3 const &, class Vec3 const &, float, float, float, int, int, float, struct WorldGenContext const &) const;
+    /**
+     * @symbol ?detectWater\@CanyonFeature\@\@IEBA_NAEAVBlockVolume\@\@HHHHHH\@Z
+     */
+    MCAPI bool detectWater(class BlockVolume &, int, int, int, int, int, int) const;
 
 protected:
 

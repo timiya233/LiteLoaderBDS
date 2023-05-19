@@ -39,13 +39,17 @@ public:
      */
     virtual void registerEvents(class entt::basic_dispatcher<class std::allocator<void>> &);
     /**
-     * @symbol ??0SideBySideExtractionSystem\@\@QEAA\@AEBV?$array\@V?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@$0BE\@\@std\@\@\@Z
+     * @symbol ??0SideBySideExtractionSystem\@\@QEAA\@AEBV?$array\@V?$vector\@IV?$allocator\@I\@std\@\@\@std\@\@$0M\@\@std\@\@\@Z
      */
-    MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 20> const &);
+    MCAPI SideBySideExtractionSystem(class std::array<std::vector<unsigned int>, 12> const &);
     /**
      * @symbol ?_onSideBySideExtractionRequest\@SideBySideExtractionSystem\@\@SAXAEBUExtractMethods\@SideBySide\@\@AEBUOnExtractSideBySide\@\@\@Z
      */
     MCAPI static void _onSideBySideExtractionRequest(struct SideBySide::ExtractMethods const &, struct OnExtractSideBySide const &);
+    /**
+     * @symbol ?extractExternalData\@SideBySideExtractionSystem\@\@SAXAEAUExternalDataSnapshotComponent\@\@AEAUExtractionSystemContext\@\@\@Z
+     */
+    MCAPI static void extractExternalData(struct ExternalDataSnapshotComponent &, struct ExtractionSystemContext &);
     /**
      * @symbol ?onStoreSideBySideResult\@SideBySideExtractionSystem\@\@SAXAEBUOnStoreSideBySideResult\@\@\@Z
      */

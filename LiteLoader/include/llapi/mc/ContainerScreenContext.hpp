@@ -49,6 +49,10 @@ public:
      */
     MCAPI enum class ContainerType getScreenContainerType() const;
     /**
+     * @symbol ??BContainerScreenContext\@\@QEBA_NXZ
+     */
+    MCAPI operator bool() const;
+    /**
      * @symbol ?tryGetActor\@ContainerScreenContext\@\@QEBAPEAVActor\@\@XZ
      */
     MCAPI class Actor * tryGetActor() const;

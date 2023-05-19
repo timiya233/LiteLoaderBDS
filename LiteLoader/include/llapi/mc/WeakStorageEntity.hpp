@@ -53,6 +53,10 @@ public:
 
 //protected:
     /**
+     * @symbol ??0WeakStorageEntity\@\@IEAA\@W4VariadicInit\@0\@AEBVEntityContext\@\@\@Z
+     */
+    MCAPI WeakStorageEntity(enum class WeakStorageEntity::VariadicInit, class EntityContext const &);
+    /**
      * @symbol ??0WeakStorageEntity\@\@IEAA\@W4EmptyInit\@0\@\@Z
      */
     MCAPI WeakStorageEntity(enum class WeakStorageEntity::EmptyInit);
@@ -65,13 +69,13 @@ public:
      */
     MCAPI WeakStorageEntity(class OwnerStorageEntity const &);
     /**
+     * @symbol ?_isSet\@WeakStorageEntity\@\@IEBA_NXZ
+     */
+    MCAPI bool _isSet() const;
+    /**
      * @symbol ?_reset\@WeakStorageEntity\@\@IEAAXXZ
      */
     MCAPI void _reset();
-    /**
-     * @symbol ??1WeakStorageEntity\@\@IEAA\@XZ
-     */
-    MCAPI ~WeakStorageEntity();
 
 protected:
 

@@ -32,13 +32,13 @@ public:
 
 //protected:
     /**
-     * @symbol ??0WeakStorageFeature\@\@IEAA\@W4EmptyInit\@0\@\@Z
-     */
-    MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
-    /**
      * @symbol ??0WeakStorageFeature\@\@IEAA\@$$QEAV0\@\@Z
      */
     MCAPI WeakStorageFeature(class WeakStorageFeature &&);
+    /**
+     * @symbol ??0WeakStorageFeature\@\@IEAA\@W4EmptyInit\@0\@\@Z
+     */
+    MCAPI WeakStorageFeature(enum class WeakStorageFeature::EmptyInit);
     /**
      * @symbol ??0WeakStorageFeature\@\@IEAA\@AEBVOwnerStorageFeature\@\@\@Z
      */

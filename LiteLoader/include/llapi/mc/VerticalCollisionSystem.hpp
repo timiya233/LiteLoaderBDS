@@ -39,19 +39,24 @@ public:
     virtual void __unk_vfn_1();
     /**
      * @vftbl 2
-     * @symbol __unk_vfn_2
+     * @symbol ?tick\@?$IStrictTickingSystem\@V?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
-    virtual void __unk_vfn_2();
+    virtual void tick(class EntityRegistry &);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?singleTick\@?$IStrictTickingSystem\@V?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
     /**
      * @vftbl 4
      * @symbol ?tick\@VerticalCollisionSystem\@\@EEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@Z
      */
     virtual void tick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent, struct SideBySidePlaybackBlocksComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &);
+    /**
+     * @vftbl 5
+     * @symbol ?singleTick\@?$IStrictTickingSystem\@V?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@\@\@MEAAXAEAV?$StrictExecutionContext\@U?$Filter\@V?$FlagComponent\@UMinecartFlag\@\@\@\@V?$FlagComponent\@UPlayerComponentFlag\@\@\@\@V?$FlagComponent\@UVerticalCollisionFlag\@\@\@\@\@\@U?$Read\@USynchedActorDataComponent\@\@UMoveRequestComponent\@\@UAABBShapeComponent\@\@UDimensionTypeComponent\@\@UStateVectorComponent\@\@\@\@U?$Write\@UStateVectorComponent\@\@UWalkDistComponent\@\@USideBySidePlaybackBlocksComponent\@\@\@\@U?$AddRemove\@UBounceComponent\@\@\@\@U?$GlobalRead\@ULocalConstBlockSourceFactoryComponent\@\@\@\@U?$GlobalWrite\@$$V\@\@U?$EntityFactoryT\@$$V\@\@\@\@AEAVStrictEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class StrictExecutionContext<struct Filter<class FlagComponent<struct MinecartFlag>, class FlagComponent<struct PlayerComponentFlag>, class FlagComponent<struct VerticalCollisionFlag>>, struct Read<struct SynchedActorDataComponent, struct MoveRequestComponent, struct AABBShapeComponent, struct DimensionTypeComponent, struct StateVectorComponent>, struct Write<struct StateVectorComponent, struct WalkDistComponent, struct SideBySidePlaybackBlocksComponent>, struct AddRemove<struct BounceComponent>, struct GlobalRead<struct LocalConstBlockSourceFactoryComponent>, struct GlobalWrite<>, struct EntityFactoryT<>> &, class StrictEntityContext &);
     /**
      * @symbol ?create\@VerticalCollisionSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */

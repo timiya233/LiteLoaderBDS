@@ -472,7 +472,7 @@ class AddonsCommand : public Command {
     }
 
 public:
-    void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+    virtual void execute(CommandOrigin const& ori, CommandOutput& output) const {
         output.setLanguageCode(ori);
         switch (operation) {
             case Operation::List:

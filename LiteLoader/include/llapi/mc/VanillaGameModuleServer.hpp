@@ -6,7 +6,6 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
-#include "VanillaSystemsRegistration.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -91,10 +90,6 @@ public:
     MCAPI VanillaGameModuleServer();
 
 //private:
-    /**
-     * @symbol ?_configureEntitySystems\@VanillaGameModuleServer\@\@AEAAXAEBV?$not_null\@V?$NonOwnerPointer\@VLevel\@\@\@Bedrock\@\@\@gsl\@\@AEAVResourcePackManager\@\@AEBVExperiments\@\@AEBURegistrationOptions\@VanillaSystemsRegistration\@\@\@Z
-     */
-    MCAPI void _configureEntitySystems(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>> const &, class ResourcePackManager &, class Experiments const &, struct VanillaSystemsRegistration::RegistrationOptions const &);
     /**
      * @symbol ?_configureWorldGen\@VanillaGameModuleServer\@\@AEAAXAEAVIWorldRegistriesProvider\@\@AEBUSpawnSettings\@\@AEBVExperiments\@\@AEAVResourcePackManager\@\@AEBVBaseGameVersion\@\@\@Z
      */

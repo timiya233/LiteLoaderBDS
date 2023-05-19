@@ -92,6 +92,10 @@ public:
      */
     MCAPI int getContainerSize() const;
     /**
+     * @symbol ?getEmptySlotsCount\@ContainerComponent\@\@QEBAHXZ
+     */
+    MCAPI int getEmptySlotsCount() const;
+    /**
      * @symbol ?getItem\@ContainerComponent\@\@QEBAAEBVItemStack\@\@H\@Z
      */
     MCAPI class ItemStack const & getItem(int) const;
@@ -163,5 +167,13 @@ public:
      * @symbol ?unpackLootTable\@ContainerComponent\@\@QEAAXAEAVLevel\@\@V?$AutomaticID\@VDimension\@\@H\@\@\@Z
      */
     MCAPI void unpackLootTable(class Level &, class AutomaticID<class Dimension, int>);
+
+//private:
+    /**
+     * @symbol ?_tryMoveInItem\@ContainerComponent\@\@AEAA_NAEAVItemStack\@\@HHH\@Z
+     */
+    MCAPI bool _tryMoveInItem(class ItemStack &, int, int, int);
+
+private:
 
 };

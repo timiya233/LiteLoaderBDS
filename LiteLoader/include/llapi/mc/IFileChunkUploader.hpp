@@ -38,9 +38,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?update\@IFileChunkUploader\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_1();
+    virtual void update();
     /**
      * @vftbl 2
      * @symbol ?initFileUploader\@ServerFileChunkUploader\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFileInfo\@\@HAEBVValue\@Json\@\@V?$function\@$$A6AX_N\@Z\@3\@\@Z
@@ -53,9 +53,9 @@ public:
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?confirmChunkReceived\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
     /**
      * @vftbl 5
      * @symbol ?uploadChunk\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V?$function\@$$A6AX_N\@Z\@5\@\@Z
@@ -73,9 +73,9 @@ public:
     virtual bool canCancelUpload(struct FileInfo const &) const = 0;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?cancelUpload\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@\@Z
      */
-    virtual void __unk_vfn_8() = 0;
+    virtual void cancelUpload(struct FileInfo const &) = 0;
     /**
      * @vftbl 9
      * @symbol ?getInitErrorCode\@ServerFileChunkUploader\@\@UEBA?AW4UploadError\@\@XZ
@@ -92,14 +92,6 @@ public:
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_IFILECHUNKUPLOADER
-    /**
-     * @symbol ?confirmChunkReceived\@IFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z
-     */
-    MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
-    /**
-     * @symbol ?update\@IFileChunkUploader\@\@UEAAXXZ
-     */
-    MCVAPI void update();
     /**
      * @symbol __unk_destructor_-1
      */

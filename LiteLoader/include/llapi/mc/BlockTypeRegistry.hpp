@@ -72,6 +72,14 @@ public:
      */
     MCAPI static bool isComplexAliasBlock(class HashedString const &);
     /**
+     * @symbol ?isLockedForModification\@BlockTypeRegistry\@\@SA_NXZ
+     */
+    MCAPI static bool isLockedForModification();
+    /**
+     * @symbol ?isLockedForRead\@BlockTypeRegistry\@\@SA_NXZ
+     */
+    MCAPI static bool isLockedForRead();
+    /**
      * @symbol ?lockAgainstRegistryModifications\@BlockTypeRegistry\@\@SA?AVBlockTypeRegistryReadLock\@\@XZ
      */
     MCAPI static class BlockTypeRegistryReadLock lockAgainstRegistryModifications();
@@ -84,13 +92,13 @@ public:
      */
     MCAPI static class WeakPtr<class BlockLegacy> lookupByName(class HashedString const &, bool);
     /**
-     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
-     */
-    MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
-    /**
      * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@AEBV?$vector\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@V?$allocator\@UBlockComplexAliasBlockState\@BlockTypeRegistry\@\@\@std\@\@\@std\@\@_N\@Z
      */
     MCAPI static class Block const * lookupByName(class HashedString const &, std::vector<struct BlockTypeRegistry::BlockComplexAliasBlockState> const &, bool);
+    /**
+     * @symbol ?lookupByName\@BlockTypeRegistry\@\@SAPEBVBlock\@\@AEBVHashedString\@\@H_N\@Z
+     */
+    MCAPI static class Block const * lookupByName(class HashedString const &, int, bool);
     /**
      * @symbol ?prepareBlocks\@BlockTypeRegistry\@\@SAXI\@Z
      */

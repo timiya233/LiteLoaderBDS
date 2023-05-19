@@ -61,17 +61,21 @@ public:
 
 //private:
     /**
-     * @symbol ?_loadItemData\@ItemRegistry\@\@AEAAXAEAVResourcePackManager\@\@V?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z\@std\@\@_NW4ItemVersion\@\@\@Z
+     * @symbol ?_loadItemData\@ItemRegistry\@\@AEAAXAEAVResourcePackManager\@\@V?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@\@Z
      */
-    MCAPI void _loadItemData(class ResourcePackManager &, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion);
+    MCAPI void _loadItemData(class ResourcePackManager &, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion);
     /**
-     * @symbol ?_loadItemDefinition\@ItemRegistry\@\@AEAAXAEAVValue\@Json\@\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z\@std\@\@1W4ItemVersion\@\@W4PackType\@\@\@Z
+     * @symbol ?_loadItemDefinition\@ItemRegistry\@\@AEAAXAEAVValue\@Json\@\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@std\@\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
      */
-    MCAPI void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
+    MCAPI void _loadItemDefinition(class Json::Value &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType);
     /**
-     * @symbol ?_parseItemDefinition\@ItemRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@\@Z\@3\@1W4ItemVersion\@\@W4PackType\@\@\@Z
+     * @symbol ?_parseItemDefinition\@ItemRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBV23\@_NV?$function\@$$A6AXAEAV?$WeakPtr\@VItem\@\@\@\@AEAVValue\@Json\@\@AEBVSemVersion\@\@_NAEBVExperiments\@\@\@Z\@3\@AEBVExperiments\@\@W4ItemVersion\@\@W4PackType\@\@\@Z
      */
-    MCAPI std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &)>, bool, enum class ItemVersion, enum class PackType);
+    MCAPI std::string _parseItemDefinition(std::string const &, bool, class std::function<void (class WeakPtr<class Item> &, class Json::Value &, class SemVersion const &, bool, class Experiments const &)>, class Experiments const &, enum class ItemVersion, enum class PackType);
+    /**
+     * @symbol ?_setWorldBaseGameVersion\@ItemRegistry\@\@AEAAXAEBVBaseGameVersion\@\@\@Z
+     */
+    MCAPI void _setWorldBaseGameVersion(class BaseGameVersion const &);
     /**
      * @symbol ?addItemToTagMap\@ItemRegistry\@\@AEAAXAEBVItem\@\@\@Z
      */
@@ -117,17 +121,17 @@ public:
      */
     MCAPI void initServerData(class ResourcePackManager &, class Experiments const &, enum class ItemVersion);
     /**
-     * @symbol ?isComponentBasedItemSchema\@ItemRegistry\@\@AEAA_NAEBVSemVersion\@\@\@Z
+     * @symbol ?isComponentBasedItemSchema\@ItemRegistry\@\@AEAA_NAEBVSemVersion\@\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool isComponentBasedItemSchema(class SemVersion const &);
-    /**
-     * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
+    MCAPI bool isComponentBasedItemSchema(class SemVersion const &, class Json::Value const &);
     /**
      * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> lookupByName(int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    /**
+     * @symbol ?lookupByName\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
     /**
      * @symbol ?lookupByNameNoAlias\@ItemRegistry\@\@AEBA?AV?$WeakPtr\@VItem\@\@\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */

@@ -37,6 +37,10 @@ public:
      * @symbol ?_doSimulatedPlayerPreAIStepSystem\@SimulatedPlayerPreAIStepSystem\@\@CAXAEBVStrictEntityContext\@\@AEAVActorOwnerComponent\@\@\@Z
      */
     MCAPI static void _doSimulatedPlayerPreAIStepSystem(class StrictEntityContext const &, class ActorOwnerComponent &);
+    /**
+     * @symbol ?_tickSimulatedPlayerPreAIStepSystem\@SimulatedPlayerPreAIStepSystem\@\@CAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@USimulatedPlayerFlag\@\@\@\@\@\@VActorOwnerComponent\@\@\@\@\@Z
+     */
+    MCAPI static void _tickSimulatedPlayerPreAIStepSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct SimulatedPlayerFlag>>, class ActorOwnerComponent>);
 
 private:
 

@@ -42,6 +42,18 @@ public:
      * @symbol ?transformBlock\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Rotation\@\@W4Mirror\@\@\@Z
      */
     MCAPI static class Block const * transformBlock(class Block const &, enum class Rotation, enum class Mirror);
+    /**
+     * @symbol ?transformMultiFaceDirectionBits\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Rotation\@\@W4Mirror\@\@\@Z
+     */
+    MCAPI static class Block const * transformMultiFaceDirectionBits(class Block const &, enum class Rotation, enum class Mirror);
+    /**
+     * @symbol ?transformStandingRotation\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Rotation\@\@W4Mirror\@\@\@Z
+     */
+    MCAPI static class Block const * transformStandingRotation(class Block const &, enum class Rotation, enum class Mirror);
+    /**
+     * @symbol ?transformVineDirectionBits\@VanillaBlockStateTransformUtils\@\@SAPEBVBlock\@\@AEBV2\@W4Rotation\@\@W4Mirror\@\@\@Z
+     */
+    MCAPI static class Block const * transformVineDirectionBits(class Block const &, enum class Rotation, enum class Mirror);
 
 //private:
     /**

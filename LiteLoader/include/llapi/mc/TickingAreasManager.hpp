@@ -57,6 +57,10 @@ public:
      */
     MCAPI unsigned int countActiveStandaloneTickingAreas() const;
     /**
+     * @symbol ?countPendingStandaloneTickingAreas\@TickingAreasManager\@\@QEBAIXZ
+     */
+    MCAPI unsigned int countPendingStandaloneTickingAreas() const;
+    /**
      * @symbol ?countStandaloneTickingAreas\@TickingAreasManager\@\@QEBAIXZ
      */
     MCAPI unsigned int countStandaloneTickingAreas() const;

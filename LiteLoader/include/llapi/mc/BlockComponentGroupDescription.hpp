@@ -28,13 +28,13 @@ public:
 
 public:
     /**
-     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
-     */
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
-    /**
      * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@XZ
      */
     MCAPI BlockComponentGroupDescription();
+    /**
+     * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@AEBU0\@\@Z
+     */
+    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const &);
     /**
      * @symbol ??0BlockComponentGroupDescription\@\@QEAA\@$$QEAU0\@\@Z
      */

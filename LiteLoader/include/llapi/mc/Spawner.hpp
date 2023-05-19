@@ -117,6 +117,10 @@ public:
      */
     MCAPI void _permuteId(struct ActorDefinitionIdentifier &, class MobSpawnRules const &, class Random &) const;
     /**
+     * @symbol ?_popCapAllows\@Spawner\@\@AEBA_NAEBVDimension\@\@AEBVMobSpawnerData\@\@_N2\@Z
+     */
+    MCAPI bool _popCapAllows(class Dimension const &, class MobSpawnerData const &, bool, bool) const;
+    /**
      * @symbol ?_sendHerdEvents\@Spawner\@\@AEBAXAEBUMobSpawnHerdInfo\@\@AEAV?$vector\@PEAVMob\@\@V?$allocator\@PEAVMob\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void _sendHerdEvents(struct MobSpawnHerdInfo const &, std::vector<class Mob *> &) const;

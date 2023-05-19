@@ -50,13 +50,9 @@ public:
     MCVAPI ~ItemInstance();
 #endif
     /**
-     * @symbol ??0ItemInstance\@\@QEAA\@XZ
+     * @symbol ??0ItemInstance\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemInstance();
-    /**
-     * @symbol ??0ItemInstance\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
-     */
-    MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
+    MCAPI ItemInstance(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemInstance\@\@QEAA\@AEBV0\@\@Z
      */
@@ -66,17 +62,21 @@ public:
      */
     MCAPI ItemInstance(class ItemStackBase const &);
     /**
-     * @symbol ??0ItemInstance\@\@QEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
+     * @symbol ??0ItemInstance\@\@QEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemInstance(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemInstance\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
-     */
-    MCAPI ItemInstance(class BlockLegacy const &, int);
+    MCAPI ItemInstance(class Block const &, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemInstance\@\@QEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemInstance(class Item const &, int, int, class CompoundTag const *);
+    /**
+     * @symbol ??0ItemInstance\@\@QEAA\@XZ
+     */
+    MCAPI ItemInstance();
+    /**
+     * @symbol ??0ItemInstance\@\@QEAA\@AEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI ItemInstance(class BlockLegacy const &, int);
     /**
      * @symbol ?clone\@ItemInstance\@\@QEBA?AV1\@XZ
      */

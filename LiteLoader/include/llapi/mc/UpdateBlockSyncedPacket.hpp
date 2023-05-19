@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@UpdateBlockSyncedPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@UpdateBlockSyncedPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_UPDATEBLOCKSYNCEDPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~UpdateBlockSyncedPacket();
 #endif
     /**
-     * @symbol ??0UpdateBlockSyncedPacket\@\@QEAA\@XZ
-     */
-    MCAPI UpdateBlockSyncedPacket();
-    /**
      * @symbol ??0UpdateBlockSyncedPacket\@\@QEAA\@AEBVBlockPos\@\@IIEAEBUActorBlockSyncMessage\@\@\@Z
      */
     MCAPI UpdateBlockSyncedPacket(class BlockPos const &, unsigned int, unsigned int, unsigned char, struct ActorBlockSyncMessage const &);
+    /**
+     * @symbol ??0UpdateBlockSyncedPacket\@\@QEAA\@XZ
+     */
+    MCAPI UpdateBlockSyncedPacket();
 
 };

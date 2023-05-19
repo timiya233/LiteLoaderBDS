@@ -137,6 +137,10 @@ public:
      */
     MCAPI void _registerFeature(std::string const &, std::unique_ptr<class IFeature>);
     /**
+     * @symbol ?_reverseLookup\@FeatureRegistry\@\@AEBAAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_K\@Z
+     */
+    MCAPI std::string const & _reverseLookup(unsigned __int64) const;
+    /**
      * @symbol ?_setupFeature\@FeatureRegistry\@\@AEAA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVIWorldRegistriesProvider\@\@AEBVResourcePackManager\@\@AEBV23\@2AEBVSemVersion\@\@\@Z
      */
     MCAPI std::string _setupFeature(class IWorldRegistriesProvider &, class ResourcePackManager const &, std::string const &, std::string const &, class SemVersion const &);

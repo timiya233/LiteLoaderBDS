@@ -54,7 +54,7 @@ public:
     virtual void init();
     /**
      * @vftbl 2
-     * @symbol ?serverInitItemStackIds\@CraftingContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
+     * @symbol ?serverInitItemStackIds\@FillingContainer\@\@UEAAXHHV?$function\@$$A6AXHAEBVItemStack\@\@\@Z\@std\@\@\@Z
      */
     virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const &)>) = 0;
     /**
@@ -69,7 +69,7 @@ public:
     virtual void removeContentChangeListener(class ContainerContentChangeListener *);
     /**
      * @vftbl 5
-     * @symbol ?getItem\@SimpleContainer\@\@UEBAAEBVItemStack\@\@H\@Z
+     * @symbol ?getItem\@FillingContainer\@\@UEBAAEBVItemStack\@\@H\@Z
      */
     virtual class ItemStack const & getItem(int) const = 0;
     /**
@@ -114,59 +114,59 @@ public:
     virtual void removeAllItems();
     /**
      * @vftbl 14
+     * @symbol ?removeAllItemsWithForceBalance\@Container\@\@UEAAXXZ
+     */
+    virtual void removeAllItemsWithForceBalance();
+    /**
+     * @vftbl 15
      * @symbol ?dropContents\@Container\@\@UEAAXAEAVBlockSource\@\@AEBVVec3\@\@_N\@Z
      */
     virtual void dropContents(class BlockSource &, class Vec3 const &, bool);
     /**
-     * @vftbl 15
+     * @vftbl 16
      * @symbol ?getContainerSize\@FillingContainer\@\@UEBAHXZ
      */
     virtual int getContainerSize() const = 0;
     /**
-     * @vftbl 16
+     * @vftbl 17
      * @symbol ?getMaxStackSize\@SimpleContainer\@\@UEBAHXZ
      */
     virtual int getMaxStackSize() const = 0;
     /**
-     * @vftbl 17
+     * @vftbl 18
      * @symbol ?startOpen\@FillingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void startOpen(class Player &) = 0;
     /**
-     * @vftbl 18
+     * @vftbl 19
      * @symbol ?stopOpen\@CraftingContainer\@\@UEAAXAEAVPlayer\@\@\@Z
      */
     virtual void stopOpen(class Player &) = 0;
     /**
-     * @vftbl 19
+     * @vftbl 20
      * @symbol ?getSlotCopies\@Container\@\@UEBA?AV?$vector\@VItemStack\@\@V?$allocator\@VItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack> getSlotCopies() const;
     /**
-     * @vftbl 20
+     * @vftbl 21
      * @symbol ?getSlots\@Container\@\@UEBA?BV?$vector\@PEBVItemStack\@\@V?$allocator\@PEBVItemStack\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::vector<class ItemStack const *> const getSlots() const;
     /**
-     * @vftbl 21
+     * @vftbl 22
      * @symbol ?getEmptySlotsCount\@Container\@\@UEBAHXZ
      */
     virtual int getEmptySlotsCount() const;
     /**
-     * @vftbl 22
+     * @vftbl 23
      * @symbol ?getItemCount\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
     virtual int getItemCount(class ItemStack const &) const;
     /**
-     * @vftbl 23
+     * @vftbl 24
      * @symbol ?findFirstSlotForItem\@Container\@\@UEBAHAEBVItemStack\@\@\@Z
      */
     virtual int findFirstSlotForItem(class ItemStack const &) const;
-    /**
-     * @vftbl 24
-     * @symbol __unk_vfn_24
-     */
-    virtual void __unk_vfn_24();
     /**
      * @vftbl 25
      * @symbol __unk_vfn_25
@@ -174,46 +174,51 @@ public:
     virtual void __unk_vfn_25();
     /**
      * @vftbl 26
+     * @symbol __unk_vfn_26
+     */
+    virtual void __unk_vfn_26();
+    /**
+     * @vftbl 27
      * @symbol ?setContainerChanged\@Container\@\@UEAAXH\@Z
      */
     virtual void setContainerChanged(int);
     /**
-     * @vftbl 27
+     * @vftbl 28
      * @symbol ?setContainerMoved\@Container\@\@UEAAXXZ
      */
     virtual void setContainerMoved();
     /**
-     * @vftbl 28
+     * @vftbl 29
      * @symbol ?setCustomName\@Container\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     virtual void setCustomName(std::string const &);
     /**
-     * @vftbl 29
+     * @vftbl 30
      * @symbol ?hasCustomName\@Container\@\@UEBA_NXZ
      */
     virtual bool hasCustomName() const;
     /**
-     * @vftbl 30
+     * @vftbl 31
      * @symbol ?readAdditionalSaveData\@Container\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void readAdditionalSaveData(class CompoundTag const &);
     /**
-     * @vftbl 31
+     * @vftbl 32
      * @symbol ?addAdditionalSaveData\@Container\@\@UEAAXAEAVCompoundTag\@\@\@Z
      */
     virtual void addAdditionalSaveData(class CompoundTag &);
     /**
-     * @vftbl 32
+     * @vftbl 33
      * @symbol ?createTransactionContext\@Container\@\@UEAAXV?$function\@$$A6AXAEAVContainer\@\@HAEBVItemStack\@\@1\@Z\@std\@\@V?$function\@$$A6AXXZ\@3\@\@Z
      */
     virtual void createTransactionContext(class std::function<void (class Container &, int, class ItemStack const &, class ItemStack const &)>, class std::function<void (void)>);
     /**
-     * @vftbl 33
+     * @vftbl 34
      * @symbol ?initializeContainerContents\@Container\@\@UEAAXAEAVBlockSource\@\@\@Z
      */
     virtual void initializeContainerContents(class BlockSource &);
     /**
-     * @vftbl 34
+     * @vftbl 35
      * @symbol ?isEmpty\@Container\@\@UEBA_NXZ
      */
     virtual bool isEmpty() const;
@@ -232,10 +237,6 @@ public:
     MCVAPI ~Container();
 #endif
     /**
-     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
-     */
-    MCAPI Container(enum class ContainerType);
-    /**
      * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
      */
     MCAPI Container(enum class ContainerType, std::string const &, bool);
@@ -243,6 +244,10 @@ public:
      * @symbol ??0Container\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI Container(class Container const &);
+    /**
+     * @symbol ??0Container\@\@QEAA\@W4ContainerType\@\@\@Z
+     */
+    MCAPI Container(enum class ContainerType);
     /**
      * @symbol ?getContainerType\@Container\@\@QEBA?AW4ContainerType\@\@XZ
      */

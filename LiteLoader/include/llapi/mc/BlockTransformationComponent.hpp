@@ -36,5 +36,9 @@ public:
      * @symbol ?getTransformationMatrix\@BlockTransformationComponent\@\@QEBAAEBVMatrix\@\@XZ
      */
     MCAPI class Matrix const & getTransformationMatrix() const;
+    /**
+     * @symbol ?setRotation\@BlockTransformationComponent\@\@QEAAXAEBURotationType\@1\@\@Z
+     */
+    MCAPI void setRotation(struct BlockTransformationComponent::RotationType const &);
 
 };

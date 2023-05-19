@@ -58,6 +58,18 @@ public:
      */
     MCAPI unsigned __int64 getHash() const;
     /**
+     * @symbol ?getRakNetGUID\@NetworkIdentifier\@\@QEBAAEBURakNetGUID\@RakNet\@\@XZ
+     */
+    MCAPI struct RakNet::RakNetGUID const & getRakNetGUID() const;
+    /**
+     * @symbol ?getSocketAddress\@NetworkIdentifier\@\@QEBAAEBUsockaddr_in\@\@XZ
+     */
+    MCAPI struct sockaddr_in const & getSocketAddress() const;
+    /**
+     * @symbol ?getSocketAddress6\@NetworkIdentifier\@\@QEBAAEBUsockaddr_in6\@\@XZ
+     */
+    MCAPI struct sockaddr_in6 const & getSocketAddress6() const;
+    /**
      * @symbol ?isUnassigned\@NetworkIdentifier\@\@QEBA_NXZ
      */
     MCAPI bool isUnassigned() const;

@@ -23,6 +23,10 @@ namespace DebugUtils {
 
 #undef AFTER_EXTRA
     /**
+     * @symbol ?buildFullTelemetryKey\@DebugUtils\@\@YA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUAssertHandlerContext\@\@\@Z
+     */
+    MCAPI std::string buildFullTelemetryKey(struct AssertHandlerContext const &);
+    /**
      * @symbol ?debugUtilMutex\@DebugUtils\@\@3Vmutex\@std\@\@A
      */
     MCAPI extern class std::mutex debugUtilMutex;
@@ -54,6 +58,10 @@ namespace DebugUtils {
      * @symbol ?gShouldPresentDialog\@DebugUtils\@\@3_NA
      */
     MCAPI extern bool gShouldPresentDialog;
+    /**
+     * @symbol ?getTelemetryCallback\@DebugUtils\@\@YAAEAV?$Connector\@$$A6AXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z\@PubSub\@Bedrock\@\@XZ
+     */
+    MCAPI class Bedrock::PubSub::Connector<void (std::string const &, std::string const &)> & getTelemetryCallback();
     /**
      * @symbol ?gp_assert_handler\@DebugUtils\@\@3V?$ServiceOverrider\@P6A_NAEBUAssertHandlerContext\@\@AEA_N\@Z\@\@A
      */

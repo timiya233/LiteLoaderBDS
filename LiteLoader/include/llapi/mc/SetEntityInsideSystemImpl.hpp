@@ -30,6 +30,10 @@ public:
      * @symbol ?_blockProcess\@SetEntityInsideSystemImpl\@\@CAXAEBVStrictEntityContext\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@UInsideBubbleColumnBlockComponent\@\@U?$InsideBlockWithPosAndBlockComponent\@UCactusBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UEndPortalBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UGenericBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UHoneyBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@USweetBerryBushBlockFlag\@\@\@\@U?$InsideBlockWithPosAndBlockComponent\@UPowderSnowBlockFlag\@\@\@\@U?$InsideBlockWithPosComponent\@UWaterlilyBlockFlag\@\@\@\@V?$FlagComponent\@UWebBlockTag\@\@\@\@\@\@AEBVBlock\@\@AEBVBlockPos\@\@AEAU?$InsideBlockWithPosAndBlockComponent\@UGenericBlockFlag\@\@\@\@AEBVIConstBlockSource\@\@P6A_N2\@Z\@Z
      */
     MCAPI static void _blockProcess(class StrictEntityContext const &, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, struct InsideBubbleColumnBlockComponent, struct InsideBlockWithPosAndBlockComponent<struct CactusBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct EndPortalBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct GenericBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct HoneyBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct SweetBerryBushBlockFlag>, struct InsideBlockWithPosAndBlockComponent<struct PowderSnowBlockFlag>, struct InsideBlockWithPosComponent<struct WaterlilyBlockFlag>, class FlagComponent<struct WebBlockTag>>, class Block const &, class BlockPos const &, struct InsideBlockWithPosAndBlockComponent<struct GenericBlockFlag> &, class IConstBlockSource const &, bool ( *)(class Block const &));
+    /**
+     * @symbol ?_isAir\@SetEntityInsideSystemImpl\@\@CA_NAEBVBlock\@\@\@Z
+     */
+    MCAPI static bool _isAir(class Block const &);
 
 private:
 

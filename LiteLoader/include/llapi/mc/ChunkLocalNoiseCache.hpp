@@ -43,6 +43,10 @@ public:
      */
     MCAPI ChunkLocalNoiseCache();
     /**
+     * @symbol ?_toIndex\@ChunkLocalNoiseCache\@\@QEBA_KAEBV?$DividedPos2d\@$03\@\@\@Z
+     */
+    MCAPI unsigned __int64 _toIndex(class DividedPos2d<4> const &) const;
+    /**
      * @symbol ?getCacheEntry\@ChunkLocalNoiseCache\@\@QEBAAEBUCacheEntry\@1\@AEBV?$DividedPos2d\@$03\@\@\@Z
      */
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const & getCacheEntry(class DividedPos2d<4> const &) const;

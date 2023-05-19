@@ -68,9 +68,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PlayStatusPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PlayStatusPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PLAYSTATUSPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -78,12 +78,12 @@ public:
     MCVAPI ~PlayStatusPacket();
 #endif
     /**
-     * @symbol ??0PlayStatusPacket\@\@QEAA\@W4PlayStatus\@\@\@Z
-     */
-    MCAPI PlayStatusPacket(enum class PlayStatus);
-    /**
      * @symbol ??0PlayStatusPacket\@\@QEAA\@XZ
      */
     MCAPI PlayStatusPacket();
+    /**
+     * @symbol ??0PlayStatusPacket\@\@QEAA\@W4PlayStatus\@\@\@Z
+     */
+    MCAPI PlayStatusPacket(enum class PlayStatus);
 
 };

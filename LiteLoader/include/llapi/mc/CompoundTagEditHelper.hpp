@@ -44,6 +44,10 @@ public:
 
 //private:
     /**
+     * @symbol ?popChild\@CompoundTagEditHelper\@\@AEAAXXZ
+     */
+    MCAPI void popChild();
+    /**
      * @symbol ?pushChild\@CompoundTagEditHelper\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI void pushChild(std::string const &);

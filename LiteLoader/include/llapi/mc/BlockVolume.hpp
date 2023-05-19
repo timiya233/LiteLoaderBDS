@@ -84,6 +84,10 @@ public:
      */
     MCAPI unsigned int indexNoBoundsCheck(class BlockPos const &) const;
     /**
+     * @symbol ?isInBounds\@BlockVolume\@\@QEBA_NI\@Z
+     */
+    MCAPI bool isInBounds(unsigned int) const;
+    /**
      * @symbol ?isInBounds\@BlockVolume\@\@QEBA_NAEBVBlockPos\@\@\@Z
      */
     MCAPI bool isInBounds(class BlockPos const &) const;

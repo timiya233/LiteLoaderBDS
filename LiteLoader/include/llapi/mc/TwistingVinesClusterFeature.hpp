@@ -41,12 +41,4 @@ public:
      */
     virtual bool place(class BlockSource &, class BlockPos const &, class Random &) const;
 
-//private:
-    /**
-     * @symbol ?_placeVineString\@TwistingVinesClusterFeature\@\@AEBAXAEAVBlockSource\@\@AEAVRandom\@\@AEBVBlockPos\@\@HHH\@Z
-     */
-    MCAPI void _placeVineString(class BlockSource &, class Random &, class BlockPos const &, int, int, int) const;
-
-private:
-
 };

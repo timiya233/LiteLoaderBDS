@@ -29,13 +29,13 @@ public:
 
 public:
     /**
-     * @symbol ??0ContainerWeakRef\@\@QEAA\@AEBUActorUniqueID\@\@W4ActorContainerType\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
-     */
-    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
-    /**
      * @symbol ??0ContainerWeakRef\@\@QEAA\@AEBVBlockPos\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
      */
     MCAPI ContainerWeakRef(class BlockPos const &, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
+    /**
+     * @symbol ??0ContainerWeakRef\@\@QEAA\@AEBUActorUniqueID\@\@W4ActorContainerType\@\@AEBV?$TypedRuntimeId\@UContainerRuntimeIdTag\@\@I$0A\@\@\@\@Z
+     */
+    MCAPI ContainerWeakRef(struct ActorUniqueID const &, enum class ActorContainerType, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const &);
     /**
      * @symbol ??0ContainerWeakRef\@\@QEAA\@XZ
      */

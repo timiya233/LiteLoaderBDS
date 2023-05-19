@@ -34,6 +34,10 @@ public:
      */
     MCAPI POIInstance(class BlockPos const &, bool, std::string, enum class POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     /**
+     * @symbol ?decreaseOwnerCount\@POIInstance\@\@QEAAX_K\@Z
+     */
+    MCAPI void decreaseOwnerCount(unsigned __int64);
+    /**
      * @symbol ?getPosition\@POIInstance\@\@QEBAAEBVBlockPos\@\@XZ
      */
     MCAPI class BlockPos const & getPosition() const;
@@ -49,6 +53,10 @@ public:
      * @symbol ?getSoundEvent\@POIInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
     MCAPI class HashedString const & getSoundEvent() const;
+    /**
+     * @symbol ?increaseOwnerCount\@POIInstance\@\@QEAAX_K\@Z
+     */
+    MCAPI void increaseOwnerCount(unsigned __int64);
     /**
      * @symbol ?incrementArrivalFailureCount\@POIInstance\@\@QEAAXXZ
      */

@@ -54,6 +54,10 @@ public:
      */
     MCAPI static class HashedString const & getVariableName(enum class MolangVariableIndex);
     /**
+     * @symbol ?isValidName\@MolangVariable\@\@SA_NPEBD\@Z
+     */
+    MCAPI static bool isValidName(char const *);
+    /**
      * @symbol ?processWaterMark\@MolangVariable\@\@SAXXZ
      */
     MCAPI static void processWaterMark();

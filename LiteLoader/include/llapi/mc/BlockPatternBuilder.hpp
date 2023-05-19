@@ -75,6 +75,10 @@ public:
      * @symbol ?_fitsBlockPatternEntry\@BlockPatternBuilder\@\@AEAA_NHHAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCAPI bool _fitsBlockPatternEntry(int, int, class BlockPos const &, class Block const &);
+    /**
+     * @symbol ?_getPattern\@BlockPatternBuilder\@\@AEAADHH\@Z
+     */
+    MCAPI char _getPattern(int, int);
 
 private:
 

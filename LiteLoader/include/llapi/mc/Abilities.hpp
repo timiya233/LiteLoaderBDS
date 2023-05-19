@@ -50,6 +50,14 @@ public:
      */
     MCAPI void forEachAbility(class std::function<void (class Ability const &, enum class AbilitiesIndex)> const &, enum class Ability::Options) const;
     /**
+     * @symbol ?getAbility\@Abilities\@\@QEAAAEAVAbility\@\@W4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI class Ability & getAbility(enum class AbilitiesIndex);
+    /**
+     * @symbol ?getAbility\@Abilities\@\@QEBAAEBVAbility\@\@W4AbilitiesIndex\@\@\@Z
+     */
+    MCAPI class Ability const & getAbility(enum class AbilitiesIndex) const;
+    /**
      * @symbol ?getBool\@Abilities\@\@QEBA_NW4AbilitiesIndex\@\@\@Z
      */
     MCAPI bool getBool(enum class AbilitiesIndex) const;
@@ -77,10 +85,6 @@ public:
      * @symbol ?setAbilityDiff\@Abilities\@\@QEAAXW4AbilitiesIndex\@\@_NAEA_N\@Z
      */
     MCAPI void setAbilityDiff(enum class AbilitiesIndex, bool, bool &);
-    /**
-     * @symbol ?setDefault\@Abilities\@\@QEAAXXZ
-     */
-    MCAPI void setDefault();
     /**
      * @symbol ?setFromPermissions\@Abilities\@\@QEAAXW4PlayerPermissionLevel\@\@\@Z
      */
@@ -123,6 +127,10 @@ public:
     MCAPI static enum class AbilitiesIndex nameToAbilityIndex(std::string const &);
 
 //private:
+    /**
+     * @symbol ?_initDefaultAbilities\@Abilities\@\@CA?AV?$array\@$$CBVAbility\@\@$0BD\@\@std\@\@XZ
+     */
+    MCAPI static class std::array<class Ability const, 19> _initDefaultAbilities();
 
 private:
     /**

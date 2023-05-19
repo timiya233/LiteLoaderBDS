@@ -268,6 +268,10 @@ public:
      */
     MCAPI void _closeChest(class BlockSource &, class Player *);
     /**
+     * @symbol ?_detectBlockObstruction\@ChestBlockActor\@\@AEBA_NAEAVBlockSource\@\@\@Z
+     */
+    MCAPI bool _detectBlockObstruction(class BlockSource &) const;
+    /**
      * @symbol ?_saveClientSideState\@ChestBlockActor\@\@AEBA_NAEAVCompoundTag\@\@\@Z
      */
     MCAPI bool _saveClientSideState(class CompoundTag &) const;
@@ -279,6 +283,10 @@ public:
      * @symbol ?_unpair\@ChestBlockActor\@\@AEAAXXZ
      */
     MCAPI void _unpair();
+    /**
+     * @symbol ?_validatePairedChest\@ChestBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
+     */
+    MCAPI void _validatePairedChest(class BlockSource &);
 
 protected:
 

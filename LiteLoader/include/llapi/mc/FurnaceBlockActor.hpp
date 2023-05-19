@@ -196,6 +196,10 @@ public:
      */
     MCAPI static float getBurnDuration(class ItemStackBase const &, float);
     /**
+     * @symbol ?getItemBurnDuration\@FurnaceBlockActor\@\@SAMAEBVItem\@\@M\@Z
+     */
+    MCAPI static float getItemBurnDuration(class Item const &, float);
+    /**
      * @symbol ?getXPRewardFromSmeltingItems\@FurnaceBlockActor\@\@SAHAEBVItemStackBase\@\@H\@Z
      */
     MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const &, int);
@@ -211,6 +215,10 @@ public:
     MCAPI FurnaceBlockActor(enum class BlockActorType, class BlockPos const &, class HashedString const &, enum class LevelSoundEvent, enum class ContainerType, int, class Block const &, class Block const &);
 
 //private:
+    /**
+     * @symbol ?_getPositionOfNeighbor\@FurnaceBlockActor\@\@AEAA?AVBlockPos\@\@H\@Z
+     */
+    MCAPI class BlockPos _getPositionOfNeighbor(int);
     /**
      * @symbol ?_refreshFurnaceBlockLitState\@FurnaceBlockActor\@\@AEAAXAEAVBlockSource\@\@\@Z
      */

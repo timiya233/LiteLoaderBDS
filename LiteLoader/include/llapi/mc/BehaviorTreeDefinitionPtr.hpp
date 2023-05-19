@@ -36,6 +36,10 @@ public:
      */
     MCAPI BehaviorTreeDefinitionPtr();
     /**
+     * @symbol ??CBehaviorTreeDefinitionPtr\@\@QEAAPEAVBehaviorTreeDefinition\@\@XZ
+     */
+    MCAPI class BehaviorTreeDefinition * operator->();
+    /**
      * @symbol ??4BehaviorTreeDefinitionPtr\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */
     MCAPI class BehaviorTreeDefinitionPtr & operator=(class BehaviorTreeDefinitionPtr &&);

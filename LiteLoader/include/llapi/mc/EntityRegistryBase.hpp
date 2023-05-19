@@ -45,6 +45,14 @@ public:
 
 //protected:
     /**
+     * @symbol ?_assertCanRemoveComponentFrom\@EntityRegistryBase\@\@IEAAXVEntityId\@\@I\@Z
+     */
+    MCAPI void _assertCanRemoveComponentFrom(class EntityId, unsigned int);
+    /**
+     * @symbol ?_assertNoNestedView\@EntityRegistryBase\@\@IEAAXXZ
+     */
+    MCAPI void _assertNoNestedView();
+    /**
      * @symbol ?_assertValidRegistry\@EntityRegistryBase\@\@IEBAXAEBVEntityContextBase\@\@\@Z
      */
     MCAPI void _assertValidRegistry(class EntityContextBase const &) const;

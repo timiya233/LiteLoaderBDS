@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@PacketViolationWarningPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@PacketViolationWarningPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_PACKETVIOLATIONWARNINGPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~PacketViolationWarningPacket();
 #endif
     /**
-     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@XZ
-     */
-    MCAPI PacketViolationWarningPacket();
-    /**
      * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@W4StreamReadResult\@\@W4PacketViolationResponse\@\@W4MinecraftPacketIds\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI PacketViolationWarningPacket(enum class StreamReadResult, enum class PacketViolationResponse, enum class MinecraftPacketIds, std::string const &);
+    /**
+     * @symbol ??0PacketViolationWarningPacket\@\@QEAA\@XZ
+     */
+    MCAPI PacketViolationWarningPacket();
 
 };

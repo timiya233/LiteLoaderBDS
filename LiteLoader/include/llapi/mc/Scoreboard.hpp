@@ -253,19 +253,19 @@ public:
     virtual class Objective * clearDisplayObjective(std::string const &);
     /**
      * @vftbl 3
-     * @symbol __unk_vfn_3
+     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
      */
-    virtual void __unk_vfn_3();
+    virtual struct ScoreboardId const & createScoreboardId(class Player const &);
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVActor\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual struct ScoreboardId const & createScoreboardId(class Actor const &);
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual struct ScoreboardId const & createScoreboardId(std::string const &);
     /**
      * @vftbl 6
      * @symbol ?onObjectiveAdded\@Scoreboard\@\@UEAAXAEBVObjective\@\@\@Z
@@ -317,18 +317,6 @@ public:
      */
     virtual bool isClientSide() const;
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_SCOREBOARD
-    /**
-     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVActor\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const & createScoreboardId(class Actor const &);
-    /**
-     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const & createScoreboardId(std::string const &);
-    /**
-     * @symbol ?createScoreboardId\@Scoreboard\@\@UEAAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
-     */
-    MCVAPI struct ScoreboardId const & createScoreboardId(class Player const &);
     /**
      * @symbol ?onPlayerIdentityUpdated\@Scoreboard\@\@UEAAXAEBUPlayerScoreboardId\@\@\@Z
      */
@@ -431,13 +419,13 @@ public:
      */
     MCAPI struct ScoreboardId const & getScoreboardId(class Actor const &) const;
     /**
-     * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
-     */
-    MCAPI struct ScoreboardId const & getScoreboardId(class Player const &) const;
-    /**
      * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI struct ScoreboardId const & getScoreboardId(std::string const &) const;
+    /**
+     * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBVPlayer\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & getScoreboardId(class Player const &) const;
     /**
      * @symbol ?getScoreboardId\@Scoreboard\@\@QEBAAEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
      */
@@ -471,6 +459,10 @@ public:
      */
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
     /**
+     * @symbol ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
+     */
+    MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    /**
      * @symbol ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBVCompoundTag\@\@\@Z
      */
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(class CompoundTag const &);
@@ -478,10 +470,6 @@ public:
      * @symbol ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, std::string const &);
-    /**
-     * @symbol ?registerScoreboardIdentity\@Scoreboard\@\@QEAAAEBVScoreboardIdentityRef\@\@AEBUScoreboardId\@\@AEBUPlayerScoreboardId\@\@\@Z
-     */
-    MCAPI class ScoreboardIdentityRef const & registerScoreboardIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
      * @symbol ?removeObjective\@Scoreboard\@\@QEAA_NPEAVObjective\@\@\@Z
      */
@@ -499,13 +487,13 @@ public:
      */
     MCAPI void replaceFakePlayer(struct ScoreboardId const &, struct PlayerScoreboardId const &);
     /**
-     * @symbol ?resetPlayerScore\@Scoreboard\@\@QEAAXAEBUScoreboardId\@\@AEAVObjective\@\@\@Z
-     */
-    MCAPI void resetPlayerScore(struct ScoreboardId const &, class Objective &);
-    /**
      * @symbol ?resetPlayerScore\@Scoreboard\@\@QEAAXAEBUScoreboardId\@\@\@Z
      */
     MCAPI void resetPlayerScore(struct ScoreboardId const &);
+    /**
+     * @symbol ?resetPlayerScore\@Scoreboard\@\@QEAAXAEBUScoreboardId\@\@AEAVObjective\@\@\@Z
+     */
+    MCAPI void resetPlayerScore(struct ScoreboardId const &, class Objective &);
     /**
      * @symbol ?DEFAULT_CRITERIA\@Scoreboard\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */

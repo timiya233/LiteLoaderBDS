@@ -33,17 +33,21 @@ public:
 
 public:
     /**
-     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
+     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
      */
-    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
+    MCAPI LevelData(bool);
     /**
      * @symbol ??0LevelData\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI LevelData(class LevelData &&);
     /**
-     * @symbol ??0LevelData\@\@QEAA\@_N\@Z
+     * @symbol ??0LevelData\@\@QEAA\@AEBVLevelSettings\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@W4GeneratorType\@\@AEBVBlockPos\@\@_NW4EducationEditionOffer\@\@MM\@Z
      */
-    MCAPI LevelData(bool);
+    MCAPI LevelData(class LevelSettings const &, std::string const &, enum class GeneratorType, class BlockPos const &, bool, enum class EducationEditionOffer, float, float);
+    /**
+     * @symbol ?_getValue\@LevelData\@\@QEBAPEBULevelDataValue\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI struct LevelDataValue const * _getValue(class HashedString const &) const;
     /**
      * @symbol ?achievementsWillBeDisabledOnLoad\@LevelData\@\@QEBA_NXZ
      */
@@ -105,13 +109,13 @@ public:
      */
     MCAPI class Abilities & getDefaultAbilities();
     /**
-     * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
-     */
-    MCAPI class PermissionsHandler & getDefaultPermissions();
-    /**
      * @symbol ?getDefaultPermissions\@LevelData\@\@QEBAAEBVPermissionsHandler\@\@XZ
      */
     MCAPI class PermissionsHandler const & getDefaultPermissions() const;
+    /**
+     * @symbol ?getDefaultPermissions\@LevelData\@\@QEAAAEAVPermissionsHandler\@\@XZ
+     */
+    MCAPI class PermissionsHandler & getDefaultPermissions();
     /**
      * @symbol ?getEduSharedUriResource\@LevelData\@\@QEBAAEBVCompoundTag\@\@XZ
      */
@@ -153,13 +157,13 @@ public:
      */
     MCAPI enum class Difficulty getGameDifficulty() const;
     /**
-     * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
-     */
-    MCAPI class GameRules & getGameRules();
-    /**
      * @symbol ?getGameRules\@LevelData\@\@QEBAAEBVGameRules\@\@XZ
      */
     MCAPI class GameRules const & getGameRules() const;
+    /**
+     * @symbol ?getGameRules\@LevelData\@\@QEAAAEAVGameRules\@\@XZ
+     */
+    MCAPI class GameRules & getGameRules();
     /**
      * @symbol ?getGameType\@LevelData\@\@QEBA?AW4GameType\@\@XZ
      */

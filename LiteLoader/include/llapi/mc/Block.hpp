@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "BlockLegacy.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -137,10 +138,6 @@ public:
      */
     MCAPI void cacheComponentData();
     /**
-     * @symbol ?calcGroundFriction\@Block\@\@QEBAMAEBUIMobMovementProxy\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI float calcGroundFriction(struct IMobMovementProxy const &, class BlockPos const &) const;
-    /**
      * @symbol ?canBeBrokenFromFalling\@Block\@\@QEBA_NXZ
      */
     MCAPI bool canBeBrokenFromFalling() const;
@@ -217,13 +214,13 @@ public:
      */
     MCAPI bool checkIsPathable(class Actor &, class BlockPos const &, class BlockPos const &) const;
     /**
-     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
-     */
-    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
-    /**
      * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_NAEBVAABB\@\@\@Z
      */
     MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool, class AABB const &) const;
+    /**
+     * @symbol ?clip\@Block\@\@QEBA?AVHitResult\@\@AEBVBlockSource\@\@AEBVBlockPos\@\@AEBVVec3\@\@2_N\@Z
+     */
+    MCAPI class HitResult clip(class BlockSource const &, class BlockPos const &, class Vec3 const &, class Vec3 const &, bool) const;
     /**
      * @symbol ?computeRawSerializationIdHashForNetwork\@Block\@\@QEBAIXZ
      */
@@ -289,9 +286,9 @@ public:
      */
     MCAPI int getComparatorSignal(class BlockSource &, class BlockPos const &, unsigned char) const;
     /**
-     * @symbol ?getConnectedDirections\@Block\@\@QEBAXAEBVBlockPos\@\@AEAVBlockSource\@\@AEA_N222\@Z
+     * @symbol ?getConnectedDirections\@Block\@\@QEBA?AUHorizontalDirectionBits\@BlockLegacy\@\@AEBVBlockPos\@\@AEAVBlockSource\@\@\@Z
      */
-    MCAPI void getConnectedDirections(class BlockPos const &, class BlockSource &, bool &, bool &, bool &, bool &) const;
+    MCAPI struct BlockLegacy::HorizontalDirectionBits getConnectedDirections(class BlockPos const &, class BlockSource &) const;
     /**
      * @symbol ?getCreativeCategory\@Block\@\@QEBA?AW4CreativeItemCategory\@\@XZ
      */
@@ -381,6 +378,10 @@ public:
      */
     MCAPI class CompoundTag const & getSerializationId() const;
     /**
+     * @symbol ?getStateMask\@Block\@\@QEBAIAEBVBlockState\@\@\@Z
+     */
+    MCAPI unsigned int getStateMask(class BlockState const &) const;
+    /**
      * @symbol ?getThickness\@Block\@\@QEBAMXZ
      */
     MCAPI float getThickness() const;
@@ -417,13 +418,13 @@ public:
      */
     MCAPI bool hasState(class BlockState const &) const;
     /**
-     * @symbol ?hasTag\@Block\@\@QEBA_NAEB_K\@Z
-     */
-    MCAPI bool hasTag(unsigned __int64 const &) const;
-    /**
      * @symbol ?hasTag\@Block\@\@QEBA_NAEBVHashedString\@\@\@Z
      */
     MCAPI bool hasTag(class HashedString const &) const;
+    /**
+     * @symbol ?hasTag\@Block\@\@QEBA_NAEB_K\@Z
+     */
+    MCAPI bool hasTag(unsigned __int64 const &) const;
     /**
      * @symbol ?ignoreEntitiesOnPistonMove\@Block\@\@QEBA_NXZ
      */
@@ -473,6 +474,10 @@ public:
      */
     MCAPI bool isEmpty() const;
     /**
+     * @symbol ?isFallingBlock\@Block\@\@QEBA_NXZ
+     */
+    MCAPI bool isFallingBlock() const;
+    /**
      * @symbol ?isFenceBlock\@Block\@\@QEBA_NXZ
      */
     MCAPI bool isFenceBlock() const;
@@ -484,10 +489,6 @@ public:
      * @symbol ?isFilteredOut\@Block\@\@QEBA_NW4BlockRenderLayer\@\@\@Z
      */
     MCAPI bool isFilteredOut(enum class BlockRenderLayer) const;
-    /**
-     * @symbol ?isHeavy\@Block\@\@QEBA_NXZ
-     */
-    MCAPI bool isHeavy() const;
     /**
      * @symbol ?isInteractiveBlock\@Block\@\@QEBA_NXZ
      */
@@ -589,13 +590,13 @@ public:
      */
     MCAPI bool mayPick(class BlockSource const &, bool) const;
     /**
-     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
-    /**
      * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@E\@Z
      */
     MCAPI bool mayPlace(class BlockSource &, class BlockPos const &, unsigned char) const;
+    /**
+     * @symbol ?mayPlace\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI bool mayPlace(class BlockSource &, class BlockPos const &) const;
     /**
      * @symbol ?mayPlaceOn\@Block\@\@QEBA_NAEAVBlockSource\@\@AEBVBlockPos\@\@\@Z
      */
@@ -800,10 +801,6 @@ public:
      * @symbol ?_lockRegistryForRead\@Block\@\@AEBA?AVBlockTypeRegistryReadLock\@\@XZ
      */
     MCAPI class BlockTypeRegistryReadLock _lockRegistryForRead() const;
-    /**
-     * @symbol ?_tryGetTransformThenRotationMatrix\@Block\@\@AEBA?AV?$unique_ptr\@VMatrix\@\@U?$default_delete\@VMatrix\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::unique_ptr<class Matrix> _tryGetTransformThenRotationMatrix() const;
     /**
      * @symbol ?_tryInitEntityIfNotInitialized\@Block\@\@AEAAXXZ
      */

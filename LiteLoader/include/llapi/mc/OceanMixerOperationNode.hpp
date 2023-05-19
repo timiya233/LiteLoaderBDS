@@ -35,16 +35,6 @@ public:
      */
     virtual void __unk_vfn_0();
     /**
-     * @vftbl 1
-     * @symbol __unk_vfn_1
-     */
-    virtual void __unk_vfn_1();
-    /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
      * @vftbl 3
      * @symbol ?_fillArea\@OceanMixerOperationNode\@\@MEBAXAEAV?$WorkingData\@PEAVBiome\@\@PEAV1\@\@OperationNodeDetails\@\@AEBVPos2d\@\@1HV?$OperationGraphResult\@W4BiomeTemperatureCategory\@\@\@\@\@Z
      */

@@ -21,6 +21,8 @@ class ItemStackBase {
 
 #define AFTER_EXTRA
 // Add Member There
+    struct ComparisonOptions;
+
 private:
 //void* vtbl;
     char filler[128];
@@ -292,13 +294,17 @@ public:
      */
     MCAPI bool hasSameUserData(class ItemStackBase const &) const;
     /**
-     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
+     * @symbol ?hasSameUserDataExcept\@ItemStackBase\@\@QEBA_NAEBV1\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
-    MCAPI bool hasTag(struct ItemTag const &) const;
+    MCAPI bool hasSameUserDataExcept(class ItemStackBase const &, std::string const &) const;
     /**
      * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEB_K\@Z
      */
     MCAPI bool hasTag(unsigned __int64 const &) const;
+    /**
+     * @symbol ?hasTag\@ItemStackBase\@\@QEBA_NAEBUItemTag\@\@\@Z
+     */
+    MCAPI bool hasTag(struct ItemTag const &) const;
     /**
      * @symbol ?hasUserData\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -392,13 +398,13 @@ public:
      */
     MCAPI bool isPotionItem() const;
     /**
-     * @symbol ?isStackable\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
-     */
-    MCAPI bool isStackable(class ItemStackBase const &) const;
-    /**
      * @symbol ?isStackable\@ItemStackBase\@\@QEBA_NXZ
      */
     MCAPI bool isStackable() const;
+    /**
+     * @symbol ?isStackable\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
+     */
+    MCAPI bool isStackable(class ItemStackBase const &) const;
     /**
      * @symbol ?isStackedByData\@ItemStackBase\@\@QEBA_NXZ
      */
@@ -412,17 +418,21 @@ public:
      */
     MCAPI bool isWearableItem() const;
     /**
-     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI void load(class CompoundTag const &, class Level &);
-    /**
      * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@\@Z
      */
     MCAPI void load(class CompoundTag const &);
     /**
+     * @symbol ?load\@ItemStackBase\@\@QEAAXAEBVCompoundTag\@\@AEAVLevel\@\@\@Z
+     */
+    MCAPI void load(class CompoundTag const &, class Level &);
+    /**
      * @symbol ?matches\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
     MCAPI bool matches(class ItemStackBase const &) const;
+    /**
+     * @symbol ?matchesChargedItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
+     */
+    MCAPI bool matchesChargedItem(class ItemStackBase const &) const;
     /**
      * @symbol ?matchesEitherWearableCase\@ItemStackBase\@\@QEBA_NPEBVCompoundTag\@\@\@Z
      */
@@ -464,13 +474,13 @@ public:
      */
     MCAPI void resetHoverName();
     /**
+     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@AEBUComparisonOptions\@1\@\@Z
+     */
+    MCAPI bool sameItem(class ItemStackBase const &, struct ItemStackBase::ComparisonOptions const &) const;
+    /**
      * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NHH\@Z
      */
     MCAPI bool sameItem(int, int) const;
-    /**
-     * @symbol ?sameItem\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
-     */
-    MCAPI bool sameItem(class ItemStackBase const &) const;
     /**
      * @symbol ?sameItemAndAux\@ItemStackBase\@\@QEBA_NAEBV1\@\@Z
      */
@@ -544,6 +554,10 @@ public:
      */
     MCAPI void setShowPickUp(bool);
     /**
+     * @symbol ?setStackSize\@ItemStackBase\@\@QEAAXE\@Z
+     */
+    MCAPI void setStackSize(unsigned char);
+    /**
      * @symbol ?setUserData\@ItemStackBase\@\@QEAAXV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@\@Z
      */
     MCAPI void setUserData(std::unique_ptr<class CompoundTag>);
@@ -567,6 +581,10 @@ public:
      * @symbol ?updateComponent\@ItemStackBase\@\@QEAA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBVValue\@Json\@\@\@Z
      */
     MCAPI bool updateComponent(std::string const &, class Json::Value const &);
+    /**
+     * @symbol ?COMPARISONOPTIONS_RELEVANTUSERDATA\@ItemStackBase\@\@2UComparisonOptions\@1\@B
+     */
+    MCAPI static struct ItemStackBase::ComparisonOptions const COMPARISONOPTIONS_RELEVANTUSERDATA;
     /**
      * @symbol ?TAG_CAN_DESTROY\@ItemStackBase\@\@2V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@B
      */
@@ -602,9 +620,9 @@ public:
 
 //protected:
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
+     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
+    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBV0\@\@Z
      */
@@ -614,17 +632,17 @@ public:
      */
     MCAPI ItemStackBase();
     /**
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
+     */
+    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlock\@\@HPEBVCompoundTag\@\@\@Z
      */
     MCAPI ItemStackBase(class Block const &, int, class CompoundTag const *);
     /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@HHPEBVCompoundTag\@\@\@Z
+     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVItem\@\@HHPEBVCompoundTag\@\@\@Z
      */
-    MCAPI ItemStackBase(class std::basic_string_view<char, struct std::char_traits<char>>, int, int, class CompoundTag const *);
-    /**
-     * @symbol ??0ItemStackBase\@\@IEAA\@AEBVBlockLegacy\@\@H\@Z
-     */
-    MCAPI ItemStackBase(class BlockLegacy const &, int);
+    MCAPI ItemStackBase(class Item const &, int, int, class CompoundTag const *);
     /**
      * @symbol ??0ItemStackBase\@\@IEAA\@AEBVRecipeIngredient\@\@\@Z
      */

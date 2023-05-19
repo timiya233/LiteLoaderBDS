@@ -6,6 +6,7 @@
 #define AUTO_GENERATED
 #include "llapi/Global.h"
 #include "Bedrock.hpp"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -16,7 +17,7 @@
  * @brief MC class EntityExitVolumeSystem.
  *
  */
-class EntityExitVolumeSystem {
+class EntityExitVolumeSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -45,6 +46,11 @@ public:
      * @symbol ?tick\@EntityExitVolumeSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
+    /**
+     * @vftbl 3
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
     /**
      * @symbol ??0EntityExitVolumeSystem\@\@QEAA\@V?$not_null\@V?$NonOwnerPointer\@$$CBVILevel\@\@\@Bedrock\@\@\@gsl\@\@\@Z
      */

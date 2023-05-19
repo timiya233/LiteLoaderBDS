@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@HurtArmorPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@HurtArmorPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_HURTARMORPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~HurtArmorPacket();
 #endif
     /**
-     * @symbol ??0HurtArmorPacket\@\@QEAA\@W4ActorDamageCause\@\@HV?$bitset\@$03\@std\@\@\@Z
-     */
-    MCAPI HurtArmorPacket(enum class ActorDamageCause, int, class std::bitset<4>);
-    /**
      * @symbol ??0HurtArmorPacket\@\@QEAA\@XZ
      */
     MCAPI HurtArmorPacket();
+    /**
+     * @symbol ??0HurtArmorPacket\@\@QEAA\@W4ActorDamageCause\@\@HV?$bitset\@$03\@std\@\@\@Z
+     */
+    MCAPI HurtArmorPacket(enum class ActorDamageCause, int, class std::bitset<4>);
 
 };

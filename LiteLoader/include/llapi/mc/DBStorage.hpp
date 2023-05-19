@@ -252,6 +252,14 @@ public:
      */
     MCAPI std::string _getTelemetryMessage(class leveldb::Status const &) const;
     /**
+     * @symbol ?_isDBSaveable\@DBStorage\@\@AEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI bool _isDBSaveable(std::string const &, bool) const;
+    /**
+     * @symbol ?_isDBUsable\@DBStorage\@\@AEBA_NAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@_N\@Z
+     */
+    MCAPI bool _isDBUsable(std::string const &, bool) const;
+    /**
      * @symbol ?_markAsCorrupted\@DBStorage\@\@AEBAXV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI void _markAsCorrupted(class std::basic_string_view<char, struct std::char_traits<char>>) const;

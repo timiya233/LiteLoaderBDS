@@ -31,6 +31,10 @@ public:
      */
     MCAPI ItemUseOnEvent(struct ItemUseOnEvent const &);
     /**
+     * @symbol ??0ItemUseOnEvent\@\@QEAA\@$$QEAU0\@\@Z
+     */
+    MCAPI ItemUseOnEvent(struct ItemUseOnEvent &&);
+    /**
      * @symbol ??1ItemUseOnEvent\@\@QEAA\@XZ
      */
     MCAPI ~ItemUseOnEvent();

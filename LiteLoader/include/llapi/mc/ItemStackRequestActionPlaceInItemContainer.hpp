@@ -48,15 +48,5 @@ public:
      * @symbol __unk_vfn_3
      */
     virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
-     * @symbol ?_write\@ItemStackRequestActionTransferBase\@\@MEBAXAEAVBinaryStream\@\@\@Z
-     */
-    virtual void _write(class BinaryStream &) const;
-    /**
-     * @vftbl 5
-     * @symbol ?_read\@ItemStackRequestActionTransferBase\@\@MEAA_NAEAVReadOnlyBinaryStream\@\@\@Z
-     */
-    virtual bool _read(class ReadOnlyBinaryStream &);
 
 };

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -37,27 +38,17 @@ public:
      */
     virtual std::string const & getName() const;
     /**
-     * @vftbl 2
-     * @symbol __unk_vfn_2
-     */
-    virtual void __unk_vfn_2();
-    /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
+     * @vftbl 5
      * @symbol ?isNetworkComponent\@BlockBreathabilityDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildNetworkTag\@BlockBreathabilityDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?initializeFromNetwork\@BlockBreathabilityDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);

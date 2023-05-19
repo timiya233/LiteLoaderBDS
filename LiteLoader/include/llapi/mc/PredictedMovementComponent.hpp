@@ -72,6 +72,10 @@ public:
      */
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const &) const;
     /**
+     * @symbol ?_incrementPredictionStat\@PredictedMovementComponent\@\@AEAAXW4MovePredictionType\@\@\@Z
+     */
+    MCAPI void _incrementPredictionStat(enum class MovePredictionType);
+    /**
      * @symbol ?_isDebugLoggingEnabled\@PredictedMovementComponent\@\@AEBA_NXZ
      */
     MCAPI bool _isDebugLoggingEnabled() const;

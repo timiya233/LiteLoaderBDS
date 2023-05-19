@@ -88,14 +88,6 @@ public:
      */
     MCAPI int nextGaussianInt(int);
     /**
-     * @symbol ?nextInt\@Random\@\@QEAAHHH\@Z
-     */
-    MCAPI int nextInt(int, int);
-    /**
-     * @symbol ?nextIntInclusive\@Random\@\@QEAAHHH\@Z
-     */
-    MCAPI int nextIntInclusive(int, int);
-    /**
      * @symbol ?getThreadLocal\@Random\@\@SAAEAV1\@XZ
      */
     MCAPI static class Random & getThreadLocal();

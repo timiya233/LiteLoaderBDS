@@ -66,4 +66,12 @@ public:
      */
     MCAPI class SpawnGroupData const * getSpawnGroup(std::string const &) const;
 
+//private:
+    /**
+     * @symbol ?_addSpawnRules\@SpawnGroupRegistry\@\@AEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEAVMobSpawnRules\@\@\@Z
+     */
+    MCAPI void _addSpawnRules(std::string const &, class MobSpawnRules &);
+
+private:
+
 };

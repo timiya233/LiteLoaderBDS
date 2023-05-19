@@ -33,5 +33,9 @@ namespace EquipmentSlots {
      * @symbol ?stringToEquipmentSlot\@EquipmentSlots\@\@YA?AW4EquipmentSlot\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI enum class EquipmentSlot stringToEquipmentSlot(std::string const &);
+    /**
+     * @symbol ?toArmorSlot\@EquipmentSlots\@\@YA?AW4ArmorSlot\@\@W4EquipmentSlot\@\@\@Z
+     */
+    MCAPI enum class ArmorSlot toArmorSlot(enum class EquipmentSlot);
 
 };

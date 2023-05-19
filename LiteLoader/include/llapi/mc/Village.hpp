@@ -278,6 +278,14 @@ public:
      */
     MCAPI void _findWeightedPOI(std::vector<class std::weak_ptr<class POIInstance>> &, class Random &, struct ActorUniqueID);
     /**
+     * @symbol ?_getDwellerMap\@Village\@\@AEBAAEBV?$unordered_map\@UActorUniqueID\@\@UDwellerData\@Village\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@5\@V?$allocator\@U?$pair\@$$CBUActorUniqueID\@\@UDwellerData\@Village\@\@\@std\@\@\@5\@\@std\@\@W4DwellerRole\@\@\@Z
+     */
+    MCAPI class std::unordered_map<struct ActorUniqueID, struct Village::DwellerData, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>> const & _getDwellerMap(enum class DwellerRole) const;
+    /**
+     * @symbol ?_getDwellerMap\@Village\@\@AEAAAEAV?$unordered_map\@UActorUniqueID\@\@UDwellerData\@Village\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@5\@V?$allocator\@U?$pair\@$$CBUActorUniqueID\@\@UDwellerData\@Village\@\@\@std\@\@\@5\@\@std\@\@W4DwellerRole\@\@\@Z
+     */
+    MCAPI class std::unordered_map<struct ActorUniqueID, struct Village::DwellerData, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>> & _getDwellerMap(enum class DwellerRole);
+    /**
      * @symbol ?_helpLocateRaiders\@Village\@\@AEAAXAEBVRaid\@\@\@Z
      */
     MCAPI void _helpLocateRaiders(class Raid const &);

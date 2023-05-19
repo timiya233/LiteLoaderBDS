@@ -40,10 +40,6 @@ public:
      */
     MCAPI MapItemTrackedActor(struct MapItemTrackedActor::UniqueId const &, class BlockSource &);
     /**
-     * @symbol ?getDecorationRotation\@MapItemTrackedActor\@\@QEAAMAEAVBlockSource\@\@\@Z
-     */
-    MCAPI float getDecorationRotation(class BlockSource &);
-    /**
      * @symbol ?nextUpdatePacket\@MapItemTrackedActor\@\@QEAA?AV?$unique_ptr\@VPacket\@\@U?$default_delete\@VPacket\@\@\@std\@\@\@std\@\@AEBVMapItemSavedData\@\@\@Z
      */
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const &);

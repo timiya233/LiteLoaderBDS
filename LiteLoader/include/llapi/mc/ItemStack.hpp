@@ -234,12 +234,12 @@ public:
      */
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const &, class BlockPalette &, bool);
     /**
-     * @symbol ?fromTag\@ItemStack\@\@SA?AV1\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
-     */
-    MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
-    /**
      * @symbol ?fromTag\@ItemStack\@\@SA?AV1\@AEBVCompoundTag\@\@\@Z
      */
     MCAPI static class ItemStack fromTag(class CompoundTag const &);
+    /**
+     * @symbol ?fromTag\@ItemStack\@\@SA?AV1\@AEBVCompoundTag\@\@AEAVLevel\@\@\@Z
+     */
+    MCAPI static class ItemStack fromTag(class CompoundTag const &, class Level &);
 
 };

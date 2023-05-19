@@ -33,9 +33,17 @@ public:
      */
     MCAPI EntityOptionalOwnerRef();
     /**
+     * @symbol ?isOwned\@EntityOptionalOwnerRef\@\@QEBA_NXZ
+     */
+    MCAPI bool isOwned() const;
+    /**
      * @symbol ?isSet\@EntityOptionalOwnerRef\@\@QEBA_NXZ
      */
     MCAPI bool isSet() const;
+    /**
+     * @symbol ?isWeak\@EntityOptionalOwnerRef\@\@QEBA_NXZ
+     */
+    MCAPI bool isWeak() const;
     /**
      * @symbol ?setOwnedRef\@EntityOptionalOwnerRef\@\@QEAAXV?$OwnerPtrT\@UEntityRefTraits\@\@\@\@\@Z
      */

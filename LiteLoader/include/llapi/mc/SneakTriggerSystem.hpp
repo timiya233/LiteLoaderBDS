@@ -29,8 +29,8 @@ public:
      */
     MCAPI static struct TickingSystemWithInfo createTriggerSystem(bool);
     /**
-     * @symbol ?updatePlayerState\@SneakTriggerSystem\@\@SA?AV?$optional\@_N\@std\@\@AEBVGetCollisionShapeInterface\@\@AEBVAABB\@\@AEBVVec2\@\@_N33MPEAUPlayerActionComponent\@\@AEBVLayeredAbilities\@\@AEBVIConstBlockSource\@\@AEAV?$vector\@VAABB\@\@V?$allocator\@VAABB\@\@\@std\@\@\@3\@\@Z
+     * @symbol ?determinePose\@SneakTriggerSystem\@\@SA?AUPlayerPoseTransitions\@1\@AEAUDeterminePoseArgs\@1\@\@Z
      */
-    MCAPI static class std::optional<bool> updatePlayerState(class GetCollisionShapeInterface const &, class AABB const &, class Vec2 const &, bool, bool, bool, float, struct PlayerActionComponent *, class LayeredAbilities const &, class IConstBlockSource const &, std::vector<class AABB> &);
+    MCAPI static struct SneakTriggerSystem::PlayerPoseTransitions determinePose(struct SneakTriggerSystem::DeterminePoseArgs &);
 
 };

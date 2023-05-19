@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -15,7 +16,7 @@
  * @brief MC class FreezingSystem.
  *
  */
-class FreezingSystem {
+class FreezingSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -44,6 +45,11 @@ public:
      * @symbol ?tick\@FreezingSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
+    /**
+     * @vftbl 3
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
     /**
      * @symbol ?FREEZE_EFFECT_UUID\@FreezingSystem\@\@2VUUID\@mce\@\@B
      */

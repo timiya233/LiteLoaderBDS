@@ -61,9 +61,9 @@ public:
     virtual int getFilteredContainerSize() const;
     /**
      * @vftbl 6
-     * @symbol __unk_vfn_6
+     * @symbol ?tick\@ContainerModel\@\@UEAAXH\@Z
      */
-    virtual void __unk_vfn_6();
+    virtual void tick(int);
     /**
      * @vftbl 7
      * @symbol ?getContainerWeakRef\@ContainerModel\@\@UEBA?AVContainerWeakRef\@\@XZ
@@ -126,9 +126,9 @@ public:
     virtual std::string const & getItemGroupName(int) const;
     /**
      * @vftbl 19
-     * @symbol __unk_vfn_19
+     * @symbol ?switchItemExpando\@ContainerModel\@\@UEAAXH\@Z
      */
-    virtual void __unk_vfn_19();
+    virtual void switchItemExpando(int);
     /**
      * @vftbl 20
      * @symbol ?_getContainer\@ContainerModel\@\@MEBAPEAVContainer\@\@XZ
@@ -158,14 +158,6 @@ public:
      */
     MCVAPI bool isItemInstanceBased() const;
     /**
-     * @symbol ?switchItemExpando\@ContainerModel\@\@UEAAXH\@Z
-     */
-    MCVAPI void switchItemExpando(int);
-    /**
-     * @symbol ?tick\@ContainerModel\@\@UEAAXH\@Z
-     */
-    MCVAPI void tick(int);
-    /**
      * @symbol __unk_destructor_-1
      */
     MCVAPI ~ContainerModel();
@@ -186,14 +178,26 @@ public:
      * @symbol ?registerPlayerNotificationCallback\@ContainerModel\@\@QEAAXV?$function\@$$A6AXHAEBVItemStack\@\@0\@Z\@std\@\@\@Z
      */
     MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const &, class ItemStack const &)>);
+    /**
+     * @symbol ?serverInitItemStackIds\@ContainerModel\@\@QEAAXXZ
+     */
+    MCAPI void serverInitItemStackIds();
 
 //protected:
     /**
      * @symbol ?_init\@ContainerModel\@\@IEAAXXZ
      */
     MCAPI void _init();
+    /**
+     * @symbol ?_notifyPlayer\@ContainerModel\@\@IEAAXHAEBVItemStack\@\@0\@Z
+     */
+    MCAPI void _notifyPlayer(int, class ItemStack const &, class ItemStack const &);
 
 //private:
+    /**
+     * @symbol ?_assertMatchesPredictiveContainer\@ContainerModel\@\@AEBAXH\@Z
+     */
+    MCAPI void _assertMatchesPredictiveContainer(int) const;
     /**
      * @symbol ?_onClientUIItemNetworkChanged\@ContainerModel\@\@AEAAXHAEBVItemStack\@\@0\@Z
      */

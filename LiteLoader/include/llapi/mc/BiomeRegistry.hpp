@@ -115,6 +115,10 @@ public:
      * @symbol ?_mergeDataInheritance\@BiomeRegistry\@\@AEAAXAEAVValue\@Json\@\@AEAVSemVersion\@\@AEAV?$InheritanceTree\@UBiomeParent\@BiomeRegistry\@\@\@\@AEBUBiomeParent\@1\@\@Z
      */
     MCAPI void _mergeDataInheritance(class Json::Value &, class SemVersion &, class InheritanceTree<struct BiomeRegistry::BiomeParent> &, struct BiomeRegistry::BiomeParent const &);
+    /**
+     * @symbol ?_register\@BiomeRegistry\@\@AEAAAEAVBiome\@\@$$QEAV?$unique_ptr\@VBiome\@\@U?$default_delete\@VBiome\@\@\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class Biome & _register(std::unique_ptr<class Biome> &&);
 
 private:
 

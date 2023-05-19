@@ -35,6 +35,10 @@ public:
      */
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)> &&);
     /**
+     * @symbol ?close\@JournaledFile\@\@QEAA?AVResult\@Core\@\@XZ
+     */
+    MCAPI class Core::Result close();
+    /**
      * @symbol ?open\@JournaledFile\@\@QEAA?AVResult\@Core\@\@VPath\@3\@VFileOpenMode\@3\@W4FileBufferingMode\@3\@\@Z
      */
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum class Core::FileBufferingMode);

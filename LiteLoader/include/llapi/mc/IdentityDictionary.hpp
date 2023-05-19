@@ -45,6 +45,14 @@ public:
      */
     MCAPI struct ScoreboardId const & getScoreboardId(struct PlayerScoreboardId const &) const;
     /**
+     * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBUPlayerScoreboardId\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct PlayerScoreboardId const &);
+    /**
+     * @symbol ?registerIdentity\@IdentityDictionary\@\@QEAAAEBUScoreboardId\@\@AEBU2\@AEBUActorUniqueID\@\@\@Z
+     */
+    MCAPI struct ScoreboardId const & registerIdentity(struct ScoreboardId const &, struct ActorUniqueID const &);
+    /**
      * @symbol ?shouldConvertFakePlayer\@IdentityDictionary\@\@QEAA_NAEBUPlayerScoreboardId\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI bool shouldConvertFakePlayer(struct PlayerScoreboardId const &, std::string const &);

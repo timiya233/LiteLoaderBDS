@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "Json.hpp"
 #include "ItemRegistry.hpp"
 
 #define BEFORE_EXTRA
@@ -57,17 +58,17 @@ public:
      */
     MCAPI void digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const &) const;
     /**
-     * @symbol ?getComplexAliasSplitNames\@ItemRegistryRef\@\@QEBAAEBV?$vector\@VHashedString\@\@V?$allocator\@VHashedString\@\@\@std\@\@\@std\@\@AEBVHashedString\@\@\@Z
+     * @symbol ?getComplexAliasSplitNames\@ItemRegistryRef\@\@QEBAAEBV?$vector\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@V?$allocator\@V?$reference_wrapper\@$$CBVHashedString\@\@\@std\@\@\@2\@\@std\@\@AEBVHashedString\@\@\@Z
      */
-    MCAPI std::vector<class HashedString> const & getComplexAliasSplitNames(class HashedString const &) const;
-    /**
-     * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
-     */
-    MCAPI class WeakPtr<class Item> getItem(class HashedString const &) const;
+    MCAPI std::vector<class std::reference_wrapper<class HashedString const>> const & getComplexAliasSplitNames(class HashedString const &) const;
     /**
      * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@F\@Z
      */
     MCAPI class WeakPtr<class Item> getItem(short) const;
+    /**
+     * @symbol ?getItem\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
+     */
+    MCAPI class WeakPtr<class Item> getItem(class HashedString const &) const;
     /**
      * @symbol ?getItemCount\@ItemRegistryRef\@\@QEBAHXZ
      */
@@ -101,9 +102,9 @@ public:
      */
     MCAPI bool isComplexAlias(class HashedString const &) const;
     /**
-     * @symbol ?isComponentBasedItemSchema\@ItemRegistryRef\@\@QEBA_NAEBVSemVersion\@\@\@Z
+     * @symbol ?isComponentBasedItemSchema\@ItemRegistryRef\@\@QEBA_NAEBVSemVersion\@\@AEBVValue\@Json\@\@\@Z
      */
-    MCAPI bool isComponentBasedItemSchema(class SemVersion const &) const;
+    MCAPI bool isComponentBasedItemSchema(class SemVersion const &, class Json::Value const &) const;
     /**
      * @symbol ?isCreativeItem\@ItemRegistryRef\@\@QEBA_NAEBVItemInstance\@\@\@Z
      */
@@ -117,6 +118,10 @@ public:
      */
     MCAPI class ItemRegistryRef::LockGuard lockItemWorldCompatibilityMutex() const;
     /**
+     * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
+     */
+    MCAPI class WeakPtr<class Item> lookupByName(int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
+    /**
      * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAH0V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> lookupByName(int &, int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
@@ -124,10 +129,6 @@ public:
      * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI class WeakPtr<class Item> lookupByName(class HashedString const &) const;
-    /**
-     * @symbol ?lookupByName\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@AEAHV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
-     */
-    MCAPI class WeakPtr<class Item> lookupByName(int &, class std::basic_string_view<char, struct std::char_traits<char>>) const;
     /**
      * @symbol ?lookupByNameNoAlias\@ItemRegistryRef\@\@QEBA?AV?$WeakPtr\@VItem\@\@\@\@V?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@\@Z
      */
@@ -208,6 +209,10 @@ public:
      * @symbol ??1ItemRegistryRef\@\@QEAA\@XZ
      */
     MCAPI ~ItemRegistryRef();
+    /**
+     * @symbol ?getCombinedItemRegistryUseCount\@ItemRegistryRef\@\@SA_KXZ
+     */
+    MCAPI static unsigned __int64 getCombinedItemRegistryUseCount();
     /**
      * @symbol ?isUsingCombinedItemRegistry\@ItemRegistryRef\@\@SA_NXZ
      */

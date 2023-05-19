@@ -51,9 +51,9 @@ public:
     virtual void write(class BinaryStream &) const;
     /**
      * @vftbl 7
-     * @symbol ?_read\@BlockEventPacket\@\@EEAA?AW4StreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
+     * @symbol ?_read\@BlockEventPacket\@\@EEAA?AUExtendedStreamReadResult\@\@AEAVReadOnlyBinaryStream\@\@\@Z
      */
-    virtual enum class StreamReadResult _read(class ReadOnlyBinaryStream &);
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream &);
 #ifdef ENABLE_VIRTUAL_FAKESYMBOL_BLOCKEVENTPACKET
     /**
      * @symbol __unk_destructor_-1
@@ -61,12 +61,12 @@ public:
     MCVAPI ~BlockEventPacket();
 #endif
     /**
-     * @symbol ??0BlockEventPacket\@\@QEAA\@XZ
-     */
-    MCAPI BlockEventPacket();
-    /**
      * @symbol ??0BlockEventPacket\@\@QEAA\@VBlockPos\@\@HH\@Z
      */
     MCAPI BlockEventPacket(class BlockPos, int, int);
+    /**
+     * @symbol ??0BlockEventPacket\@\@QEAA\@XZ
+     */
+    MCAPI BlockEventPacket();
 
 };

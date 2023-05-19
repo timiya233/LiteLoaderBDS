@@ -38,9 +38,9 @@ public:
     virtual void __unk_vfn_0();
     /**
      * @vftbl 1
-     * @symbol __unk_vfn_1
+     * @symbol ?update\@ServerFileChunkUploader\@\@UEAAXXZ
      */
-    virtual void __unk_vfn_1();
+    virtual void update();
     /**
      * @vftbl 2
      * @symbol ?initFileUploader\@ServerFileChunkUploader\@\@UEAAXAEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@AEBUFileInfo\@\@HAEBVValue\@Json\@\@V?$function\@$$A6AX_N\@Z\@3\@\@Z
@@ -53,9 +53,9 @@ public:
     virtual void getServerMissingChunks(struct FileInfo const &, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?confirmChunkReceived\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
     /**
      * @vftbl 5
      * @symbol ?uploadChunk\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@AEBV?$vector\@EV?$allocator\@E\@std\@\@\@std\@\@V?$function\@$$A6AX_N\@Z\@5\@\@Z
@@ -68,9 +68,9 @@ public:
     virtual bool canCancelUpload(struct FileInfo const &) const;
     /**
      * @vftbl 8
-     * @symbol __unk_vfn_8
+     * @symbol ?cancelUpload\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@\@Z
      */
-    virtual void __unk_vfn_8();
+    virtual void cancelUpload(struct FileInfo const &);
     /**
      * @vftbl 9
      * @symbol ?getInitErrorCode\@ServerFileChunkUploader\@\@UEBA?AW4UploadError\@\@XZ
@@ -86,19 +86,5 @@ public:
      * @symbol ?getChunkInfo\@ServerFileChunkUploader\@\@UEBA?AUFileChunkInfo\@\@AEBUFileInfo\@\@H\@Z
      */
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const &, int) const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_SERVERFILECHUNKUPLOADER
-    /**
-     * @symbol ?cancelUpload\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@\@Z
-     */
-    MCVAPI void cancelUpload(struct FileInfo const &);
-    /**
-     * @symbol ?confirmChunkReceived\@ServerFileChunkUploader\@\@UEAAXAEBUFileInfo\@\@AEBUFileChunkInfo\@\@\@Z
-     */
-    MCVAPI void confirmChunkReceived(struct FileInfo const &, struct FileChunkInfo const &);
-    /**
-     * @symbol ?update\@ServerFileChunkUploader\@\@UEAAXXZ
-     */
-    MCVAPI void update();
-#endif
 
 };

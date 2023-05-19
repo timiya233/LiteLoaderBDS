@@ -35,10 +35,6 @@ struct ItemStackNetIdVariant {
 #undef AFTER_EXTRA
 public:
     /**
-     * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@XZ
-     */
-    MCAPI ItemStackNetIdVariant();
-    /**
      * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@$$QEAU0\@\@Z
      */
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant &&);
@@ -47,6 +43,10 @@ public:
      */
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const &);
     /**
+     * @symbol ??0ItemStackNetIdVariant\@\@QEAA\@XZ
+     */
+    MCAPI ItemStackNetIdVariant();
+    /**
      * @symbol ?deserialize\@ItemStackNetIdVariant\@\@QEAAXAEAVReadOnlyBinaryStream\@\@\@Z
      */
     MCAPI void deserialize(class ReadOnlyBinaryStream &);
@@ -54,6 +54,10 @@ public:
      * @symbol ?hasServerNetId\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */
     MCAPI bool hasServerNetId() const;
+    /**
+     * @symbol ?isServerNetId\@ItemStackNetIdVariant\@\@QEBA_NXZ
+     */
+    MCAPI bool isServerNetId() const;
     /**
      * @symbol ?isValid\@ItemStackNetIdVariant\@\@QEBA_NXZ
      */

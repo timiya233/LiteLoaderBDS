@@ -30,13 +30,13 @@ public:
 
 public:
     /**
-     * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@HH\@Z
-     */
-    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
-    /**
      * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@\@Z
      */
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
+    /**
+     * @symbol ??0NoiseCellInterpolator\@\@QEAA\@V?$span\@$$CBM$0?0\@gsl\@\@HH\@Z
+     */
+    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     /**
      * @symbol ?getLerpedValue\@NoiseCellInterpolator\@\@QEBAMXZ
      */

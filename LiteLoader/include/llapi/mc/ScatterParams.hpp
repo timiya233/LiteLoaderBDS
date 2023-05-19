@@ -59,10 +59,6 @@ public:
 
 //private:
     /**
-     * @symbol ?_getPos\@ScatterParams\@\@AEBA?AVBlockPos\@\@IAEBV2\@AEAVRandom\@\@AEAVRenderParams\@\@\@Z
-     */
-    MCAPI class BlockPos _getPos(unsigned int, class BlockPos const &, class Random &, class RenderParams &) const;
-    /**
      * @symbol ?_parseExpressionNodeFloat\@ScatterParams\@\@AEAAXAEBVCompoundTag\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@1AEAVExpressionNode\@\@M\@Z
      */
     MCAPI void _parseExpressionNodeFloat(class CompoundTag const &, std::string const &, std::string const &, class ExpressionNode &, float);

@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "SubChunkBrightnessStorage.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -58,6 +59,10 @@ public:
      */
     MCAPI void fetchBlocksInCylinder(class BlockPos const &, class BlockPos const &, unsigned int, unsigned int, class std::function<bool (class Block const &)> const &, std::vector<class BlockDataFetchResult<class Block>> &) const;
     /**
+     * @symbol ?getHash\@SubChunk\@\@QEBA_KXZ
+     */
+    MCAPI unsigned __int64 getHash() const;
+    /**
      * @symbol ?getLight\@SubChunk\@\@QEBA?AULightPair\@SubChunkBrightnessStorage\@\@G\@Z
      */
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
@@ -81,6 +86,10 @@ public:
      * @symbol ?likelyHasNonUniformBlockLight\@SubChunk\@\@QEBA_NXZ
      */
     MCAPI bool likelyHasNonUniformBlockLight() const;
+    /**
+     * @symbol ?needsHashToBeRecalculated\@SubChunk\@\@QEBA_NXZ
+     */
+    MCAPI bool needsHashToBeRecalculated() const;
     /**
      * @symbol ?needsInitLighting\@SubChunk\@\@QEBA_NXZ
      */
@@ -125,6 +134,10 @@ public:
      * @symbol ?setBlockLight\@SubChunk\@\@QEAAXGE\@Z
      */
     MCAPI void setBlockLight(unsigned short, unsigned char);
+    /**
+     * @symbol ?setBlocksToUniform\@SubChunk\@\@QEAAXAEBVBlock\@\@_N1\@Z
+     */
+    MCAPI void setBlocksToUniform(class Block const &, bool, bool);
     /**
      * @symbol ?setFromBlockVolume\@SubChunk\@\@QEAAXAEBVBlockVolume\@\@F\@Z
      */

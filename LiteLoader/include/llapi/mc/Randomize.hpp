@@ -73,5 +73,9 @@ public:
      * @symbol ?ChanceFloatGreaterThan_MinExcessiveImprobability\@Randomize\@\@2MB
      */
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
+    /**
+     * @symbol ?InvalidCallFromDerivedClassMessage\@Randomize\@\@2QBDB
+     */
+    MCAPI static char const InvalidCallFromDerivedClassMessage[];
 
 };

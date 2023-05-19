@@ -57,6 +57,10 @@ public:
      */
     MCAPI bool isAutoSendEnabled() const;
     /**
+     * @symbol ?isOptimizationsEnabled\@SpatialActorNetworkData\@\@QEBA_NXZ
+     */
+    MCAPI bool isOptimizationsEnabled() const;
+    /**
      * @symbol ?sendUpdate\@SpatialActorNetworkData\@\@QEAAX_N00\@Z
      */
     MCAPI void sendUpdate(bool, bool, bool);
@@ -90,10 +94,6 @@ public:
      * @symbol ?_initializeLastSentValues\@SpatialActorNetworkData\@\@AEAAXXZ
      */
     MCAPI void _initializeLastSentValues();
-    /**
-     * @symbol ?_shouldUpdateBasedOptimizationOnScore\@SpatialActorNetworkData\@\@AEBA_NAEAVPlayer\@\@\@Z
-     */
-    MCAPI bool _shouldUpdateBasedOptimizationOnScore(class Player &) const;
 
 private:
     /**

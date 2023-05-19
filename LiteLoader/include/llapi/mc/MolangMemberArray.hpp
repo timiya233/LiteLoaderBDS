@@ -42,21 +42,17 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_RGB, class mce::Color const &);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_XYZ\@\@AEBVVec3\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_XYZ, class Vec3 const &);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGBA\@\@AEBVColor\@mce\@\@\@Z
-     */
-    MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
-    /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_SpeedAndDirection\@\@MAEBVVec3\@\@\@Z
      */
     MCAPI MolangMemberArray(enum class MolangStruct_SpeedAndDirection, float, class Vec3 const &);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
     /**
      * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_TRS\@\@$$QEAU0\@11\@Z
      */
@@ -74,9 +70,13 @@ public:
      */
     MCAPI MolangMemberArray(enum class MolangStruct_UV, float, float);
     /**
-     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RotYAndPosY\@\@MM\@Z
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_RGBA\@\@AEBVColor\@mce\@\@\@Z
      */
-    MCAPI MolangMemberArray(enum class MolangStruct_RotYAndPosY, float, float);
+    MCAPI MolangMemberArray(enum class MolangStruct_RGBA, class mce::Color const &);
+    /**
+     * @symbol ??0MolangMemberArray\@\@QEAA\@W4MolangStruct_MinAndMax\@\@$$QEAU0\@1\@Z
+     */
+    MCAPI MolangMemberArray(enum class MolangStruct_MinAndMax, struct MolangMemberArray &&, struct MolangMemberArray &&);
     /**
      * @symbol ?add\@MolangMemberArray\@\@QEAAXAEBVHashedString\@\@AEBUMolangScriptArg\@\@\@Z
      */

@@ -65,6 +65,14 @@ public:
      * @symbol ?_computeAquifer\@Aquifer\@\@AEBA?AUFluidSample\@1\@AEBVBlockPos\@\@\@Z
      */
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const &) const;
+    /**
+     * @symbol ?_getIndex\@Aquifer\@\@AEBAHAEBVBlockPos\@\@\@Z
+     */
+    MCAPI int _getIndex(class BlockPos const &) const;
+    /**
+     * @symbol ?_getOrComputeNewFluidSample\@Aquifer\@\@AEAA?AUFluidSample\@1\@AEBVBlockPos\@\@\@Z
+     */
+    MCAPI struct Aquifer::FluidSample _getOrComputeNewFluidSample(class BlockPos const &);
 
 private:
     /**

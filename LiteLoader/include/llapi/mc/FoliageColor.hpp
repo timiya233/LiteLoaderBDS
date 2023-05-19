@@ -73,6 +73,10 @@ public:
     MCAPI static int getMapGrassColor(class BlockSource &, class BlockPos const &);
 
 //private:
+    /**
+     * @symbol ?_index\@FoliageColor\@\@CAHMM\@Z
+     */
+    MCAPI static int _index(float, float);
 
 private:
     /**

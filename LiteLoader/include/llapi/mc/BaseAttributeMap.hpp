@@ -57,13 +57,17 @@ public:
      */
     MCAPI std::vector<class AttributeInstanceHandle> const & getDirtyAttributes() const;
     /**
+     * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@I\@Z
+     */
+    MCAPI class AttributeInstance const & getInstance(unsigned int) const;
+    /**
      * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
     MCAPI class AttributeInstance const & getInstance(class Attribute const &) const;
     /**
-     * @symbol ?getInstance\@BaseAttributeMap\@\@QEBAAEBVAttributeInstance\@\@I\@Z
+     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
      */
-    MCAPI class AttributeInstance const & getInstance(unsigned int) const;
+    MCAPI class AttributeInstance * getMutableInstance(unsigned int);
     /**
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVAttribute\@\@\@Z
      */
@@ -72,10 +76,6 @@ public:
      * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@AEBVHashedString\@\@\@Z
      */
     MCAPI class AttributeInstance * getMutableInstance(class HashedString const &);
-    /**
-     * @symbol ?getMutableInstance\@BaseAttributeMap\@\@QEAAPEAVAttributeInstance\@\@I\@Z
-     */
-    MCAPI class AttributeInstance * getMutableInstance(unsigned int);
     /**
      * @symbol ?getSyncableAttributes\@BaseAttributeMap\@\@QEBA?AV?$vector\@VAttributeInstanceHandle\@\@V?$allocator\@VAttributeInstanceHandle\@\@\@std\@\@\@std\@\@XZ
      */

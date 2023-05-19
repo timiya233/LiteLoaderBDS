@@ -59,11 +59,17 @@ public:
      * @symbol ?getState\@InternalTaskGroup\@\@UEBA?AW4TaskGroupState\@\@XZ
      */
     virtual enum class TaskGroupState getState() const;
-#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     /**
+     * @vftbl 6
      * @symbol ?processCoroutines\@InternalTaskGroup\@\@UEAAXXZ
      */
-    MCVAPI void processCoroutines();
+    virtual void processCoroutines();
+    /**
+     * @vftbl 7
+     * @symbol ?taskComplete\@InternalTaskGroup\@\@UEAAXV?$not_null\@PEAVBackgroundTaskBase\@\@\@gsl\@\@\@Z
+     */
+    virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_INTERNALTASKGROUP
     /**
      * @symbol ?queue\@InternalTaskGroup\@\@UEAA?AV?$shared_ptr\@V?$IAsyncResult\@X\@Threading\@Bedrock\@\@\@std\@\@AEBU?$TaskStartInfoEx\@X\@\@$$QEAV?$function\@$$A6A?AVTaskResult\@\@XZ\@3\@$$QEAV?$function\@$$A6AXXZ\@3\@\@Z
      */
@@ -76,10 +82,6 @@ public:
      * @symbol ?requeueTask\@InternalTaskGroup\@\@UEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@_N\@Z
      */
     MCVAPI void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
-    /**
-     * @symbol ?taskComplete\@InternalTaskGroup\@\@UEAAXV?$not_null\@PEAVBackgroundTaskBase\@\@\@gsl\@\@\@Z
-     */
-    MCVAPI void taskComplete(class gsl::not_null<class BackgroundTaskBase *>);
     /**
      * @symbol ?taskRegister\@InternalTaskGroup\@\@UEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */

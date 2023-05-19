@@ -100,6 +100,10 @@ public:
 
 //protected:
     /**
+     * @symbol ?_canAdd\@ContainerScreenValidation\@\@IEBAHAEBUContainerValidationSlotInfo\@\@AEBVItemStackBase\@\@H\@Z
+     */
+    MCAPI int _canAdd(struct ContainerValidationSlotInfo const &, class ItemStackBase const &, int) const;
+    /**
      * @symbol ?_tryAddItem\@ContainerScreenValidation\@\@IEAAHAEAUContainerValidationSlotInfo\@\@H_N\@Z
      */
     MCAPI int _tryAddItem(struct ContainerValidationSlotInfo &, int, bool);
@@ -133,6 +137,10 @@ public:
      * @symbol ?_getOrCreateContainerValidator\@ContainerScreenValidation\@\@AEAA?AV?$shared_ptr\@$$CBVContainerValidationBase\@\@\@std\@\@W4ContainerEnumName\@\@\@Z
      */
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum class ContainerEnumName);
+    /**
+     * @symbol ?_isValidSlot\@ContainerScreenValidation\@\@AEBA_NAEBUContainerValidationSlotInfo\@\@\@Z
+     */
+    MCAPI bool _isValidSlot(struct ContainerValidationSlotInfo const &) const;
     /**
      * @symbol ?_propagateContainers\@ContainerScreenValidation\@\@AEAA_NXZ
      */

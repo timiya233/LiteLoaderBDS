@@ -135,6 +135,10 @@ public:
      */
     MCAPI bool _isEmptyInternal() const;
     /**
+     * @symbol ?_isOwner\@TaskGroup\@\@AEBA_NXZ
+     */
+    MCAPI bool _isOwner() const;
+    /**
      * @symbol ?_queueInternal\@TaskGroup\@\@AEAAXV?$shared_ptr\@VBackgroundTaskBase\@\@\@std\@\@\@Z
      */
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);

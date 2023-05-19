@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "ITickingSystem.hpp"
 
 #define BEFORE_EXTRA
 
@@ -14,7 +15,7 @@
  * @brief MC class AngerLevelSystem.
  *
  */
-class AngerLevelSystem {
+class AngerLevelSystem : public ITickingSystem {
 
 #define AFTER_EXTRA
 
@@ -42,5 +43,10 @@ public:
      * @symbol ?tick\@AngerLevelSystem\@\@UEAAXAEAVEntityRegistry\@\@\@Z
      */
     virtual void tick(class EntityRegistry &);
+    /**
+     * @vftbl 3
+     * @symbol ?singleTick\@ITickingSystem\@\@UEAAXAEAVEntityRegistry\@\@AEAVEntityContext\@\@\@Z
+     */
+    virtual void singleTick(class EntityRegistry &, class EntityContext &);
 
 };

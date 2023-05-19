@@ -35,8 +35,9 @@ public:
     virtual bool isValid() const {
         throw("TODO");
     }
-    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&) override {
+
+    virtual struct ExtendedStreamReadResult _read(class ReadOnlyBinaryStream&) override {
         throw("TODO in MyPkt::_read()");
-        return (enum StreamReadResult)0;
+        return ExtendedStreamReadResult((StreamReadResult)0, "");
     }
 };

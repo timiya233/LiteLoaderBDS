@@ -43,21 +43,21 @@ public:
      */
     MCAPI MobEffectInstance(unsigned int, int, int);
     /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
-     */
-    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
-    /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@IHH_N00\@Z
      */
     MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
+    /**
+     * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
+     */
+    MCAPI MobEffectInstance(unsigned int);
     /**
      * @symbol ??0MobEffectInstance\@\@QEAA\@$$QEAV0\@\@Z
      */
     MCAPI MobEffectInstance(class MobEffectInstance &&);
     /**
-     * @symbol ??0MobEffectInstance\@\@QEAA\@I\@Z
+     * @symbol ??0MobEffectInstance\@\@QEAA\@IHHHHH_N00\@Z
      */
-    MCAPI MobEffectInstance(unsigned int);
+    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
     /**
      * @symbol ?applyEffects\@MobEffectInstance\@\@QEAAXPEAVActor\@\@\@Z
      */
@@ -74,6 +74,10 @@ public:
      * @symbol ?getComponentName\@MobEffectInstance\@\@QEBAAEBVHashedString\@\@XZ
      */
     MCAPI class HashedString const & getComponentName() const;
+    /**
+     * @symbol ?getDescriptionId\@MobEffectInstance\@\@QEBA?AV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@XZ
+     */
+    MCAPI std::string getDescriptionId() const;
     /**
      * @symbol ?getDifficulityDuration\@MobEffectInstance\@\@QEBAHW4Difficulty\@\@\@Z
      */

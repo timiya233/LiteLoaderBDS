@@ -82,4 +82,12 @@ public:
      */
     MCAPI static std::string const EVENTS_ENABLED_STRING;
 
+//protected:
+    /**
+     * @symbol ?_getEventReference\@MobEvents\@\@IEAAAEAVMobEvent\@\@W4MobEventsIndex\@\@\@Z
+     */
+    MCAPI class MobEvent & _getEventReference(enum class MobEventsIndex);
+
+protected:
+
 };

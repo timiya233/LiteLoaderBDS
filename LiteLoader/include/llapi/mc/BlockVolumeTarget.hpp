@@ -51,14 +51,14 @@ public:
     virtual class Block const * tryGetLiquidBlock(class BlockPos const &) const;
     /**
      * @vftbl 4
-     * @symbol __unk_vfn_4
+     * @symbol ?getBlock\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void __unk_vfn_4();
+    virtual class Block const & getBlock(class BlockPos const &) const;
     /**
      * @vftbl 5
-     * @symbol __unk_vfn_5
+     * @symbol ?getBlockNoBoundsCheck\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
      */
-    virtual void __unk_vfn_5();
+    virtual class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
     /**
      * @vftbl 6
      * @symbol ?getExtraBlock\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
@@ -177,14 +177,6 @@ public:
      * @symbol ?canSurvive\@BlockVolumeTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */
     MCVAPI bool canSurvive(class BlockPos const &, class Block const &) const;
-    /**
-     * @symbol ?getBlock\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCVAPI class Block const & getBlock(class BlockPos const &) const;
-    /**
-     * @symbol ?getBlockNoBoundsCheck\@BlockVolumeTarget\@\@UEBAAEBVBlock\@\@AEBVBlockPos\@\@\@Z
-     */
-    MCVAPI class Block const & getBlockNoBoundsCheck(class BlockPos const &) const;
     /**
      * @symbol ?mayPlace\@BlockVolumeTarget\@\@UEBA_NAEBVBlockPos\@\@AEBVBlock\@\@\@Z
      */

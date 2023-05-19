@@ -17,7 +17,7 @@
 struct DimensionDocument {
 
 #define AFTER_EXTRA
-
+    struct Dimension;
 #undef AFTER_EXTRA
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSIONDOCUMENT
 public:

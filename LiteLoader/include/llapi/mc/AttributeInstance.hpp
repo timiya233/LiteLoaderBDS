@@ -93,21 +93,21 @@ public:
      */
     MCAPI class AttributeModifier getModifier(class mce::UUID const &) const;
     /**
-     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
-     */
-    MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    /**
      * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@H\@Z
      */
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     /**
-     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     * @symbol ?getModifiers\@AttributeInstance\@\@QEBA?AV?$vector\@VAttributeModifier\@\@V?$allocator\@VAttributeModifier\@\@\@std\@\@\@std\@\@XZ
      */
-    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
+    MCAPI std::vector<class AttributeModifier> getModifiers() const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVAttributeModifier\@\@\@Z
      */
     MCAPI bool hasModifier(class AttributeModifier const &) const;
+    /**
+     * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NV?$shared_ptr\@VAttributeModifier\@\@\@std\@\@\@Z
+     */
+    MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
     /**
      * @symbol ?hasModifier\@AttributeInstance\@\@QEBA_NAEBVUUID\@mce\@\@\@Z
      */

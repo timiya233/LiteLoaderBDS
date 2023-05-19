@@ -42,6 +42,10 @@ public:
      */
     MCAPI class WorkerPool & getCoroutinePool();
     /**
+     * @symbol ?getName\@Scheduler\@\@QEBA?AV?$basic_string_view\@DU?$char_traits\@D\@std\@\@\@std\@\@XZ
+     */
+    MCAPI class std::basic_string_view<char, struct std::char_traits<char>> getName() const;
+    /**
      * @symbol ?processCoroutines\@Scheduler\@\@QEAAXV?$duration\@_JU?$ratio\@$00$0DLJKMKAA\@\@std\@\@\@chrono\@std\@\@0\@Z
      */
     MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
@@ -57,5 +61,17 @@ public:
      * @symbol ?AVERAGE_TASK_TOLERANCE\@Scheduler\@\@2MB
      */
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
+
+//protected:
+    /**
+     * @symbol ?_getCoroutineWorker\@Scheduler\@\@IEAAAEAVBackgroundWorker\@\@XZ
+     */
+    MCAPI class BackgroundWorker & _getCoroutineWorker();
+    /**
+     * @symbol ?_runCoroutines\@Scheduler\@\@IEAA_NN\@Z
+     */
+    MCAPI bool _runCoroutines(double);
+
+protected:
 
 };

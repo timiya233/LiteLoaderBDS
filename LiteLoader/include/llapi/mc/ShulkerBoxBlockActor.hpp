@@ -109,10 +109,6 @@ public:
      * @symbol ?_calculateMovementWithCollisions\@ShulkerBoxBlockActor\@\@AEBA?AVVec3\@\@AEAVBlockSource\@\@PEAVActor\@\@\@Z
      */
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource &, class Actor *) const;
-    /**
-     * @symbol ?_moveCollidedEntities\@ShulkerBoxBlockActor\@\@AEBAXAEAVBlockSource\@\@\@Z
-     */
-    MCAPI void _moveCollidedEntities(class BlockSource &) const;
 
 private:
     /**

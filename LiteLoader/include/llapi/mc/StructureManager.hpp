@@ -108,13 +108,13 @@ public:
      */
     MCAPI enum class QueueRequestResult tryPlaceStructureInWorld(std::unique_ptr<class CommandArea>, class ServerLevel &, class Dimension &, class BoundingBox const &, class BlockPos const &, class StructureSettings const &, class StructureTemplate const &, std::unique_ptr<class StructureAnimationData>);
     /**
-     * @symbol ?getStructurePath\@StructureManager\@\@SA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
-     */
-    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &, std::string const &);
-    /**
      * @symbol ?getStructurePath\@StructureManager\@\@SA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@Z
      */
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &);
+    /**
+     * @symbol ?getStructurePath\@StructureManager\@\@SA?AV?$PathBuffer\@V?$StackString\@D$0EAA\@\@Core\@\@\@Core\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@0\@Z
+     */
+    MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024>> getStructurePath(std::string const &, std::string const &);
 
 //private:
     /**

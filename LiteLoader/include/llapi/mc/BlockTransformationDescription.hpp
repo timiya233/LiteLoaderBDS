@@ -5,6 +5,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "llapi/Global.h"
+#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 
@@ -39,22 +40,17 @@ public:
      */
     virtual void initializeComponent(class EntityContext &) const;
     /**
-     * @vftbl 3
-     * @symbol __unk_vfn_3
-     */
-    virtual void __unk_vfn_3();
-    /**
-     * @vftbl 4
+     * @vftbl 5
      * @symbol ?isNetworkComponent\@BlockTransformationDescription\@\@UEBA_NXZ
      */
     virtual bool isNetworkComponent() const;
     /**
-     * @vftbl 5
+     * @vftbl 6
      * @symbol ?buildNetworkTag\@BlockTransformationDescription\@\@UEBA?AV?$unique_ptr\@VCompoundTag\@\@U?$default_delete\@VCompoundTag\@\@\@std\@\@\@std\@\@XZ
      */
     virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /**
-     * @vftbl 6
+     * @vftbl 7
      * @symbol ?initializeFromNetwork\@BlockTransformationDescription\@\@UEAAXAEBVCompoundTag\@\@\@Z
      */
     virtual void initializeFromNetwork(class CompoundTag const &);
@@ -70,5 +66,9 @@ public:
      * @symbol ?bindType\@BlockTransformationDescription\@\@SAXXZ
      */
     MCAPI static void bindType();
+    /**
+     * @symbol ?registerVersionUpgrades\@BlockTransformationDescription\@\@SAXAEAVCerealSchemaUpgradeSet\@\@\@Z
+     */
+    MCAPI static void registerVersionUpgrades(class CerealSchemaUpgradeSet &);
 
 };

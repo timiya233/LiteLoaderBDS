@@ -41,4 +41,12 @@ public:
      */
     virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI &, class BlockPos const &, class Random &, class RenderParams &, struct TreeHelper::TreeParams const &, std::vector<class BlockPos> const &) const;
 
+//private:
+    /**
+     * @symbol ?_fillLayer\@FancyTreeCanopy\@\@AEBA?AV?$optional\@VBlockPos\@\@\@std\@\@AEAVIBlockWorldGenAPI\@\@AEBVBlockPos\@\@AEBVBlock\@\@HAEBUTreeParams\@TreeHelper\@\@\@Z
+     */
+    MCAPI class std::optional<class BlockPos> _fillLayer(class IBlockWorldGenAPI &, class BlockPos const &, class Block const &, int, struct TreeHelper::TreeParams const &) const;
+
+private:
+
 };

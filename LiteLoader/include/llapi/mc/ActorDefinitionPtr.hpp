@@ -30,6 +30,14 @@ public:
 
 public:
     /**
+     * @symbol ??CActorDefinitionPtr\@\@QEBAPEBVActorDefinition\@\@XZ
+     */
+    MCAPI class ActorDefinition const * operator->() const;
+    /**
+     * @symbol ??CActorDefinitionPtr\@\@QEAAPEAVActorDefinition\@\@XZ
+     */
+    MCAPI class ActorDefinition * operator->();
+    /**
      * @symbol ??1ActorDefinitionPtr\@\@QEAA\@XZ
      */
     MCAPI ~ActorDefinitionPtr();

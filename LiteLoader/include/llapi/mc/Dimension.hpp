@@ -44,6 +44,10 @@ public:
      */
     MCVAPI void deserialize(class CompoundTag const &);
     /**
+     * @symbol ?flushLevelChunkGarbageCollector\@Dimension\@\@UEAAXXZ
+     */
+    MCVAPI void flushLevelChunkGarbageCollector();
+    /**
      * @symbol ?forceCheckAllNeighChunkSavedStat\@Dimension\@\@UEBA_NXZ
      */
     MCVAPI bool forceCheckAllNeighChunkSavedStat() const;
@@ -217,13 +221,13 @@ public:
      */
     MCAPI class Actor * fetchEntity(struct ActorUniqueID, bool) const;
     /**
-     * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@VBlockPos\@\@MPEAVActor\@\@\@Z
-     */
-    MCAPI class Player * fetchNearestAttackablePlayer(class BlockPos, float, class Actor *);
-    /**
      * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@AEAVActor\@\@M\@Z
      */
     MCAPI class Player * fetchNearestAttackablePlayer(class Actor &, float);
+    /**
+     * @symbol ?fetchNearestAttackablePlayer\@Dimension\@\@QEAAPEAVPlayer\@\@VBlockPos\@\@MPEAVActor\@\@\@Z
+     */
+    MCAPI class Player * fetchNearestAttackablePlayer(class BlockPos, float, class Actor *);
     /**
      * @symbol ?fetchNearestInteractablePlayer\@Dimension\@\@QEBAPEAVPlayer\@\@AEAVActor\@\@M\@Z
      */
@@ -244,10 +248,6 @@ public:
      * @symbol ?flagEntityforChunkMove\@Dimension\@\@QEAAXAEAVActor\@\@\@Z
      */
     MCAPI void flagEntityforChunkMove(class Actor &);
-    /**
-     * @symbol ?flushLevelChunkGarbageCollector\@Dimension\@\@QEAAXXZ
-     */
-    MCAPI void flushLevelChunkGarbageCollector();
     /**
      * @symbol ?flushRunTimeLighting\@Dimension\@\@QEAAXXZ
      */
@@ -273,6 +273,10 @@ public:
      */
     MCAPI class ChunkBuildOrderPolicyBase & getChunkBuildOrderPolicy();
     /**
+     * @symbol ?getChunkGenTaskGroup\@Dimension\@\@QEAAAEAVTaskGroup\@\@XZ
+     */
+    MCAPI class TaskGroup & getChunkGenTaskGroup();
+    /**
      * @symbol ?getChunkLoadActionList\@Dimension\@\@QEAA?AV?$not_null\@PEAVChunkLoadActionList\@\@\@gsl\@\@XZ
      */
     MCAPI class gsl::not_null<class ChunkLoadActionList *> getChunkLoadActionList();
@@ -296,6 +300,10 @@ public:
      * @symbol ?getEntityIdMap\@Dimension\@\@QEAAAEAV?$unordered_map\@UActorUniqueID\@\@VWeakEntityRef\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@4\@V?$allocator\@U?$pair\@$$CBUActorUniqueID\@\@VWeakEntityRef\@\@\@std\@\@\@4\@\@std\@\@XZ
      */
     MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>> & getEntityIdMap();
+    /**
+     * @symbol ?getEntityIdMapConst\@Dimension\@\@QEBAAEBV?$unordered_map\@UActorUniqueID\@\@VWeakEntityRef\@\@U?$hash\@UActorUniqueID\@\@\@std\@\@U?$equal_to\@UActorUniqueID\@\@\@4\@V?$allocator\@U?$pair\@$$CBUActorUniqueID\@\@VWeakEntityRef\@\@\@std\@\@\@4\@\@std\@\@XZ
+     */
+    MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>> const & getEntityIdMapConst() const;
     /**
      * @symbol ?getFeatureTerrainAdjustments\@Dimension\@\@QEAAAEAVFeatureTerrainAdjustments\@\@XZ
      */
@@ -524,6 +532,10 @@ public:
      * @symbol ?_processEntityChunkTransfers\@Dimension\@\@AEAAXXZ
      */
     MCAPI void _processEntityChunkTransfers();
+    /**
+     * @symbol ?_runChunkGenerationWatchdog\@Dimension\@\@AEAAXXZ
+     */
+    MCAPI void _runChunkGenerationWatchdog();
     /**
      * @symbol ?_sendBlockEntityUpdatePacket\@Dimension\@\@AEAAXAEBVNetworkBlockPosition\@\@\@Z
      */

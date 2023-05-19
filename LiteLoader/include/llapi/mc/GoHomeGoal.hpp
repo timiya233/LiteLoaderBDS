@@ -76,13 +76,13 @@ public:
 
 //private:
     /**
-     * @symbol ?_getHomeDimension\@GoHomeGoal\@\@AEBA?AV?$AutomaticID\@VDimension\@\@H\@\@XZ
+     * @symbol ?_hasReachedHome\@GoHomeGoal\@\@AEBA_NXZ
      */
-    MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
+    MCAPI bool _hasReachedHome() const;
     /**
-     * @symbol ?_getHomePos\@GoHomeGoal\@\@AEBA?AVBlockPos\@\@XZ
+     * @symbol ?_hasRequiredComponents\@GoHomeGoal\@\@AEBA_NXZ
      */
-    MCAPI class BlockPos _getHomePos() const;
+    MCAPI bool _hasRequiredComponents() const;
     /**
      * @symbol ?_triggerOnFailedEvents\@GoHomeGoal\@\@AEAAXXZ
      */

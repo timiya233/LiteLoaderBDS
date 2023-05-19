@@ -58,6 +58,10 @@ public:
      */
     MCAPI class std::shared_ptr<class ActorAnimationControllerStatePlayer> const getCurrentAnimationControllerStatePlayer() const;
     /**
+     * @symbol ?getCurrentFrameIndex\@AnimationComponent\@\@QEAA_JXZ
+     */
+    MCAPI __int64 getCurrentFrameIndex();
+    /**
      * @symbol ?getLocator\@AnimationComponent\@\@QEAAPEAVModelPartLocator\@\@AEB_K\@Z
      */
     MCAPI class ModelPartLocator * getLocator(unsigned __int64 const &);

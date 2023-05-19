@@ -36,10 +36,6 @@ public:
      */
     MCAPI static void flagUnsupportedComparisonFrame(struct IActorMovementProxy &, class std::basic_string_view<char, struct std::char_traits<char>>, struct SideBySidePartialComparison *);
     /**
-     * @symbol ?isTriggered\@SideBySideTrigger\@\@SA_NAEAUIActorMovementProxy\@\@W4SideBySideExtractionId\@\@\@Z
-     */
-    MCAPI static bool isTriggered(struct IActorMovementProxy &, enum class SideBySideExtractionId);
-    /**
      * @symbol ?shouldSimulateLegacy\@SideBySideTrigger\@\@SA_NAEBUIActorMovementProxy\@\@W4SideBySideExtractionId\@\@\@Z
      */
     MCAPI static bool shouldSimulateLegacy(struct IActorMovementProxy const &, enum class SideBySideExtractionId);

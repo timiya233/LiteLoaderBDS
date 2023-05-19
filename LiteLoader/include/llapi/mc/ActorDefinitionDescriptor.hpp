@@ -27,13 +27,13 @@ public:
      */
     MCAPI ActorDefinitionDescriptor();
     /**
-     * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
-    /**
      * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@AEBV0\@\@Z
      */
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const &);
+    /**
+     * @symbol ??0ActorDefinitionDescriptor\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor &&);
     /**
      * @symbol ?combine\@ActorDefinitionDescriptor\@\@QEAAAEAV1\@AEBV1\@\@Z
      */
@@ -63,13 +63,13 @@ public:
      */
     MCAPI bool hasNavigationSubComponent();
     /**
-     * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
-     */
-    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor &&);
-    /**
      * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@AEBV0\@\@Z
      */
     MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor const &);
+    /**
+     * @symbol ??4ActorDefinitionDescriptor\@\@QEAAAEAV0\@$$QEAV0\@\@Z
+     */
+    MCAPI class ActorDefinitionDescriptor & operator=(class ActorDefinitionDescriptor &&);
     /**
      * @symbol ?overlaps\@ActorDefinitionDescriptor\@\@QEBA_NAEBV1\@\@Z
      */

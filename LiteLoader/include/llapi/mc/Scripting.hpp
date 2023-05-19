@@ -48,6 +48,10 @@ enum class LogLevel : int {
      */
     MCAPI void LogMessage(enum class Scripting::LogLevel, char const *, unsigned int, char const *, ...);
     /**
+     * @symbol ?SetAssertHandler\@Scripting\@\@YAXP6A_NPEAXPEBD1AEA_NI11\@Z0\@Z
+     */
+    MCAPI void SetAssertHandler(bool ( *)(void *, char const *, char const *, bool &, unsigned int, char const *, char const *), void *);
+    /**
      * @symbol ?_versionSplit\@Scripting\@\@YA?AV?$vector\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@V?$allocator\@V?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@std\@\@\@2\@\@std\@\@AEBV?$basic_string\@DU?$char_traits\@D\@std\@\@V?$allocator\@D\@2\@\@3\@D\@Z
      */
     MCAPI std::vector<std::string> _versionSplit(std::string const &, char);

@@ -128,6 +128,12 @@ public:
      * @symbol ?chunkPosNeedsBlending\@DBChunkStorage\@\@UEAA_NAEBVChunkPos\@\@\@Z
      */
     virtual bool chunkPosNeedsBlending(class ChunkPos const &);
+#ifdef ENABLE_VIRTUAL_FAKESYMBOL_DBCHUNKSTORAGE
+    /**
+     * @symbol __unk_destructor_-1
+     */
+    MCVAPI ~DBChunkStorage();
+#endif
     /**
      * @symbol ??0DBChunkStorage\@\@QEAA\@V?$unique_ptr\@VChunkSource\@\@U?$default_delete\@VChunkSource\@\@\@std\@\@\@std\@\@AEAVDBStorage\@\@AEAVScheduler\@\@AEBVExperiments\@\@\@Z
      */

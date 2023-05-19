@@ -34,13 +34,13 @@ public:
      */
     MCAPI PathFinder(class BlockSource &, class NavigationComponent const &);
     /**
-     * @symbol ?findPath\@PathFinder\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@0M\@Z
-     */
-    MCAPI std::unique_ptr<class Path> findPath(class Actor &, class Actor &, float);
-    /**
      * @symbol ?findPath\@PathFinder\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@HHHM\@Z
      */
     MCAPI std::unique_ptr<class Path> findPath(class Actor &, int, int, int, float);
+    /**
+     * @symbol ?findPath\@PathFinder\@\@QEAA?AV?$unique_ptr\@VPath\@\@U?$default_delete\@VPath\@\@\@std\@\@\@std\@\@AEAVActor\@\@0M\@Z
+     */
+    MCAPI std::unique_ptr<class Path> findPath(class Actor &, class Actor &, float);
     /**
      * @symbol ?isFree\@PathFinder\@\@QEAA?AW4NodeType\@\@AEAVActor\@\@AEBVBlockPos\@\@11W4CanJumpIntoNode\@\@W4CanClimbIntoNode\@\@\@Z
      */

@@ -38,6 +38,10 @@ public:
      */
     MCAPI unsigned __int64 findStateIndex(std::string const &, bool, unsigned __int64) const;
     /**
+     * @symbol ?fireEvents\@ActorAnimationController\@\@QEBAXAEAVRenderParams\@\@AEBVActorAnimationControllerPlayer\@\@\@Z
+     */
+    MCAPI void fireEvents(class RenderParams &, class ActorAnimationControllerPlayer const &) const;
+    /**
      * @symbol ?resolveTransitionStateIndices\@ActorAnimationController\@\@QEAAXXZ
      */
     MCAPI void resolveTransitionStateIndices();

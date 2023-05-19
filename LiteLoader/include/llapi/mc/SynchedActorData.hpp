@@ -214,13 +214,13 @@ public:
      */
     MCAPI class Vec3 getVec3(unsigned short) const;
     /**
-     * @symbol ?markDirty\@SynchedActorData\@\@QEAAXAEAVDataItem\@\@\@Z
-     */
-    MCAPI void markDirty(class DataItem &);
-    /**
      * @symbol ?markDirty\@SynchedActorData\@\@QEAAXG\@Z
      */
     MCAPI void markDirty(unsigned short);
+    /**
+     * @symbol ?markDirty\@SynchedActorData\@\@QEAAXAEAVDataItem\@\@\@Z
+     */
+    MCAPI void markDirty(class DataItem &);
     /**
      * @symbol ??4SynchedActorData\@\@QEAAAEAV0\@$$QEAV0\@\@Z
      */

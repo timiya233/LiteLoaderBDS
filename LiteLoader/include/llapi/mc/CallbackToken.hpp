@@ -29,10 +29,6 @@ public:
 
 public:
     /**
-     * @symbol ??0CallbackToken\@\@QEAA\@$$QEAV0\@\@Z
-     */
-    MCAPI CallbackToken(class CallbackToken &&);
-    /**
      * @symbol ??0CallbackToken\@\@QEAA\@V?$weak_ptr\@VCallbackTokenCancelState\@\@\@std\@\@\@Z
      */
     MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
@@ -40,6 +36,10 @@ public:
      * @symbol ??0CallbackToken\@\@QEAA\@XZ
      */
     MCAPI CallbackToken();
+    /**
+     * @symbol ??0CallbackToken\@\@QEAA\@$$QEAV0\@\@Z
+     */
+    MCAPI CallbackToken(class CallbackToken &&);
     /**
      * @symbol ?cancelCallback\@CallbackToken\@\@QEAAXXZ
      */

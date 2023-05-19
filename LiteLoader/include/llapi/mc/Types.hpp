@@ -107,6 +107,13 @@ public:
 //
 // }; // namespace Core
 
+
+namespace BlockTrait {
+    class ITrait;
+    class IGetPlacementBlockCallback;
+} // namespace BlockTrait
+
+
 namespace gametest {
 class BaseGameTestBatchRunner;
 

@@ -32,13 +32,13 @@ public:
 
 public:
     /**
-     * @symbol ??0Ability\@\@QEAA\@_NW4Options\@0\@\@Z
-     */
-    MCAPI Ability(bool, enum class Ability::Options);
-    /**
      * @symbol ??0Ability\@\@QEAA\@XZ
      */
     MCAPI Ability();
+    /**
+     * @symbol ??0Ability\@\@QEAA\@_NW4Options\@0\@\@Z
+     */
+    MCAPI Ability(bool, enum class Ability::Options);
     /**
      * @symbol ?getBool\@Ability\@\@QEBA_NXZ
      */
@@ -63,6 +63,10 @@ public:
      * @symbol ??9Ability\@\@QEBA_NAEBV0\@\@Z
      */
     MCAPI bool operator!=(class Ability const &) const;
+    /**
+     * @symbol ?reset\@Ability\@\@QEAAXW4Type\@1\@\@Z
+     */
+    MCAPI void reset(enum class Ability::Type);
     /**
      * @symbol ?setBool\@Ability\@\@QEAAX_N\@Z
      */

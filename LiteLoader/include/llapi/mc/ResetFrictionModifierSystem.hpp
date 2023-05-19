@@ -28,12 +28,8 @@ public:
 
 public:
     /**
-     * @symbol ?createResetFrictionModifierSystem\@ResetFrictionModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
+     * @symbol ?createSystem\@ResetFrictionModifierSystem\@\@SA?AUTickingSystemWithInfo\@\@XZ
      */
-    MCAPI static struct TickingSystemWithInfo createResetFrictionModifierSystem();
-    /**
-     * @symbol ?tickResetFrictionModifierSystem\@ResetFrictionModifierSystem\@\@SAXV?$ViewT\@VStrictEntityContext\@\@VEntityRegistryBase\@\@U?$Include\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@V?$FlagComponent\@ULocalPlayerComponentFlag\@\@\@\@UPlayerInputRequestComponent\@\@UVanillaClientGameplayComponent\@\@\@\@UFrictionModifierComponent\@\@\@\@\@Z
-     */
-    MCAPI static void tickResetFrictionModifierSystem(class ViewT<class StrictEntityContext, class EntityRegistryBase, struct Include<class FlagComponent<struct ActorMovementTickNeededFlag>, class FlagComponent<struct LocalPlayerComponentFlag>, struct PlayerInputRequestComponent, struct VanillaClientGameplayComponent>, struct FrictionModifierComponent>);
+    MCAPI static struct TickingSystemWithInfo createSystem();
 
 };

@@ -89,6 +89,10 @@ public:
      */
     MCAPI bool _pushOutItems(class BlockSource &, class Container &, class Vec3 const &, int);
     /**
+     * @symbol ?_tryMoveInItem\@Hopper\@\@IEAA_NAEAVBlockSource\@\@AEAVContainer\@\@AEAVItemStack\@\@HHH\@Z
+     */
+    MCAPI bool _tryMoveInItem(class BlockSource &, class Container &, class ItemStack &, int, int, int);
+    /**
      * @symbol ?_tryMoveItems\@Hopper\@\@IEAA_NAEAVBlockSource\@\@AEAVContainer\@\@AEBVVec3\@\@H_N\@Z
      */
     MCAPI bool _tryMoveItems(class BlockSource &, class Container &, class Vec3 const &, int, bool);

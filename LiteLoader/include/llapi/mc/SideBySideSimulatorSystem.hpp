@@ -28,6 +28,10 @@ public:
 
 public:
     /**
+     * @symbol ?_assignSimulator\@SideBySideSimulatorSystem\@\@SAXAEBVStrictEntityContext\@\@VStrictEntityContextOwner\@\@V?$EntityModifierT\@VEntityRegistryBase\@\@VStrictEntityContext\@\@V?$FlagComponent\@UActorMovementTickNeededFlag\@\@\@\@USideBySideSimulatorComponent\@\@V?$FlagComponent\@UUsesECSMovementFlag\@\@\@\@\@\@AEAUData\@SideBySideRemappingComponent\@\@\@Z
+     */
+    MCAPI static void _assignSimulator(class StrictEntityContext const &, class StrictEntityContextOwner, class EntityModifierT<class EntityRegistryBase, class StrictEntityContext, class FlagComponent<struct ActorMovementTickNeededFlag>, struct SideBySideSimulatorComponent, class FlagComponent<struct UsesECSMovementFlag>>, struct SideBySideRemappingComponent::Data &);
+    /**
      * @symbol ?_clearRemappings\@SideBySideSimulatorSystem\@\@SAXV?$OptionalGlobalT\@USideBySideRemappingComponent\@\@VEntityRegistryBase\@\@\@\@\@Z
      */
     MCAPI static void _clearRemappings(class OptionalGlobalT<struct SideBySideRemappingComponent, class EntityRegistryBase>);
