@@ -1,0 +1,13 @@
+blank_issues_enabled: false
+contact_links:
+  - name: New LiteLoader Issue
+    url: https://github.com/LiteLDev/LiteLoader/issues/new/choose
+    about: Open a new issue if you have a problem with LiteLoader
+
+  - name: New PeEditor Issue
+    url: https://github.com/LiteLDev/PeEditor/issues/new/choose
+    about: Open a new issue if you have a problem with PeEditor
+
+  - name: New PreLoader Issue
+    url: https://github.com/LiteLDev/PreLoader/issues/new/choose
+    about: Open a new issue if you have a problem with PreLoader

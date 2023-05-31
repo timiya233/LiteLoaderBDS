@@ -1,0 +1,29 @@
+site_name: LiteLoaderBDS
+site_url: https://docs.litebds.com
+
+nav:
+  - Languages:
+    - English: javascript:changeLanguage('en')
+    - 中文: javascript:changeLanguage('zh')
+
+  - Basics:
+    - index.md
+
+theme:
+  name: readthedocs
+extra_javascript:
+  - js/script.js
+
+use_directory_urls: false
+
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en:
+          name: English
+        zh:
+          name: 中文
+      nav_translations:
+        zh:
+          Basics: 基础
