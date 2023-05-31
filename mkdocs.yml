@@ -8,6 +8,13 @@ nav:
 
   - Basics:
     - index.md
+    - installation.md
+    - usage.md
+    - faq.md
+
+  - Proposals:
+    - proposals/blueprints.md
+    - proposals/event_system.md
 
 theme:
   name: readthedocs
@@ -27,3 +34,4 @@ plugins:
       nav_translations:
         zh:
           Basics: 基础
+          Proposals: 提案
