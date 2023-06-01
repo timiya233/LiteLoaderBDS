@@ -8,7 +8,7 @@ nav:
 
   - Basics:
     - index.md
-    - installation.md
+    - installation/windows.md
     - usage.md
     - faq.md
 
@@ -23,6 +23,10 @@ extra_javascript:
 
 use_directory_urls: false
 
+markdown_extensions:
+  - admonition:
+  - codehilite:
+
 plugins:
   - i18n:
       default_language: en
@@ -33,5 +37,6 @@ plugins:
           name: 中文
       nav_translations:
         zh:
+          Languages: 语言
           Basics: 基础
           Proposals: 提案
